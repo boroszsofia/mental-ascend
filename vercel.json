@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "mentalascend.hu"
+        }
+      ],
+      "destination": "https://mentalascend.com/hu",
+      "permanent": true
+    }
+  ]
+}
