@@ -65,7 +65,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 28px
+      gap: 28px;
+      position: relative
     }
 
     .brand {
@@ -137,6 +138,47 @@
       color: var(--white);
       border: 1px solid var(--line-light);
       background: transparent
+    }
+
+    .menu-icon,
+    .menu-icon::before,
+    .menu-icon::after {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: currentColor;
+      transition: transform .2s, opacity .2s
+    }
+
+    .menu-icon {
+      position: relative
+    }
+
+    .menu-icon::before,
+    .menu-icon::after {
+      content: "";
+      position: absolute;
+      left: 0
+    }
+
+    .menu-icon::before {
+      top: -6px
+    }
+
+    .menu-icon::after {
+      top: 6px
+    }
+
+    .menu-button[aria-expanded="true"] .menu-icon {
+      background: transparent
+    }
+
+    .menu-button[aria-expanded="true"] .menu-icon::before {
+      transform: translateY(6px) rotate(45deg)
+    }
+
+    .menu-button[aria-expanded="true"] .menu-icon::after {
+      transform: translateY(-6px) rotate(-45deg)
     }
 
     .hero {
@@ -540,12 +582,16 @@
     .about-intro {
       max-width: 950px;
       margin-bottom: 44px;
-      color: #e9eae5;
+      color: var(--gold-light);
       font-size: 20px;
       line-height: 1.6
     }
 
     .about-intro strong {
+      color: var(--gold-light)
+    }
+
+    .about-intro .about-goal {
       color: var(--gold-light)
     }
 
@@ -960,12 +1006,89 @@
     }
 
     @media(max-width:850px) {
-      .nav-links {
-        display: none
+      body {
+        padding-top: 94px
+      }
+
+      .site-header {
+        position: fixed;
+        inset: 0 0 auto;
+        z-index: 20;
+        background: var(--black)
+      }
+
+      .brand-mark small {
+        display: block;
+        position: absolute;
+        right: auto;
+        left: 50%;
+        bottom: calc(100% + 6px);
+        transform: translateX(-50%);
+        white-space: nowrap
       }
 
       .menu-button {
-        display: block
+        padding: 8px 0;
+        border: 0
+      }
+
+      .menu-icon,
+      .menu-icon::before,
+      .menu-icon::after {
+        width: 27px;
+        height: 3px
+      }
+
+      .menu-icon::before {
+        top: -8px
+      }
+
+      .menu-icon::after {
+        top: 8px
+      }
+
+      .menu-button[aria-expanded="true"] .menu-icon::before {
+        transform: translateY(8px) rotate(45deg)
+      }
+
+      .menu-button[aria-expanded="true"] .menu-icon::after {
+        transform: translateY(-8px) rotate(-45deg)
+      }
+
+      .nav-links {
+        display: flex;
+        position: absolute;
+        top: calc(100% - 1px);
+        left: 24px;
+        right: 24px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 0;
+        border: 1px solid var(--line-light);
+        background: rgba(7, 9, 10, .97);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-8px);
+        transition: opacity .2s, transform .2s
+      }
+
+      .nav-links.is-open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0)
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 13px 18px
+      }
+
+      .menu-button {
+        display: block;
+        position: relative;
+        z-index: 1;
+        cursor: pointer
       }
 
       .tagline {
@@ -1080,21 +1203,22 @@
     <div class="container nav"><a class="brand" href="#top" aria-label="Mental Ascend kezdőlap"><span
           class="brand-mark"><small>MENTAL</small><strong>ASCEND<em>.</em></strong></span><span
           class="tagline">Csúcsforma. <span>Fejben is.</span></span></a>
-      <nav class="nav-links" aria-label="Fő navigáció"><a href="szolgaltatasok.html">Szolgáltatások</a><a
-          href="rolunk.html">Rólunk</a><a href="#faq">GYIK</a><a href="#lead-magnet">Ingyenes munkafüzet</a><a
-          class="nav-cta" href="#contact">Ingyenes konzultáció</a></nav><button class="menu-button" type="button"
-        aria-label="Menü megnyitása">Menü</button>
+      <nav class="nav-links" aria-label="Fő navigáció"><a class="active" href="#top">Kezdőlap</a><a
+          href="szolgaltatasok.html">Szolgáltatások</a><a href="rolunk.html">Rólunk</a><a
+          href="kapcsolat.html">Kapcsolat</a><a href="#contact">Ingyenes konzultáció</a><a href="#lead-magnet">Ingyenes
+          munkafüzet</a></nav><button class="menu-button" type="button" aria-label="Menü megnyitása"
+        aria-expanded="false"><span class="menu-icon"></span></button>
     </div>
   </header>
   <main id="top">
     <section class="hero">
       <div class="container hero-inner">
         <h1>Csúcsforma.<span>Fejben is.</span></h1>
-        <p class="hero-copy"><span class="hero-lead">Komplex mentális fejlesztőrendszer sportolóknak, szülőknek és
-            csapatoknak.</span>Sport mental coachinggal, élsportolói mentoringgal és sportpszichológiai támogatással
-          segítünk, hogy tudatosan hozd a csúcsformádat, és jobban kezeld a nyomást.</p>
-        <div class="hero-actions"><a class="button primary" href="#contact">Foglalj 20 perces ingyenes
-            konzultációt</a><a class="button secondary" href="#lead-magnet">Ingyenes munkafüzet letöltése</a></div>
+        <p class="hero-copy"><span class="hero-lead">Mentális teljesítményfejlesztő rendszer
+            sportolóknak.</span>Coachinggal, élsportolói mentoringgal és sportpszichológiával segítünk kezelni a nyomást
+          és kihozni belőled a maximumot a téthelyzetekben is.</p>
+        <div class="hero-actions"><a class="button primary" href="#contact">Érdekel!</a><a class="button secondary"
+            href="#lead-magnet">Ingyenes munkafüzet letöltése</a></div>
       </div>
     </section>
     <section id="for-you" class="recognise">
@@ -1124,7 +1248,7 @@
             </ul>
           </div>
         </div>
-        <div class="recognise-bottom"><strong>Nem kell egyedül megküzdenetek ezekkel a helyzetekkel. Segítünk megtalálni
+        <div class="recognise-bottom"><strong>Nem kell egyedül megküzdened ezekkel a helyzetekkel. Segítünk megtalálni
             a következő lépést.</strong><a class="button dark" href="#contact">Jelentkezem 20 perces ingyenes
             konzultációra</a></div>
       </div>
@@ -1186,8 +1310,9 @@
           <div class="section-kicker">Rólunk</div>
           <h2>Kik vagyunk?</h2>
           <p class="about-intro"><strong>A Mental Ascend-et két sport mentál coach hozta létre – két teljesen különböző
-              útról érkezve, de egyetlen közös céllal: mentálisan felkészült, tudatos és nyomás alatt is csúcsformát
-              nyújtó sportolókat segíteni a pályára.</strong></p>
+              háttérrel, de egyetlen közös céllal: <span class="about-goal">mentálisan felkészült, tudatos és nyomás
+                alatt
+                is csúcsformát nyújtó sportolókat segíteni a pályára.</span></strong></p>
           <div class="founders-grid">
             <article class="founder-card">
               <div class="founder-header">
@@ -1219,9 +1344,6 @@
                 szilárd mentális alapokat adjon az egyéni sportolóknak, a szülőknek és a csapatoknak.</p>
             </article>
           </div>
-          <p class="about-closing"><strong>Két különböző út. Egy közös szenvedély:</strong> Szilárd mentális alapokat és
-            gyakorlati támogatást adni a sportolóknak, hogy a tétmeccsek döntő pillanataiban is kihozhassák magukból a
-            csúcsformát.</p>
         </div>
       </section>
     </div>
@@ -1261,12 +1383,13 @@
         <div class="contact-copy">
           <div class="section-kicker">Ingyenes konzultáció</div>
           <h2>Kezdjük egy <span>beszélgetéssel.</span></h2>
-          <p>Egy 20 perces, kötetlen konzultációban átbeszéljük a helyzetedet, a céljaidat, és közösen megnézzük, milyen
-            támogatás lehet számodra vagy gyermeked számára a legideálisabb.</p>
+
           <ul class="contact-points">
+            <li>20 perces, kötetlen konzultáció</li>
             <li>Röviden megismerjük a helyzetedet</li>
             <li>Tisztázzuk, mire lenne most a legnagyobb szükség</li>
             <li>Közösen kiválasztjuk a lehetséges következő lépést</li>
+            <li>Kötelezettségtől mentes, és ingyenes</li>
           </ul>
         </div>
         <div class="contact-form">
@@ -1285,8 +1408,7 @@
               kapni? *<textarea required name="message"
                 placeholder="Írj néhány mondatot a helyzetről és arról, miben szeretnél támogatást."></textarea></label><label
               class="check"><input required type="checkbox" name="privacy"><span>Elolvastam és elfogadom az adatkezelési
-                tájékoztatót. *</span></label><button class="button primary" type="submit">Kérem az ingyenes
-              konzultációt</button></form>
+                tájékoztatót. *</span></label><button class="button primary" type="submit">Elküldés</button></form>
         </div>
       </div>
     </section>
@@ -1334,6 +1456,27 @@
     <div class="container footer-inner"><span>© 2026 Mental Ascend. Minden jog fenntartva.</span><span><a
           href="#contact">Kapcsolat</a> · <a href="#">Adatkezelési tájékoztató</a></span></div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuButton = document.querySelector('.menu-button');
+      const navLinks = document.querySelector('.nav-links');
+
+      menuButton.addEventListener('click', () => {
+        const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', String(!isOpen));
+        menuButton.setAttribute('aria-label', isOpen ? 'Menü megnyitása' : 'Menü bezárása');
+        navLinks.classList.toggle('is-open', !isOpen);
+      });
+
+      navLinks.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          menuButton.setAttribute('aria-expanded', 'false');
+          menuButton.setAttribute('aria-label', 'Menü megnyitása');
+          navLinks.classList.remove('is-open');
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>

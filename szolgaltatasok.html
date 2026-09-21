@@ -59,7 +59,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 30px
+      gap: 30px;
+      position: relative
     }
 
     .brand {
@@ -127,6 +128,47 @@
       color: var(--white);
       border: 1px solid var(--line-light);
       background: transparent
+    }
+
+    .menu-icon,
+    .menu-icon::before,
+    .menu-icon::after {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: currentColor;
+      transition: transform .2s, opacity .2s
+    }
+
+    .menu-icon {
+      position: relative
+    }
+
+    .menu-icon::before,
+    .menu-icon::after {
+      content: "";
+      position: absolute;
+      left: 0
+    }
+
+    .menu-icon::before {
+      top: -6px
+    }
+
+    .menu-icon::after {
+      top: 6px
+    }
+
+    .menu-button[aria-expanded="true"] .menu-icon {
+      background: transparent
+    }
+
+    .menu-button[aria-expanded="true"] .menu-icon::before {
+      transform: translateY(6px) rotate(45deg)
+    }
+
+    .menu-button[aria-expanded="true"] .menu-icon::after {
+      transform: translateY(-6px) rotate(-45deg)
     }
 
     /* A feltöltött kollázskép a szolgáltatások oldal hero háttere */
@@ -392,12 +434,12 @@
       background: transparent
     }
 
-    .service-row.coaching-highlight .service-actions .service-price > span {
+    .service-row.coaching-highlight .service-actions .service-price>span {
       color: var(--gold-light);
       background: var(--black)
     }
 
-    .service-row.coaching-highlight .service-actions .service-price > span + span {
+    .service-row.coaching-highlight .service-actions .service-price>span+span {
       border-color: transparent
     }
 
@@ -433,13 +475,13 @@
       text-transform: uppercase
     }
 
-    .service-price > span {
+    .service-price>span {
       display: block;
       padding: 10px 14px;
       background: var(--gold)
     }
 
-    .service-price > span + span {
+    .service-price>span+span {
       margin: 0;
       padding: 10px 14px;
       border-top: 0
@@ -763,12 +805,78 @@
     }
 
     @media(max-width:850px) {
-      .nav-links {
-        display: none
+      body {
+        padding-top: 94px
+      }
+
+      .site-header {
+        position: fixed;
+        inset: 0 0 auto;
+        z-index: 20;
+        background: var(--black)
+      }
+
+      .brand-mark small {
+        position: absolute;
+        right: auto;
+        left: 50%;
+        bottom: calc(100% + 6px);
+        transform: translateX(-50%);
+        white-space: nowrap
       }
 
       .menu-button {
-        display: block
+        padding: 8px 0;
+        border: 0
+      }
+
+      .menu-icon,
+      .menu-icon::before,
+      .menu-icon::after {
+        width: 27px;
+        height: 3px
+      }
+
+      .menu-icon::before { top: -8px }
+      .menu-icon::after { top: 8px }
+
+      .menu-button[aria-expanded="true"] .menu-icon::before { transform: translateY(8px) rotate(45deg) }
+      .menu-button[aria-expanded="true"] .menu-icon::after { transform: translateY(-8px) rotate(-45deg) }
+
+      .nav-links {
+        display: flex;
+        position: absolute;
+        top: calc(100% - 1px);
+        left: 24px;
+        right: 24px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 0;
+        border: 1px solid var(--line-light);
+        background: rgba(7, 9, 10, .97);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-8px);
+        transition: opacity .2s, transform .2s
+      }
+
+      .nav-links.is-open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0)
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 13px 18px
+      }
+
+      .menu-button {
+        display: block;
+        position: relative;
+        z-index: 1;
+        cursor: pointer
       }
 
       .tagline {
@@ -875,10 +983,11 @@
     <div class="container nav"><a class="brand" href="index.html" aria-label="Mental Ascend főoldal"><span
           class="brand-mark"><small>MENTAL</small><strong>ASCEND<em>.</em></strong></span><span
           class="tagline">Csúcsforma. <span>Fejben is.</span></span></a>
-      <nav class="nav-links" aria-label="Fő navigáció"><a class="active" href="#top">Szolgáltatások</a><a
-          href="rolunk.html">Rólunk</a><a href="index.html#faq">GYIK</a><a class="nav-cta"
-          href="index.html#contact">Kapcsolat</a></nav><button class="menu-button" type="button"
-        aria-label="Menü megnyitása">Menü</button>
+      <nav class="nav-links" aria-label="Fő navigáció"><a href="index.html#top">Kezdőlap</a><a class="active"
+          href="#top">Szolgáltatások</a><a href="rolunk.html">Rólunk</a><a href="kapcsolat.html">Kapcsolat</a><a
+          href="index.html#contact">Ingyenes konzultáció</a><a href="index.html#lead-magnet">Ingyenes
+          munkafüzet</a></nav><button class="menu-button" type="button" aria-label="Menü megnyitása"
+        aria-expanded="false"><span class="menu-icon"></span></button>
     </div>
   </header>
   <main id="top">
@@ -893,9 +1002,8 @@
     <nav class="service-nav" aria-label="Szolgáltatások gyorsmenü">
       <div class="container service-nav-inner"><a href="#coaching">Sport mental coaching</a><a
           href="#mentoring">Élsportolói mentoring</a><a href="#csomag">Ascend Performance csomag</a><a
-          href="#pszichologia">Sportpszichológia</a><a
-          href="#szulok">Szülői tanácsadás</a><a href="#team">Sport team coaching</a><a
-          href="#munkafuzetek">Munkafüzetek</a></div>
+          href="#pszichologia">Sportpszichológia</a><a href="#szulok">Szülői tanácsadás</a><a href="#team">Sport team
+          coaching</a><a href="#munkafuzetek">Munkafüzetek</a></div>
     </nav>
     <section class="service-row coaching-highlight" id="coaching">
       <div class="container service-layout">
@@ -914,7 +1022,9 @@
             <div class="feature">Önbizalom és belső stabilitás építése</div>
             <div class="feature">Hibák, kudarcok utáni visszatérés</div>
           </div>
-          <div class="service-actions"><span class="service-price"><span>20 000 Ft <small>/ alkalom</small></span><span>100 000 Ft <small>/ 5+1 alkalom</small></span></span><a class="button" href="index.html#contact">Kérek ingyenes konzultációt</a></div>
+          <div class="service-actions"><span class="service-price"><span>20 000 Ft <small>/
+                  alkalom</small></span><span>100 000 Ft <small>/ 5+1 alkalom</small></span></span><a class="button"
+              href="index.html#contact">Kérek ingyenes konzultációt</a></div>
         </article>
       </div>
     </section>
@@ -935,7 +1045,9 @@
             <div class="feature">Sérülések, kispad és nehéz időszakok</div>
             <div class="feature">Döntések és teljesítménykényszer kezelése</div>
           </div>
-          <div class="service-actions"><span class="service-price"><span>40 000 Ft <small>/ alkalom</small></span></span><a class="button" href="index.html#contact">Kérek ingyenes konzultációt</a></div>
+          <div class="service-actions"><span class="service-price"><span>40 000 Ft <small>/
+                  alkalom</small></span></span><a class="button" href="index.html#contact">Kérek ingyenes
+              konzultációt</a></div>
         </article>
       </div>
     </section>
@@ -984,7 +1096,9 @@
             <div class="feature">Érzelmi elakadások feldolgozása</div>
             <div class="feature">Stabilabb mentális működés kialakítása</div>
           </div>
-          <div class="service-actions"><span class="service-price"><span>25 000 Ft <small>/ alkalom</small></span></span><a class="button" href="index.html#contact">Kérek ingyenes konzultációt</a></div>
+          <div class="service-actions"><span class="service-price"><span>25 000 Ft <small>/
+                  alkalom</small></span></span><a class="button" href="index.html#contact">Kérek ingyenes
+              konzultációt</a></div>
         </article>
       </div>
     </section>
@@ -1003,14 +1117,16 @@
             <div class="feature">Támogatás nyomásgyakorlás nélkül</div>
             <div class="feature">Motiváció és önállóság erősítése</div>
           </div>
-          <div class="service-actions"><span class="service-price"><span>20 000 Ft <small>/ alkalom</small></span></span><a class="button" href="index.html#contact">Kérek ingyenes konzultációt</a></div>
+          <div class="service-actions"><span class="service-price"><span>20 000 Ft <small>/
+                  alkalom</small></span></span><a class="button" href="index.html#contact">Kérek ingyenes
+              konzultációt</a></div>
         </article>
       </div>
     </section>
     <section class="service-row alt" id="team">
       <div class="container service-layout">
         <aside class="service-meta"><span class="service-number">05 / CSAPATOKNAK</span>
-            <h2>Sport team coaching</h2>
+          <h2>Sport team coaching</h2>
         </aside>
         <article class="service-content">
           <p class="lead">Csapatkohézió, kommunikáció, közös célok és mentális felkészülés sportközösségeknek.</p>
@@ -1022,7 +1138,9 @@
             <div class="feature">Mentális felkészülés kiélezett helyzetekre</div>
             <div class="feature">Edzői és csapatdinamikai támogatás</div>
           </div>
-          <div class="service-actions"><span class="service-price"><span>Egyedi ajánlat <small>megbeszélés szerint</small></span></span><a class="button" href="index.html#contact">Kérek egyedi ajánlatot</a></div>
+          <div class="service-actions"><span class="service-price"><span>Egyedi ajánlat <small>megbeszélés
+                  szerint</small></span></span><a class="button" href="index.html#contact">Kérek egyedi ajánlatot</a>
+          </div>
         </article>
       </div>
     </section>
@@ -1063,6 +1181,27 @@
     <div class="container footer-inner"><span>© 2026 Mental Ascend. Minden jog fenntartva.</span><span><a
           href="index.html#contact">Kapcsolat</a> · <a href="#">Adatkezelési tájékoztató</a></span></div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuButton = document.querySelector('.menu-button');
+      const navLinks = document.querySelector('.nav-links');
+
+      menuButton.addEventListener('click', () => {
+        const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', String(!isOpen));
+        menuButton.setAttribute('aria-label', isOpen ? 'Menü megnyitása' : 'Menü bezárása');
+        navLinks.classList.toggle('is-open', !isOpen);
+      });
+
+      navLinks.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          menuButton.setAttribute('aria-expanded', 'false');
+          menuButton.setAttribute('aria-label', 'Menü megnyitása');
+          navLinks.classList.remove('is-open');
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>

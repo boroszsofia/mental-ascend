@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kapcsolat a Mental Ascend csapatával.">
+    <title>Kapcsolat | Mental Ascend</title>
+    <style>
+        :root {
+            --black: #07090a;
+            --black-soft: #101517;
+            --white: #f8f8f4;
+            --grey: #b5bab8;
+            --gold: #d9ad38;
+            --gold-light: #f0d06b;
+            --line-light: rgba(255, 255, 255, .15);
+            --max: 1180px
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            color: var(--white);
+            background: #151b1d;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .container {
+            width: min(var(--max), calc(100% - 48px));
+            margin: 0 auto
+        }
+
+        .site-header {
+            position: relative;
+            z-index: 10;
+            border-bottom: 1px solid var(--line-light);
+            background: var(--black)
+        }
+
+        .nav {
+            position: relative;
+            min-height: 94px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            color: var(--white)
+        }
+
+        .brand-mark {
+            position: relative;
+            display: block;
+            font-weight: 900;
+            line-height: .8;
+            letter-spacing: .16em
+        }
+
+        .brand-mark small {
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: calc(100% + 6px);
+            color: var(--gold-light);
+            font-size: 9px;
+            text-align: center;
+            letter-spacing: .34em
+        }
+
+        .brand-mark strong {
+            font-size: 27px
+        }
+
+        .brand-mark em {
+            color: var(--gold);
+            font-style: normal
+        }
+
+        .tagline {
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .2em;
+            text-transform: uppercase
+        }
+
+        .tagline span {
+            color: var(--gold-light)
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+            color: #e9e9e5;
+            font-size: 14px
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: var(--gold-light)
+        }
+
+        .menu-button {
+            display: none;
+            padding: 8px 10px;
+            color: var(--white);
+            border: 1px solid var(--line-light);
+            background: transparent;
+            cursor: pointer
+        }
+
+        .menu-icon,
+        .menu-icon::before,
+        .menu-icon::after {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: currentColor;
+            transition: transform .2s
+        }
+
+        .menu-icon {
+            position: relative
+        }
+
+        .menu-icon::before,
+        .menu-icon::after {
+            content: "";
+            position: absolute;
+            left: 0
+        }
+
+        .menu-icon::before {
+            top: -6px
+        }
+
+        .menu-icon::after {
+            top: 6px
+        }
+
+        .menu-button[aria-expanded="true"] .menu-icon {
+            background: transparent
+        }
+
+        .menu-button[aria-expanded="true"] .menu-icon::before {
+            transform: translateY(6px) rotate(45deg)
+        }
+
+        .menu-button[aria-expanded="true"] .menu-icon::after {
+            transform: translateY(-6px) rotate(-45deg)
+        }
+
+        main {
+            min-height: calc(100vh - 174px);
+            padding: 110px 0;
+            background: #151b1d
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center
+        }
+
+        .eyebrow {
+            margin-bottom: 18px;
+            color: var(--gold-light);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .2em;
+            text-transform: uppercase
+        }
+
+        h1 {
+            max-width: 650px;
+            margin: 0 0 24px;
+            font-size: clamp(48px, 8vw, 96px);
+            line-height: .9;
+            letter-spacing: -.06em;
+            text-transform: uppercase
+        }
+
+        h1 span {
+            color: var(--gold)
+        }
+
+        .intro {
+            max-width: 570px;
+            color: var(--grey);
+            font-size: 19px
+        }
+
+        .contact-card {
+            padding: 38px;
+            border-top: 5px solid var(--gold);
+            background: #20282c
+        }
+
+        .contact-card h2 {
+            margin: 0 0 26px;
+            font-size: 31px;
+            line-height: 1.1
+        }
+
+        .contact-list {
+            display: grid;
+            gap: 22px;
+            margin: 0;
+            padding: 0;
+            list-style: none
+        }
+
+        .contact-list li {
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--line-light)
+        }
+
+        .contact-list li:last-child {
+            padding-bottom: 0;
+            border-bottom: 0
+        }
+
+        .contact-label {
+            display: block;
+            margin-bottom: 3px;
+            color: var(--gold-light);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .14em;
+            text-transform: uppercase
+        }
+
+        .contact-value {
+            color: var(--white);
+            font-size: 18px
+        }
+
+        .contact-value:hover {
+            color: var(--gold-light)
+        }
+
+        .consultation {
+            margin-top: 70px;
+            padding-top: 30px;
+            border-top: 1px solid var(--line-light)
+        }
+
+        .consultation-grid {
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: 68px;
+            align-items: start
+        }
+
+        .consultation h2 {
+            margin: 0 0 10px;
+            font-size: 29px
+        }
+
+        .consultation h2 span {
+            color: var(--gold-light)
+        }
+
+        .consultation p {
+            margin: 0;
+            color: var(--grey)
+        }
+
+        .contact-points {
+            margin: 30px 0 0;
+            padding: 0;
+            list-style: none
+        }
+
+        .contact-points li {
+            position: relative;
+            margin: 11px 0;
+            padding-left: 25px;
+            color: #dfe3df
+        }
+
+        .contact-points li::before {
+            content: "+";
+            position: absolute;
+            left: 0;
+            color: var(--gold-light);
+            font-weight: 900
+        }
+
+        .contact-form {
+            padding: 32px;
+            border: 1px solid var(--line-light);
+            border-top: 4px solid var(--gold);
+            background: rgba(6, 11, 13, .35)
+        }
+
+        .contact-form form {
+            display: grid;
+            gap: 16px
+        }
+
+        .contact-form label {
+            display: grid;
+            gap: 7px;
+            color: #e6e9e6;
+            font-size: 13px;
+            font-weight: 700
+        }
+
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px;
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, .24);
+            border-radius: 0;
+            background: #1b2529;
+            font: inherit
+        }
+
+        .contact-form input:focus,
+        .contact-form select:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: #202c31
+        }
+
+        .contact-form textarea {
+            min-height: 125px;
+            resize: vertical
+        }
+
+        .check {
+            display: flex !important;
+            align-items: flex-start;
+            gap: 10px;
+            color: var(--grey) !important;
+            font-size: 13px !important;
+            font-weight: 400 !important
+        }
+
+        .check input {
+            width: auto;
+            margin-top: 4px
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 24px;
+            padding: 15px 21px;
+            color: var(--black);
+            border: 1px solid var(--gold);
+            background: var(--gold);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .075em;
+            text-transform: uppercase
+        }
+
+        .button:hover {
+            color: var(--black);
+            background: var(--gold-light)
+        }
+
+        footer {
+            padding: 35px 0;
+            color: var(--grey);
+            background: #050606;
+            font-size: 13px
+        }
+
+        @media(max-width:850px) {
+            body {
+                padding-top: 94px
+            }
+
+            .site-header {
+                position: fixed;
+                inset: 0 0 auto;
+                z-index: 20;
+                background: var(--black)
+            }
+
+            .brand-mark small {
+                display: block;
+                position: absolute;
+                right: auto;
+                left: 50%;
+                bottom: calc(100% + 6px);
+                transform: translateX(-50%);
+                white-space: nowrap
+            }
+
+            .menu-button {
+                padding: 8px 0;
+                border: 0
+            }
+
+            .menu-icon,
+            .menu-icon::before,
+            .menu-icon::after {
+                width: 27px;
+                height: 3px
+            }
+
+            .menu-icon::before { top: -8px }
+            .menu-icon::after { top: 8px }
+
+            .menu-button[aria-expanded="true"] .menu-icon::before { transform: translateY(8px) rotate(45deg) }
+            .menu-button[aria-expanded="true"] .menu-icon::after { transform: translateY(-8px) rotate(-45deg) }
+
+            .nav-links {
+                display: flex;
+                position: absolute;
+                top: calc(100% - 1px);
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 10px 0;
+                border: 1px solid var(--line-light);
+                background: rgba(7, 9, 10, .98);
+                opacity: 0;
+                pointer-events: none;
+                transform: translateY(-8px);
+                transition: opacity .2s, transform .2s
+            }
+
+            .nav-links.is-open {
+                opacity: 1;
+                pointer-events: auto;
+                transform: translateY(0)
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 13px 18px
+            }
+
+            .menu-button {
+                display: block;
+                position: relative;
+                z-index: 1;
+                cursor: pointer
+            }
+
+            .tagline {
+                display: none
+            }
+
+            .contact-layout {
+                grid-template-columns: 1fr;
+                gap: 45px
+            }
+
+            .consultation-grid {
+                grid-template-columns: 1fr;
+                gap: 40px
+            }
+        }
+
+        @media(max-width:560px) {
+            .container {
+                width: min(var(--max), calc(100% - 32px))
+            }
+
+            main {
+                padding: 75px 0
+            }
+
+            .contact-card {
+                padding: 25px
+            }
+
+            .contact-form {
+                padding: 22px
+            }
+
+            .button {
+                width: 100%
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="index.html#top" aria-label="Mental Ascend főoldal"><span
+                    class="brand-mark"><small>MENTAL</small><strong>ASCEND<em>.</em></strong></span><span
+                    class="tagline">Csúcsforma. <span>Fejben is.</span></span></a>
+            <nav class="nav-links" aria-label="Fő navigáció">
+                <a href="index.html#top">Kezdőlap</a>
+                <a href="szolgaltatasok.html">Szolgáltatások</a>
+                <a href="rolunk.html">Rólunk</a>
+                <a class="active" href="#top">Kapcsolat</a>
+                <a href="index.html#contact">Ingyenes konzultáció</a>
+                <a href="index.html#lead-magnet">Ingyenes munkafüzet</a>
+            </nav>
+            <button class="menu-button" type="button" aria-label="Menü megnyitása" aria-expanded="false"><span
+                    class="menu-icon"></span></button>
+        </div>
+    </header>
+
+    <main id="top">
+        <div class="container">
+            <div class="contact-layout">
+                <section>
+                    <div class="eyebrow">Mental Ascend</div>
+                    <h1>Kapcsolat<span>.</span></h1>
+                    <p class="intro">Kérdésed van, vagy szeretnéd megtalálni a számodra megfelelő támogatási formát?
+                        Vedd fel velünk a kapcsolatot.</p>
+                </section>
+                <section class="contact-card" aria-label="Elérhetőségek">
+                    <h2>Elérhetőségeink</h2>
+                    <ul class="contact-list">
+                        <li><span class="contact-label">Weboldal</span><a class="contact-value"
+                                href="https://mentalascend.com/hu">mentalascend.com/hu</a></li>
+                        <li><span class="contact-label">E-mail</span><a class="contact-value"
+                                href="mailto:ascendmental@gmail.com">ascendmental@gmail.com</a></li>
+                        <li><span class="contact-label">Instagram</span><a class="contact-value"
+                                href="https://www.instagram.com/mentalascend.hu/" target="_blank"
+                                rel="noreferrer">@mentalascend.hu</a></li>
+                    </ul>
+                </section>
+            </div>
+            <section class="consultation" id="consultation">
+                <div class="consultation-grid">
+                    <div>
+                        <div class="eyebrow">Ingyenes konzultáció</div>
+                        <h2>Kezdjük egy <span>beszélgetéssel.</span></h2>
+                        <ul class="contact-points">
+                            <li>20 perces, kötetlen konzultáció</li>
+                            <li>Röviden megismerjük a helyzetedet</li>
+                            <li>Tisztázzuk, mire lenne most a legnagyobb szükség</li>
+                            <li>Közösen kiválasztjuk a lehetséges következő lépést</li>
+                            <li>Kötelezettségtől mentes, és ingyenes</li>
+                        </ul>
+                    </div>
+                    <div class="contact-form">
+                        <form>
+                            <label>Név *<input required type="text" name="name"></label>
+                            <label>E-mail-cím *<input required type="email" name="email"></label>
+                            <label>Ki szeretne segítséget kérni? *<select required name="who">
+                                <option value="">Válassz...</option>
+                                <option>Sportolóként magamnak</option>
+                                <option>Gyermekemnek</option>
+                                <option>Szülőként magamnak</option>
+                            </select></label>
+                            <label>Sportoló korosztálya *<select required name="age-group">
+                                <option value="">Válassz...</option>
+                                <option>14 év alatti</option>
+                                <option>14–18 év közötti</option>
+                                <option>18 év feletti / Felnőtt</option>
+                            </select></label>
+                            <label>Sportág<input type="text" name="sport"></label>
+                            <label>Miben szeretnél segítséget kapni? *<textarea required name="message"
+                                placeholder="Írj néhány mondatot a helyzetről és arról, miben szeretnél támogatást."></textarea></label>
+                            <label class="check"><input required type="checkbox" name="privacy"><span>Elolvastam és elfogadom az adatkezelési tájékoztatót. *</span></label>
+                            <button class="button" type="submit">Kérem az ingyenes konzultációt</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">© 2026 Mental Ascend. Minden jog fenntartva.</div>
+    </footer>
+
+    <script>
+        const menuButton = document.querySelector('.menu-button');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuButton.addEventListener('click', () => {
+            const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+            menuButton.setAttribute('aria-expanded', String(!isOpen));
+            menuButton.setAttribute('aria-label', isOpen ? 'Menü megnyitása' : 'Menü bezárása');
+            navLinks.classList.toggle('is-open', !isOpen);
+        });
+
+        navLinks.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+                menuButton.setAttribute('aria-expanded', 'false');
+                menuButton.setAttribute('aria-label', 'Menü megnyitása');
+                navLinks.classList.remove('is-open');
+            });
+        });
+    </script>
+</body>
+
+</html>

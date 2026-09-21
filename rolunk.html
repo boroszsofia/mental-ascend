@@ -60,7 +60,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 30px
+      gap: 30px;
+      position: relative
     }
 
     .brand {
@@ -128,6 +129,47 @@
       color: var(--white);
       border: 1px solid var(--line-light);
       background: transparent
+    }
+
+    .menu-icon,
+    .menu-icon::before,
+    .menu-icon::after {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: currentColor;
+      transition: transform .2s, opacity .2s
+    }
+
+    .menu-icon {
+      position: relative
+    }
+
+    .menu-icon::before,
+    .menu-icon::after {
+      content: "";
+      position: absolute;
+      left: 0
+    }
+
+    .menu-icon::before {
+      top: -6px
+    }
+
+    .menu-icon::after {
+      top: 6px
+    }
+
+    .menu-button[aria-expanded="true"] .menu-icon {
+      background: transparent
+    }
+
+    .menu-button[aria-expanded="true"] .menu-icon::before {
+      transform: translateY(6px) rotate(45deg)
+    }
+
+    .menu-button[aria-expanded="true"] .menu-icon::after {
+      transform: translateY(-6px) rotate(-45deg)
     }
 
     .page-hero {
@@ -568,12 +610,88 @@
     }
 
     @media(max-width:850px) {
-      .nav-links {
-        display: none
+      body {
+        padding-top: 94px
+      }
+
+      .site-header {
+        position: fixed;
+        inset: 0 0 auto;
+        z-index: 20;
+        background: var(--black)
+      }
+
+      .brand-mark small {
+        position: absolute;
+        right: auto;
+        left: 50%;
+        bottom: calc(100% + 6px);
+        transform: translateX(-50%);
+        white-space: nowrap
       }
 
       .menu-button {
-        display: block
+        padding: 8px 0;
+        border: 0
+      }
+
+      .menu-icon,
+      .menu-icon::before,
+      .menu-icon::after {
+        width: 27px;
+        height: 3px
+      }
+
+      .menu-icon::before {
+        top: -8px
+      }
+
+      .menu-icon::after {
+        top: 8px
+      }
+
+      .menu-button[aria-expanded="true"] .menu-icon::before {
+        transform: translateY(8px) rotate(45deg)
+      }
+
+      .menu-button[aria-expanded="true"] .menu-icon::after {
+        transform: translateY(-8px) rotate(-45deg)
+      }
+
+      .nav-links {
+        display: flex;
+        position: absolute;
+        top: calc(100% - 1px);
+        left: 24px;
+        right: 24px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 0;
+        border: 1px solid var(--line-light);
+        background: rgba(7, 9, 10, .97);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-8px);
+        transition: opacity .2s, transform .2s
+      }
+
+      .nav-links.is-open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0)
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 13px 18px
+      }
+
+      .menu-button {
+        display: block;
+        position: relative;
+        z-index: 1;
+        cursor: pointer
       }
 
       .tagline {
@@ -665,10 +783,11 @@
     <div class="container nav"><a class="brand" href="index.html" aria-label="Mental Ascend főoldal"><span
           class="brand-mark"><small>MENTAL</small><strong>ASCEND<em>.</em></strong></span><span
           class="tagline">Csúcsforma. <span>Fejben is.</span></span></a>
-      <nav class="nav-links" aria-label="Fő navigáció"><a href="szolgaltatasok.html">Szolgáltatások</a><a class="active"
-          href="#top">Rólunk</a><a href="index.html#faq">GYIK</a><a class="nav-cta"
-          href="index.html#contact">Kapcsolat</a></nav><button class="menu-button" type="button"
-        aria-label="Menü megnyitása">Menü</button>
+      <nav class="nav-links" aria-label="Fő navigáció"><a href="index.html#top">Kezdőlap</a><a
+          href="szolgaltatasok.html">Szolgáltatások</a><a class="active" href="#top">Rólunk</a><a
+          href="kapcsolat.html">Kapcsolat</a><a href="index.html#contact">Ingyenes konzultáció</a><a
+          href="index.html#lead-magnet">Ingyenes munkafüzet</a></nav><button class="menu-button" type="button"
+        aria-label="Menü megnyitása" aria-expanded="false"><span class="menu-icon"></span></button>
     </div>
   </header>
   <main id="top">
@@ -685,9 +804,8 @@
         <div class="section-kicker">Közös missziónk</div>
 
 
-        <div class="mission-box">„Az élsportolói tapasztalatot és a nemzetközi coaching szemléletet ötvözve adunk
-          szilárd mentális alapokat és gyakorlati eszközöket a döntő pillanatokban – sportolóknak, szülőknek és
-          csapatoknak.”</div>
+        <div class="mission-box">„Szilárd mentális alapokat és gyakorlati támogatást adni a sportolóknak, hogy a
+          tétmeccsek döntő pillanataiban is kihozhassák magukból a csúcsformát.”</div>
       </div>
     </section>
     <section class="profiles">
@@ -817,6 +935,27 @@
     <div class="container footer-inner"><span>© 2026 Mental Ascend. Minden jog fenntartva.</span><span><a
           href="index.html#contact">Kapcsolat</a> · <a href="#">Adatkezelési tájékoztató</a></span></div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuButton = document.querySelector('.menu-button');
+      const navLinks = document.querySelector('.nav-links');
+
+      menuButton.addEventListener('click', () => {
+        const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', String(!isOpen));
+        menuButton.setAttribute('aria-label', isOpen ? 'Menü megnyitása' : 'Menü bezárása');
+        navLinks.classList.toggle('is-open', !isOpen);
+      });
+
+      navLinks.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          menuButton.setAttribute('aria-expanded', 'false');
+          menuButton.setAttribute('aria-label', 'Menü megnyitása');
+          navLinks.classList.remove('is-open');
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
