@@ -787,6 +787,66 @@
       background: var(--white)
     }
 
+    .decision-tree {
+      padding: 0 0 70px;
+      background: var(--gold)
+    }
+
+    .service-picker {
+      padding: 0;
+      background: var(--white)
+    }
+
+    .service-picker .container {
+      width: 100%;
+      max-width: none
+    }
+
+    .service-picker .decision-tree-services {
+      max-width: none;
+      margin-top: 0;
+      background: var(--white)
+    }
+
+    .decision-tree img {
+      display: block;
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      margin: 0 auto
+    }
+
+    .decision-tree-services {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 900px;
+      margin: 28px auto 0;
+      padding: 24px;
+      color: var(--black-soft);
+      background: var(--white)
+    }
+
+    .decision-tree-services a {
+      display: flex;
+      min-height: 72px;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 10px;
+      border-top: 4px solid var(--gold);
+      color: var(--black-soft);
+      background: var(--off-white);
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.2;
+      text-align: center
+    }
+
+    .decision-tree-services a:hover {
+      color: var(--black);
+      background: #f4e4ad
+    }
+
     footer {
       padding: 35px 0;
       color: #aeb3b1;
@@ -837,11 +897,21 @@
         height: 3px
       }
 
-      .menu-icon::before { top: -8px }
-      .menu-icon::after { top: 8px }
+      .menu-icon::before {
+        top: -8px
+      }
 
-      .menu-button[aria-expanded="true"] .menu-icon::before { transform: translateY(8px) rotate(45deg) }
-      .menu-button[aria-expanded="true"] .menu-icon::after { transform: translateY(-8px) rotate(-45deg) }
+      .menu-icon::after {
+        top: 8px
+      }
+
+      .menu-button[aria-expanded="true"] .menu-icon::before {
+        transform: translateY(8px) rotate(45deg)
+      }
+
+      .menu-button[aria-expanded="true"] .menu-icon::after {
+        transform: translateY(-8px) rotate(-45deg)
+      }
 
       .nav-links {
         display: flex;
@@ -894,6 +964,14 @@
         gap: 36px
       }
 
+      .decision-tree-services {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+      }
+
+      .service-picker {
+        display: none
+      }
+
       .service-meta {
         position: static
       }
@@ -933,7 +1011,8 @@
       }
 
       .feature-list,
-      .workbook-grid {
+      .workbook-grid,
+      .decision-tree-services {
         grid-template-columns: 1fr
       }
 
@@ -999,28 +1078,32 @@
           élsportolói mentoring, szülői támogatás és csapatfejlesztés – a te helyzetedhez igazítva.</p>
       </div>
     </section>
-    <nav class="service-nav" aria-label="Szolgáltatások gyorsmenü">
-      <div class="container service-nav-inner"><a href="#coaching">Sport mental coaching</a><a
-          href="#mentoring">Élsportolói mentoring</a><a href="#csomag">Ascend Performance csomag</a><a
-          href="#pszichologia">Sportpszichológia</a><a href="#szulok">Szülői tanácsadás</a><a href="#team">Sport team
-          coaching</a><a href="#munkafuzetek">Munkafüzetek</a></div>
-    </nav>
+    <section class="service-picker" aria-label="Szolgáltatások gyorsmenü">
+      <div class="container">
+        <nav class="decision-tree-services" aria-label="Szolgáltatások listája">
+          <a href="#coaching">Sport mental coaching</a>
+          <a href="#mentoring">Élsportolói mentoring</a>
+          <a href="#pszichologia">Sportpszichológia</a>
+          <a href="#szulok">Szülői tanácsadás</a>
+          <a href="#team">Sport team coaching</a>
+        </nav>
+      </div>
+    </section>
     <section class="service-row coaching-highlight" id="coaching">
       <div class="container service-layout">
         <aside class="service-meta"><span class="service-number">01 / EGYÉNI TÁMOGATÁS</span>
           <h2>Sport mental coaching</h2>
         </aside>
         <article class="service-content">
-          <p class="lead">Személyre szabott mentális fejlesztés a jobb fókuszért és a teljesítménynövelésért nyomás
-            alatt is.</p>
-          <p>A közös folyamatban a sportoló aktuális helyzetéből indulunk ki. Nem kész válaszokat adunk, hanem olyan
-            kérdésekkel, gyakorlati eszközökkel és rendszeres reflektálással dolgozunk, amelyek segítenek tudatosabban
-            kezelni a versenyhelyzeteket.</p>
+          <p class="lead"><strong>Személyre szabott mentális fejlesztés a jobb fókuszért és a
+              teljesítménynövelésért.</strong></p>
+          <p>Nem kész sablonokat adunk: saját élményekből és helyzetekből építkezünk. Gyakorlati eszközökkel segítünk,
+            hogy a legélesebb meccshelyzetekben is urald a nyomást.</p>
           <div class="feature-list">
-            <div class="feature">Verseny előtti feszültség és meccsszorongás kezelése</div>
+            <div class="feature">Verseny előtti feszültség kezelése</div>
             <div class="feature">Fókusz és figyelem tudatos irányítása</div>
             <div class="feature">Önbizalom és belső stabilitás építése</div>
-            <div class="feature">Hibák, kudarcok utáni visszatérés</div>
+            <div class="feature">Hibák és kudarcok tudatos feldolgozása</div>
           </div>
           <div class="service-actions"><span class="service-price"><span>20 000 Ft <small>/
                   alkalom</small></span><span>100 000 Ft <small>/ 5+1 alkalom</small></span></span><a class="button"
@@ -1034,16 +1117,16 @@
           <h2>Élsportolói mentoring</h2>
         </aside>
         <article class="service-content">
-          <p class="lead">Konkrét tapasztalatátadás, útmutatás és profi szemléletmód Stieber Zoltán 26-szoros válogatott
-            labdarúgótól.</p>
-          <p>A mentoringban az élsportban szerzett valós tapasztalat, a sportoló saját helyzete és a következő döntései
-            találkoznak. Zoltán releváns nézőpontokkal, őszinte visszajelzésekkel és saját élményeiből hozott
-            tanulságokkal támogat.</p>
+          <p class="lead"><strong>Konkrét tapasztalatátadás, útmutatás és profi szemléletmód Stieber Zoltán 26-szoros
+              válogatott
+              labdarúgótól.</p>
+          <p>Az élsportban szerzett tapasztalat találkozik a te jeleneddel. Zoli őszinte visszajelzésekkel,
+            gyakorlati útmutatással és saját élményeivel segít. </p>
           <div class="feature-list">
-            <div class="feature">Szintlépés és sportolói út tudatosítása</div>
-            <div class="feature">Külföld, klubváltás és új helyzetek</div>
-            <div class="feature">Sérülések, kispad és nehéz időszakok</div>
-            <div class="feature">Döntések és teljesítménykényszer kezelése</div>
+            <div class="feature">Szintlépés és a tudatos karrierépítés</div>
+            <div class="feature">Klubváltás és beilleszkedés külföldön</div>
+            <div class="feature">Nehéz időszakok, sérülések, kispad</div>
+            <div class="feature">Döntési helyzetek és nyomáskezelés</div>
           </div>
           <div class="service-actions"><span class="service-price"><span>40 000 Ft <small>/
                   alkalom</small></span></span><a class="button" href="index.html#contact">Kérek ingyenes
@@ -1056,25 +1139,24 @@
         <div class="package-head">
           <div class="section-kicker">Csomagajánlat</div>
           <h2>Ascend Performance csomag</h2>
-          <p>Hosszabb távú, strukturált támogatás azoknak a sportolóknak, akik a mentális fejlesztést és az élsportolói
-            nézőpontot is be szeretnék építeni a fejlődésükbe.</p>
+          <p>Hosszabb távú, strukturált támogatás a mentális fejlődés és az élsportolói tapasztalat ötvözésével.</p>
         </div>
         <div class="package-card">
           <div>
-            <h3>Coaching + mentoring egy folyamatban.</h3>
-            <p>A csomag a rendszeres mentális fejlesztést és a profi sportból hozott, valós mentori tapasztalatot
-              kapcsolja össze.</p>
+            <h3>8 Coaching + 2 Mentoring</h3>
+            <p>A rendszeres mentális fejlesztést és a profi sportból hozott, valós mentori tapasztalat egy csomagban.
+            </p>
             <ul class="package-items">
-              <li>6 alkalom sport mental coaching</li>
-              <li>2 alkalom élsportolói mentoring Stieber Zoltánnal</li>
-              <li>Strukturált fókusz a célokra, nyomáskezelésre és szintlépésre</li>
-              <li>Összesen 8 személyes online alkalom</li>
+              <li>8 alkalom személyre szabott mentálcoaching</li>
+              <li>2 alkalom élsportolói mentoring Stieber Zoltánna</li>
+              <li>Komplex mentális felkészítés a csúcsteljesítményért</li>
+              <li>Összesen 10 egyéni, online konzultációs alkalom</li>
             </ul>
           </div>
           <div class="package-price">
-            <div class="old">Egyenként: 180 000 Ft</div>
-            <div class="new">160 000 <span class="currency">Ft</span></div>
-            <p>20 000 Ft kedvezmény a külön foglaláshoz képest.</p><a class="button" href="index.html#contact">Érdekel a
+            <div class="old">Lista ár: 240 000 Ft</div>
+            <div class="new">199 000 <span class="currency">Ft</span></div>
+            <p>41 000 Ft kedvezmény a külön foglaláshoz képest.</p><a class="button" href="index.html#contact">Érdekel a
               csomag</a>
           </div>
         </div>
@@ -1086,15 +1168,15 @@
           <h2>Sportpszichológia</h2>
         </aside>
         <article class="service-content">
-          <p class="lead">A teljesítményt gátló mélyebb belső blokkok, meccsszorongás és érzelmi elakadások
-            feldolgozása.</p>
-          <p>Amikor a teljesítmény mögött olyan visszatérő minták vagy érzelmi nehézségek jelennek meg, amelyek
-            célzottabb támogatást igényelnek, ez a forma adhat megfelelő keretet.</p>
+          <p class="lead"><strong>A teljesítményt gátló mélyebb belső blokkok, meccsszorongás és érzelmi elakadások
+              feldolgozása.</strong></p>
+          <p>Ahol a tudatos technika nem elég, ott a mélyebb okokat fejtjük fel. Célzott szakmai kerete a visszatérő
+            félelmek és a teljesítménygátló elakadások feloldásához.</p>
           <div class="feature-list">
             <div class="feature">Teljesítménygátló belső blokkok feltárása</div>
-            <div class="feature">Versenyhelyzeti félelmek kezelése</div>
-            <div class="feature">Érzelmi elakadások feldolgozása</div>
-            <div class="feature">Stabilabb mentális működés kialakítása</div>
+            <div class="feature">Versenyhelyzeti félelmek és szorongás</div>
+            <div class="feature">Érzelmi elakadások és kudarckezelés</div>
+            <div class="feature">Stabil, ingadozásmentes belső alapok</div>
           </div>
           <div class="service-actions"><span class="service-price"><span>25 000 Ft <small>/
                   alkalom</small></span></span><a class="button" href="index.html#contact">Kérek ingyenes
@@ -1108,14 +1190,14 @@
           <h2>Szülői tanácsadás</h2>
         </aside>
         <article class="service-content">
-          <p class="lead">Coaching szemléletű segítség ahhoz, hogyan támogasd gyermekedet tudatosabban.</p>
-          <p>A közös gondolkodás segít megtalálni azt a kommunikációs és támogató szerepet, amely a gyermeked fejlődését
-            szolgálja.</p>
+          <p class="lead">Gyakorlati útmutatás és támogatás ahhoz, hogy tudatosan segíthesd a gyermeked.</p>
+          <p>A közös munka során megtaláljuk azt a jó egyensúlyt és kommunikációt, amellyel valódi támogatást adhatsz
+            neki – anélkül, hogy extra nyomást helyeznél rá.</p>
           <div class="feature-list">
-            <div class="feature">Mit mondj verseny előtt és után?</div>
-            <div class="feature">Hogyan reagálj hibára és kudarcra?</div>
-            <div class="feature">Támogatás nyomásgyakorlás nélkül</div>
-            <div class="feature">Motiváció és önállóság erősítése</div>
+            <div class="feature">Eredményes kommunikáció meccs előtt és után</div>
+            <div class="feature">Helyes szülői reakciók a hibákra, kudarcra</div>
+            <div class="feature">Kiegyensúlyozott támogatás nyomás nélkül</div>
+            <div class="feature">A gyermek belső motivációjának építése</div>
           </div>
           <div class="service-actions"><span class="service-price"><span>20 000 Ft <small>/
                   alkalom</small></span></span><a class="button" href="index.html#contact">Kérek ingyenes
@@ -1129,13 +1211,13 @@
           <h2>Sport team coaching</h2>
         </aside>
         <article class="service-content">
-          <p class="lead">Csapatkohézió, kommunikáció, közös célok és mentális felkészülés sportközösségeknek.</p>
-          <p>Az adott közösség aktuális helyzetére, céljaira és kihívásaira építünk, legyen szó kommunikációról,
-            összetartásról, bizalomról vagy a versenyhelyzetek közös kezeléséről.</p>
+          <p class="lead">Csapatkohézió, kommunikáció és mentális felkészülés sportközösségeknek és egyesületeknek.</p>
+          <p>A csapat aktuális helyzetére építve segítünk a közös célok kijelölésében, a csapatdinamika fejlesztésében
+            és az esetleges belső konfliktusok hatékony rendezésében.</p>
           <div class="feature-list">
-            <div class="feature">Csapaton belüli kommunikáció és bizalom</div>
-            <div class="feature">Közös célok és működés tisztázása</div>
-            <div class="feature">Mentális felkészülés kiélezett helyzetekre</div>
+            <div class="feature">Közös csapatcélok és működés tisztázása</div>
+            <div class="feature">Csapatdinamika és bizalom fejlesztése</div>
+            <div class="feature">Belső konfliktusok hatékony kezelése</div>
             <div class="feature">Edzői és csapatdinamikai támogatás</div>
           </div>
           <div class="service-actions"><span class="service-price"><span>Egyedi ajánlat <small>megbeszélés
@@ -1146,23 +1228,19 @@
     </section>
     <section class="workbooks" id="munkafuzetek">
       <div class="container">
-        <div class="section-kicker">Ingyenes munkafüzetek</div>
-        <h2>Az első lépés lehet egy gyakorlat.</h2>
-        <p class="intro">Két rövid, gyakorlatias anyag, amely segít elindítani a gondolkodást a mentális felkészülésről
-          – sportolóknak és szülőknek külön.</p>
+        <div class="section-kicker">Az első lépés lehet egy gyakorlat</div>
+        <h2>Ingyenes munkafüzetek</h2>
+        <p class="intro">Két ingyenes, gyakorlatias munkafüzet, ami segíthet elindíulni a mentális felkészülésben.
+          – sportolóknak és szülőknek. Add meg az e-mail címed és küldjük is.</p>
         <div class="workbook-grid">
           <article class="workbook">
             <h3>Sportolói munkafüzet</h3>
-            <p>Gyakorlatias bevezető a fókusz, a versenyhelyzeti nyomás, az önbizalom és a hibák utáni visszatérés
-              témáiba.</p>
             <form class="workbook-form"><input type="email" name="athlete-workbook-email" placeholder="E-mail-cím"
                 aria-label="E-mail-cím a sportolói munkafüzethez" required><button class="button" type="submit">Kérem a
                 munkafüzetet</button></form>
           </article>
           <article class="workbook">
             <h3>Szülői munkafüzet</h3>
-            <p>Segítség ahhoz, hogyan tudod jól támogatni gyermekedet verseny előtt, verseny után és a nehezebb
-              időszakokban.</p>
             <form class="workbook-form"><input type="email" name="parent-workbook-email" placeholder="E-mail-cím"
                 aria-label="E-mail-cím a szülői munkafüzethez" required><button class="button" type="submit">Kérem a
                 munkafüzetet</button></form>
@@ -1172,8 +1250,13 @@
     </section>
     <section class="cta">
       <div class="container cta-inner">
-        <h2>Nem tudod, melyik támogatási forma lenne a legjobb? Kezdjük egy beszélgetéssel.</h2><a class="button"
+        <h2>Nem tudod, melyik támogatási forma lenne a legjobb? Kezdjük egy beszélgetéssel. </h2><a class="button"
           href="index.html#contact">Foglalj ingyenes konzultációt</a>
+      </div>
+    </section>
+    <section class="decision-tree" aria-label="Szolgáltatásválasztó döntési fa">
+      <div class="container">
+        <img src="pics/döntési fa.png" alt="Döntési fa a megfelelő Mental Ascend szolgáltatás kiválasztásához">
       </div>
     </section>
   </main>

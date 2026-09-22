@@ -427,11 +427,21 @@
                 height: 3px
             }
 
-            .menu-icon::before { top: -8px }
-            .menu-icon::after { top: 8px }
+            .menu-icon::before {
+                top: -8px
+            }
 
-            .menu-button[aria-expanded="true"] .menu-icon::before { transform: translateY(8px) rotate(45deg) }
-            .menu-button[aria-expanded="true"] .menu-icon::after { transform: translateY(-8px) rotate(-45deg) }
+            .menu-icon::after {
+                top: 8px
+            }
+
+            .menu-button[aria-expanded="true"] .menu-icon::before {
+                transform: translateY(8px) rotate(45deg)
+            }
+
+            .menu-button[aria-expanded="true"] .menu-icon::after {
+                transform: translateY(-8px) rotate(-45deg)
+            }
 
             .nav-links {
                 display: flex;
@@ -567,21 +577,22 @@
                             <label>Név *<input required type="text" name="name"></label>
                             <label>E-mail-cím *<input required type="email" name="email"></label>
                             <label>Ki szeretne segítséget kérni? *<select required name="who">
-                                <option value="">Válassz...</option>
-                                <option>Sportolóként magamnak</option>
-                                <option>Gyermekemnek</option>
-                                <option>Szülőként magamnak</option>
-                            </select></label>
+                                    <option value="">Válassz...</option>
+                                    <option>Sportolóként magamnak</option>
+                                    <option>Gyermekemnek</option>
+                                    <option>Szülőként magamnak</option>
+                                </select></label>
                             <label>Sportoló korosztálya *<select required name="age-group">
-                                <option value="">Válassz...</option>
-                                <option>14 év alatti</option>
-                                <option>14–18 év közötti</option>
-                                <option>18 év feletti / Felnőtt</option>
-                            </select></label>
+                                    <option value="">Válassz...</option>
+                                    <option>14 év alatti</option>
+                                    <option>14–18 év közötti</option>
+                                    <option>18 év feletti / Felnőtt</option>
+                                </select></label>
                             <label>Sportág<input type="text" name="sport"></label>
                             <label>Miben szeretnél segítséget kapni? *<textarea required name="message"
-                                placeholder="Írj néhány mondatot a helyzetről és arról, miben szeretnél támogatást."></textarea></label>
-                            <label class="check"><input required type="checkbox" name="privacy"><span>Elolvastam és elfogadom az adatkezelési tájékoztatót. *</span></label>
+                                    placeholder="Írj néhány mondatot a helyzetről és arról, miben szeretnél támogatást."></textarea></label>
+                            <label class="check"><input required type="checkbox" name="privacy"><span>Elolvastam és
+                                    elfogadom az adatkezelési tájékoztatót. *</span></label>
                             <button class="button" type="submit">Kérem az ingyenes konzultációt</button>
                         </form>
                     </div>
