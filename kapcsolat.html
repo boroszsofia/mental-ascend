@@ -28,6 +28,7 @@
 
         body {
             margin: 0;
+            padding-top: 94px;
             color: var(--white);
             background: #151b1d;
             font-family: Arial, Helvetica, sans-serif;
@@ -45,8 +46,9 @@
         }
 
         .site-header {
-            position: relative;
-            z-index: 10;
+            position: fixed;
+            inset: 0 0 auto;
+            z-index: 20;
             border-bottom: 1px solid var(--line-light);
             background: var(--black)
         }
@@ -68,8 +70,9 @@
         }
 
         .brand-mark {
-            position: relative;
-            display: block;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             font-weight: 900;
             line-height: .8;
             letter-spacing: .16em
@@ -77,9 +80,7 @@
 
         .brand-mark small {
             display: block;
-            position: absolute;
-            right: 0;
-            bottom: calc(100% + 6px);
+            margin-bottom: 6px;
             color: var(--gold-light);
             font-size: 9px;
             text-align: center;
@@ -410,11 +411,6 @@
 
             .brand-mark small {
                 display: block;
-                position: absolute;
-                right: auto;
-                left: 50%;
-                bottom: calc(100% + 6px);
-                transform: translateX(-50%);
                 white-space: nowrap
             }
 
@@ -596,7 +592,7 @@
                                     placeholder="Írj néhány mondatot a helyzetről és arról, miben szeretnél támogatást."></textarea></label>
                             <label class="check"><input required type="checkbox" name="privacy"><span>Elolvastam és
                                     elfogadom az adatkezelési tájékoztatót. *</span></label>
-                            <button class="button" type="submit">Kérem az ingyenes konzultációt</button>
+                            <button class="button" type="submit">Elküldés</button>
                         </form>
                     </div>
                 </div>

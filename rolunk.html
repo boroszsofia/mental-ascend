@@ -34,6 +34,7 @@
 
     body {
       margin: 0;
+      padding-top: 94px;
       background: var(--black);
       color: var(--white);
       font-family: Arial, Helvetica, sans-serif;
@@ -51,6 +52,9 @@
     }
 
     .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 20;
       background: var(--black);
       border-bottom: 1px solid var(--line-light)
     }
@@ -72,6 +76,9 @@
     }
 
     .brand-mark {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       font-weight: 900;
       line-height: .8;
       letter-spacing: .16em
@@ -267,6 +274,7 @@
     .mission {
       position: relative;
       overflow: hidden;
+      padding: 68px 0;
       color: var(--black);
       background: linear-gradient(115deg, #c99a28, #e5ba4e)
     }
@@ -299,7 +307,10 @@
     }
 
     .mission .section-kicker {
-      color: #5d4307
+      margin-bottom: 18px;
+      color: #5d4307;
+      font-size: 16px;
+      letter-spacing: .16em
     }
 
     .mission-intro {
@@ -310,14 +321,15 @@
 
     .mission-box {
       max-width: 960px;
-      margin-top: 38px;
-      padding: 36px 38px;
+      margin-top: 26px;
+      padding: 26px 30px;
       border-left: 4px solid var(--black);
       background: rgba(255, 255, 255, .18);
       color: #1c211f;
-      font-size: clamp(22px, 2.6vw, 32px);
-      line-height: 1.42;
-      letter-spacing: -.018em
+      font-size: clamp(18px, 2vw, 24px);
+      font-style: italic;
+      line-height: 1.5;
+      letter-spacing: 0
     }
 
     .profiles {
@@ -622,11 +634,6 @@
       }
 
       .brand-mark small {
-        position: absolute;
-        right: auto;
-        left: 50%;
-        bottom: calc(100% + 6px);
-        transform: translateX(-50%);
         white-space: nowrap
       }
 
@@ -804,8 +811,12 @@
         <div class="section-kicker">Közös missziónk</div>
 
 
-        <div class="mission-box">„Szilárd mentális alapokat és gyakorlati támogatást adni a sportolóknak, hogy a
-          tétmeccsek döntő pillanataiban is kihozhassák magukból a csúcsformát.”</div>
+        <div class="mission-box"><strong>Szeretnénk hozzájárulni az újabb magyar sportsikerekhez </strong> –
+          olyan mentálisan stabil
+          játékosokkal, akik az utolsó másodpercekben is higgadtak és fókuszáltak tudnak maradni. Munkánkkal egy olyan
+          felnövekvő generációt támogatunk, amely a pályán és azon kívül is erős, belső tartással éli a
+          mindennapjait.”
+        </div>
       </div>
     </section>
     <section class="profiles">
@@ -822,7 +833,7 @@
           <div>
             <div class="section-kicker">Társalapító</div>
             <h2 class="profile-name">Stieber Zoltán</h2>
-            <div class="profile-role">Társalapító · Mentor · Sport mentál coach · Korábbi válogatott labdarúgó</div>
+            <div class="profile-role">Mentor · Sport mentál coach · Korábbi válogatott labdarúgó</div>
             <blockquote class="quote">„A profi sport megtanított arra, hogy a tehetség önmagában nem elég. A döntő
               pillanatokban annak van előnye, aki fejben is készen áll.”</blockquote>
             <div class="profile-copy">
@@ -851,33 +862,34 @@
       <article class="profile" id="zsofi">
         <div class="container profile-inner">
           <aside class="profile-aside">
-            <div class="profile-photo"><img src="pics/Zsófi profi.jpg" alt="Boros Zsófia portréja"></div>
+            <div class="profile-photo"><img src="pics/Zsofi mikrofon.png" alt="Boros Zsófia portréja"></div>
           </aside>
           <div>
             <div class="section-kicker">Társalapító</div>
             <h2 class="profile-name">Boros Zsófia</h2>
-            <div class="profile-role">Társalapító · ICF ACC minősített coach · Sport mentál &amp; Team coach</div>
-            <blockquote class="quote">„A sportban és az üzleti életben sem az a cél, hogy ne legyenek nehéz pillanatok.
+            <div class="profile-role">Sport mentál &amp; Team coach · ICF ACC minősített coach</div>
+            <blockquote class="quote">„A sportban és az életben sem az a cél, hogy ne legyenek nehéz pillanatok.
               Az a cél, hogy legyenek eszközeid jól reagálni rájuk.”</blockquote>
             <div class="profile-copy">
               <p>A sport mindig is az egyik fix pont volt az életemben. Tizenhárom évig versenyszerűen kézilabdáztam, és
-                ma is rendszeresen állítom magam új kihívások elé – legyen szó távfutásról, búvárkodásról vagy
+                ma is rendszeresen állítom magam új kihívások elé – legyen szó 30 km futásról, búvárkodásról vagy
                 teniszről. A sport számomra nemcsak fizikai teljesítmény, hanem belső tartás, fókusz és tudatos működés
                 is.</p>
-              <p>Tíz évet töltöttem multinacionális környezetben vezetőként, éltem külföldön és multikulturális
-                csapatokat vezettem. Legutóbb a Procter &amp; Gamble közép-európai marketingigazgatójaként dolgoztam,
+              <p>Tíz évet töltöttem multinacionális környezetben vezetőként, éltem külföldön és vezettem multikulturális
+                csapatokat. Legutóbb a Procter &amp; Gamble közép-európai marketingigazgatójaként dolgoztam,
                 ahol a magas teljesítmény, a folyamatos nyomás és a felelősségvállalás a mindennapok része volt.</p>
-              <p>ICF ACC minősítésű coachként a sportból hozott tapasztalataimat a business coaching és a sport mentál
-                coaching strukturált módszertanával kapcsolom össze. Hiszek abban, hogy a mentális felkészülés ugyanúgy
+              <p>ICF ACC minősítésű coachként törekszem a sportból és vállalati életből hozott tapasztalataimat, a sport
+                mentál
+                és business coaching strukturált módszertanával összekapcsolni. Hiszek abban, hogy a mentális
+                felkészülés ugyanúgy
                 a sportolói fejlődés szerves része, mint a technikai, taktikai vagy fizikai edzés.</p>
             </div>
             <div class="value-box">
               <h3>Mit hozok a közös munkába?</h3>
-              <p>Sport mentál coachként és team coachként coaching szemléletű támogatást, strukturált folyamatokat és az
-                üzleti életből hozott nemzetközi vezetői tapasztalatot viszem a közös munkába. Egyéni sportolókkal,
-                szülőkkel és csapatokkal is dolgozom: abban segítek, hogy jobban értsék saját működésüket, tudatosabban
-                kezeljék a nyomást, és olyan belső kapaszkodókat építsenek, amelyekre nehéz helyzetekben is
-                támaszkodhatnak.</p>
+              <p>A nemzetközi vezetői tapasztalatomat, a versenysportból hozott szemléletet és strukturált coaching
+                módszertant ötvözöm. Abban segítem a sportolókat, szülőket és csapatokat, hogy jobban értsék a saját
+                működésüket, tudatosan kezeljék a nyomást, és és a legnehezebb helyzetekben is megtalálják a belső
+                stabilitásukat.</p>
             </div>
           </div>
         </div>
