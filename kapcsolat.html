@@ -99,6 +99,16 @@
             color: var(--gold-light)
         }
 
+        .nav-links a.nav-cta,
+        .nav-links a.nav-cta:hover {
+            padding: 11px 16px;
+            color: var(--black);
+            border: 1px solid var(--gold);
+            background: var(--gold);
+            font-weight: 800;
+            white-space: nowrap
+        }
+
         .menu-button {
             display: none;
             padding: 8px 10px;
@@ -485,6 +495,11 @@
                 padding: 13px 18px
             }
 
+            .nav-links a.nav-cta,
+            .nav-links a.nav-cta:hover {
+                padding: 13px 18px
+            }
+
             .menu-button {
                 display: block;
                 position: relative;
@@ -541,8 +556,7 @@
                 <a href="szolgaltatasok.html">Szolgáltatások</a>
                 <a href="rolunk.html">Rólunk</a>
                 <a class="active" href="#top">Kapcsolat</a>
-                <a href="index.html#contact">Ingyenes konzultáció</a>
-                <a href="index.html#lead-magnet">Ingyenes munkafüzet</a>
+                <a class="nav-cta" href="#consultation-form">Ingyenes konzultáció</a>
             </nav>
             <button class="menu-button" type="button" aria-label="Menü megnyitása" aria-expanded="false"><span
                     class="menu-icon"></span></button>
@@ -584,7 +598,7 @@
                             <li>Kötelezettségtől mentes, és ingyenes</li>
                         </ul>
                     </div>
-                    <div class="contact-form">
+                    <div class="contact-form" id="consultation-form">
                         <form action="https://formspree.io/f/mbglaznk" method="POST">
                             <label>Név *<input required type="text" name="name"></label>
                             <label>E-mail-cím *<input required type="email" name="email"></label>
@@ -598,14 +612,16 @@
                                     <option value="">Válassz...</option>
                                     <option>14 év alatti</option>
                                     <option>14–18 év közötti</option>
-                                    <option>18 év feletti / Felnőtt</option>
+                                        <option>18 év feletti / felnőtt</option>
                                 </select></label>
                             <label>Sportág<input type="text" name="sport"></label>
-                            <label>Miben szeretnél segítséget kapni? *<textarea required name="message"
-                                    placeholder="Írj néhány mondatot a helyzetről és arról, miben szeretnél támogatást."></textarea></label>
+                                    <label>Miben szeretnél segítséget kapni? *<textarea required name="message"
+                                        placeholder="Írj néhány mondatot arról, milyen helyzetben szeretnél támogatást."></textarea></label>
+                                    <label>Mikor tudnál részt venni egy 20 perces online konzultáción? *<textarea required name="availability"
+                                        placeholder="Adj meg 3 lehetséges idősávot a következő 7 napból (például: hétfő délelőtt, szerda 14:00–16:00). A megbeszéléshez Google Meet-meghívót küldünk."></textarea></label>
                             <label class="check"><input required type="checkbox" name="privacy"><span>Elolvastam és
                                     elfogadom az adatkezelési tájékoztatót. *</span></label>
-                            <button class="button" type="submit">Elküldés</button>
+                                    <button class="button primary" type="submit">Elküldés</button>
                         </form>
                     </div>
                 </div>

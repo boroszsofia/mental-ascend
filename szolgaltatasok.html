@@ -104,8 +104,14 @@
       color: var(--gold-light)
     }
 
-    .nav-cta {
-      color: var(--gold-light)
+    .nav-links a.nav-cta,
+    .nav-links a.nav-cta:hover {
+      padding: 11px 16px;
+      color: var(--black);
+      border: 1px solid var(--gold);
+      background: var(--gold);
+      font-weight: 800;
+      white-space: nowrap
     }
 
     .menu-button {
@@ -944,6 +950,11 @@
         padding: 13px 18px
       }
 
+      .nav-links a.nav-cta,
+      .nav-links a.nav-cta:hover {
+        padding: 13px 18px
+      }
+
       .menu-button {
         display: block;
         position: relative;
@@ -1070,9 +1081,8 @@
           class="brand-logo" src="pics/Logo vertical.jpeg" alt=""></a>
       <nav class="nav-links" aria-label="Fő navigáció"><a href="index.html#top">Kezdőlap</a><a class="active"
           href="#top">Szolgáltatások</a><a href="rolunk.html">Rólunk</a><a href="kapcsolat.html">Kapcsolat</a><a
-          href="index.html#contact">Ingyenes konzultáció</a><a href="index.html#lead-magnet">Ingyenes
-          munkafüzet</a></nav><button class="menu-button" type="button" aria-label="Menü megnyitása"
-        aria-expanded="false"><span class="menu-icon"></span></button>
+          class="nav-cta" href="index.html#contact-form">Ingyenes konzultáció</a></nav><button class="menu-button"
+        type="button" aria-label="Menü megnyitása" aria-expanded="false"><span class="menu-icon"></span></button>
     </div>
   </header>
   <main id="top">
@@ -1232,7 +1242,7 @@
         </article>
       </div>
     </section>
-    <section class="workbooks" id="munkafuzetek">
+    <section class="workbooks" id="munkafuzetek" hidden>
       <div class="container">
         <div class="section-kicker">Az első lépés lehet egy gyakorlat</div>
         <h2>Ingyenes munkafüzetek</h2>

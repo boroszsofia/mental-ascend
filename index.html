@@ -107,8 +107,14 @@
       color: var(--gold-light)
     }
 
-    .nav-cta {
-      color: var(--gold-light)
+    .nav-links a.nav-cta,
+    .nav-links a.nav-cta:hover {
+      padding: 11px 16px;
+      color: var(--black);
+      border: 1px solid var(--gold);
+      background: var(--gold);
+      font-weight: 800;
+      white-space: nowrap
     }
 
     .menu-button {
@@ -470,6 +476,11 @@
       padding: 58px 0 105px
     }
 
+    .services-cta {
+      margin-top: 48px;
+      text-align: center
+    }
+
     .service-group+.service-group {
       margin-top: 56px
     }
@@ -784,7 +795,8 @@
       padding: 32px;
       border: 1px solid rgba(255, 255, 255, .17);
       border-top: 4px solid var(--gold);
-      background: rgba(6, 11, 13, .35)
+      background: rgba(6, 11, 13, .35);
+      scroll-margin-top: 112px
     }
 
     form {
@@ -1150,6 +1162,11 @@
         padding: 13px 18px
       }
 
+      .nav-links a.nav-cta,
+      .nav-links a.nav-cta:hover {
+        padding: 13px 18px
+      }
+
       .menu-button {
         display: block;
         position: relative;
@@ -1283,9 +1300,9 @@
           src="pics/Logo vertical.jpeg" alt=""></a>
       <nav class="nav-links" aria-label="Fő navigáció"><a class="active" href="#top">Kezdőlap</a><a
           href="szolgaltatasok.html">Szolgáltatások</a><a href="rolunk.html">Rólunk</a><a
-          href="kapcsolat.html">Kapcsolat</a><a href="#contact">Ingyenes konzultáció</a><a href="#lead-magnet">Ingyenes
-          munkafüzet</a></nav><button class="menu-button" type="button" aria-label="Menü megnyitása"
-        aria-expanded="false"><span class="menu-icon"></span></button>
+          href="kapcsolat.html">Kapcsolat</a><a class="nav-cta" href="#contact-form">Ingyenes konzultáció</a></nav>
+      <button class="menu-button" type="button" aria-label="Menü megnyitása" aria-expanded="false"><span
+          class="menu-icon"></span></button>
     </div>
   </header>
   <main id="top">
@@ -1295,8 +1312,8 @@
         <p class="hero-copy"><span class="hero-lead">Mentális teljesítményfejlesztő rendszer
             sportolóknak.</span>Coachinggal, élsportolói mentoringgal és sportpszichológiával segítünk kezelni a nyomást
           és kihozni belőled a maximumot a téthelyzetekben is.</p>
-        <div class="hero-actions"><a class="button primary" href="#contact">Érdekel!</a><a class="button secondary"
-            href="#lead-magnet">Ingyenes munkafüzet letöltése</a></div>
+        <div class="hero-actions"><a class="button primary" href="#contact-form">Kérem az ingyenes konzultációt</a>
+        </div>
       </div>
     </section>
     <section id="for-you" class="recognise">
@@ -1379,6 +1396,8 @@
                   meg többet →</a>
               </article>
             </div>
+          </div>
+          <div class="services-cta"><a class="button primary" href="#contact-form">Kérem az ingyenes konzultációt</a>
           </div>
         </div>
       </section>
@@ -1470,24 +1489,30 @@
             <li>Kötelezettségtől mentes, és ingyenes</li>
           </ul>
         </div>
-        <div class="contact-form">
-          <form action="https://formspree.io/f/mbglaznk" method="POST"><label>Név *<input required type="text"
-                name="name"></label><label>E-mail-cím *<input required type="email" name="email"></label><label>Ki
-              szeretne segítséget kérni? *<select required name="who">
+        <div class="contact-form" id="contact-form">
+          <form action="https://formspree.io/f/mbglaznk" method="POST">
+            <label>Név *<input required type="text" name="name"></label>
+            <label>E-mail-cím *<input required type="email" name="email"></label>
+            <label>Ki szeretne segítséget kérni? *<select required name="who">
                 <option value="">Válassz...</option>
                 <option>Sportolóként magamnak</option>
                 <option>Gyermekemnek</option>
                 <option>Szülőként magamnak</option>
-              </select></label><label>Sportoló korosztálya *<select required name="age-group">
+              </select></label>
+            <label>Sportoló korosztálya *<select required name="age-group">
                 <option value="">Válassz...</option>
                 <option>14 év alatti</option>
                 <option>14–18 év közötti</option>
-                <option>18 év feletti / Felnőtt</option>
-              </select></label><label>Sportág<input type="text" name="sport"></label><label>Miben szeretnél segítséget
-              kapni? *<textarea required name="message"
-                placeholder="Írj néhány mondatot arról, hogy miben szeretnél támogatást, illetve küldj 3 "></textarea></label><label
-              class="check"><input required type="checkbox" name="privacy"><span>Elolvastam és elfogadom az adatkezelési
-                tájékoztatót. *</span></label><button class="button primary" type="submit">Elküldés</button></form>
+                <option>18 év feletti / felnőtt</option>
+              </select></label>
+            <label>Sportág<input type="text" name="sport"></label>
+            <label>Miben szeretnél segítséget kapni? *<textarea required name="message"
+                placeholder="Írj néhány mondatot arról, milyen helyzetben szeretnél támogatást."></textarea></label>
+            <label>Mikor tudnál részt venni egy 20 perces online konzultáción? *<textarea required name="availability"
+                placeholder="Adj meg 3 lehetséges idősávot a következő 7 napból (például: hétfő délelőtt, szerda 14:00–16:00). A megbeszéléshez Google Meet-meghívót küldünk."></textarea></label>
+            <label class="check"><input required type="checkbox" name="privacy"><span>Elolvastam és elfogadom az adatkezelési tájékoztatót. *</span></label>
+            <button class="button primary" type="submit">Elküldés</button>
+          </form>
         </div>
       </div>
       <section class="faq" aria-labelledby="faq-title">
@@ -1607,7 +1632,7 @@
           </div>
         </div>
       </section>
-      <section id="lead-magnet" class="lead-magnet">
+      <section id="lead-magnet" class="lead-magnet" hidden>
         <div class="container lead-inner">
           <div>
             <h2>Kezdd a mentális alapozást már ma – <span>ingyenes munkafüzetünkkel.</span></h2>
