@@ -1291,6 +1291,33 @@
         display: grid
       }
     }
+
+    .language-switch {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px !important
+    }
+
+    .language-switch img {
+      display: block;
+      width: 32px;
+      height: 32px;
+      flex: 0 0 auto;
+      object-fit: contain;
+      border: 0
+    }
+
+    @media(max-width:850px) {
+      .nav-links .nav-cta {
+        order: 1
+      }
+
+      .nav-links .language-switch {
+        order: 2;
+        justify-content: flex-start
+      }
+    }
   </style>
 </head>
 
@@ -1300,7 +1327,9 @@
           src="pics/Logo vertical.jpeg" alt=""></a>
       <nav class="nav-links" aria-label="Fő navigáció"><a class="active" href="#top">Kezdőlap</a><a
           href="szolgaltatasok.html">Szolgáltatások</a><a href="rolunk.html">Rólunk</a><a
-          href="kapcsolat.html">Kapcsolat</a><a class="nav-cta" href="#contact-form">Ingyenes konzultáció</a></nav>
+          href="kapcsolat.html">Kapcsolat</a><a class="language-switch" href="eng/index.html"
+          aria-label="Switch to English" title="English"><img src="pics/brit%20z%C3%A1szl%C3%B3.png"
+            alt="British flag"></a><a class="nav-cta" href="#contact-form">Ingyenes konzultáció</a></nav>
       <button class="menu-button" type="button" aria-label="Menü megnyitása" aria-expanded="false"><span
           class="menu-icon"></span></button>
     </div>
@@ -1510,7 +1539,8 @@
                 placeholder="Írj néhány mondatot arról, milyen helyzetben szeretnél támogatást."></textarea></label>
             <label>Mikor tudnál részt venni egy 20 perces online konzultáción? *<textarea required name="availability"
                 placeholder="Adj meg 3 lehetséges idősávot a következő 7 napból (például: hétfő délelőtt, szerda 14:00–16:00). A megbeszéléshez Google Meet-meghívót küldünk."></textarea></label>
-            <label class="check"><input required type="checkbox" name="privacy"><span>Elolvastam és elfogadom az adatkezelési tájékoztatót. *</span></label>
+            <label class="check"><input required type="checkbox" name="privacy"><span>Elolvastam és elfogadom az
+                adatkezelési tájékoztatót. *</span></label>
             <button class="button primary" type="submit">Elküldés</button>
           </form>
         </div>

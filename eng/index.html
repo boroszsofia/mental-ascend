@@ -1,0 +1,1772 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Mental performance coaching for athletes, parents and teams. Build confidence, focus and resilience under pressure.">
+    <title>Mental Ascend | Perform at your best. Mentally.</title>
+    <style>
+        :root {
+            --black: #07090a;
+            --panel: #111719;
+            --white: #f8f8f4;
+            --muted: #b5bab8;
+            --gold: #d9ad38;
+            --gold-light: #f0d06b;
+            --line: rgba(255, 255, 255, .15);
+            --max: 1180px
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            padding-top: 94px;
+            background: var(--black);
+            color: var(--white);
+            font: 16px/1.6 Arial, Helvetica, sans-serif
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .container {
+            width: min(var(--max), calc(100% - 48px));
+            margin: auto
+        }
+
+        .site-header {
+            position: fixed;
+            inset: 0 0 auto;
+            z-index: 10;
+            border-bottom: 1px solid var(--line);
+            background: #000
+        }
+
+        .nav {
+            min-height: 94px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px
+        }
+
+        .brand-logo {
+            display: block;
+            width: clamp(148px, 18vw, 210px);
+            height: auto
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+            color: #e9e9e5;
+            font-size: 14px
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-light)
+        }
+
+        .nav-cta,
+        .button {
+            display: inline-block;
+            padding: 12px 18px;
+            background: var(--gold);
+            color: var(--black);
+            font-weight: 800;
+            border: 1px solid var(--gold)
+        }
+
+        .language-switch {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px !important
+        }
+
+        .language-switch img {
+            display: block;
+            width: 32px;
+            height: 32px;
+            flex: 0 0 auto;
+            object-fit: contain;
+            border: 0
+        }
+
+        .menu-button {
+            display: none;
+            color: var(--white);
+            background: none;
+            border: 0;
+            padding: 8px
+        }
+
+        .hero {
+            min-height: 680px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(90deg, rgba(1, 3, 4, .92), rgba(1, 3, 4, .4)), url('../pics/landing%20k%C3%A9p.jpg') center 32%/cover
+        }
+
+        .hero-inner {
+            padding: 110px 0;
+            max-width: 860px
+        }
+
+        h1 {
+            margin: 0 0 24px;
+            font-size: clamp(58px, 9vw, 112px);
+            line-height: .9;
+            letter-spacing: -.055em;
+            text-transform: uppercase
+        }
+
+        h1 span,
+        .gold {
+            color: var(--gold)
+        }
+
+        .hero p {
+            max-width: 760px;
+            color: #f0f0ec;
+            font-size: 19px;
+            line-height: 1.65
+        }
+
+        .eyebrow,
+        .kicker {
+            color: var(--gold-light);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .18em;
+            text-transform: uppercase
+        }
+
+        .section {
+            padding: 84px 0
+        }
+
+        .section h2 {
+            font-size: clamp(35px, 5vw, 62px);
+            line-height: 1;
+            letter-spacing: -.045em;
+            margin: 0 0 20px
+        }
+
+        h2 {
+            margin: 0 0 20px;
+            color: inherit;
+            font-size: clamp(35px, 5vw, 62px);
+            line-height: 1;
+            letter-spacing: -.045em
+        }
+
+        .section-kicker {
+            margin-bottom: 14px;
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .2em;
+            text-transform: uppercase
+        }
+
+        .section-dark {
+            background: #efefea;
+            color: #111719
+        }
+
+        .section-dark .kicker {
+            color: #80600d
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px
+        }
+
+        .grid.three {
+            grid-template-columns: repeat(3, minmax(0, 1fr))
+        }
+
+        .item {
+            padding: 26px;
+            border: 1px solid rgba(255, 255, 255, .16);
+            background: var(--panel)
+        }
+
+        .section-dark .item {
+            border-color: rgba(7, 9, 10, .16);
+            background: #fff
+        }
+
+        .item h3 {
+            margin: 0 0 8px;
+            font-size: 21px
+        }
+
+        .item p {
+            margin: 0;
+            color: var(--muted)
+        }
+
+        .section-dark .item p {
+            color: #465052
+        }
+
+        .split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: center
+        }
+
+        .split img {
+            width: 100%;
+            max-height: 460px;
+            object-fit: cover
+        }
+
+        .quote {
+            padding: 28px 0;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            font-size: 20px
+        }
+
+        .cta {
+            padding: 64px 0;
+            background: #d9ad38;
+            color: #111719
+        }
+
+        .cta-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px
+        }
+
+        .cta h2 {
+            margin: 0;
+            font-size: clamp(28px, 4vw, 46px);
+            line-height: 1.1
+        }
+
+        .cta .button {
+            background: #111719;
+            color: #fff;
+            border-color: #111719;
+            white-space: nowrap
+        }
+
+        footer {
+            padding: 28px 0;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        .footer-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px
+        }
+
+        .footer-logo {
+            width: 120px
+        }
+
+        @media(max-width:850px) {
+            .menu-button {
+                display: block
+            }
+
+            .nav {
+                min-height: 82px
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 16px;
+                right: 16px;
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 10px 0;
+                border: 1px solid var(--line);
+                background: rgba(7, 9, 10, .97);
+                opacity: 0;
+                pointer-events: none;
+                transform: translateY(-8px);
+                transition: .2s
+            }
+
+            .nav-links.is-open {
+                opacity: 1;
+                pointer-events: auto;
+                transform: none
+            }
+
+            .nav-links>a {
+                display: flex;
+                align-items: center;
+                padding: 13px 18px
+            }
+
+            .nav-links .nav-cta {
+                order: 1
+            }
+
+            .nav-links .language-switch {
+                order: 2;
+                justify-content: flex-start
+            }
+
+            .grid.three {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+
+            .split {
+                gap: 28px
+            }
+        }
+
+        @media(max-width:600px) {
+            .container {
+                width: calc(100% - 36px)
+            }
+
+            .hero {
+                min-height: 590px
+            }
+
+            .hero-inner {
+                padding: 90px 0
+            }
+
+            .grid,
+            .grid.three,
+            .split {
+                grid-template-columns: 1fr
+            }
+
+            .section {
+                padding: 64px 0
+            }
+
+            .cta-row,
+            .footer-row {
+                align-items: flex-start;
+                flex-direction: column
+            }
+
+            .cta .button {
+                white-space: normal
+            }
+        }
+    </style>
+    <style>
+        :root {
+            --black-soft: #101517;
+            --graphite: #20282c;
+            --graphite-panel: #1b2529;
+            --off-white: #efefea;
+            --grey-dark: #5a6568;
+            --gold-dark: #9b7011;
+            --line-dark: rgba(7, 9, 10, .18)
+        }
+
+        .hero {
+            min-height: 760px;
+            position: relative;
+            overflow: hidden;
+            background-image: linear-gradient(90deg, rgba(1, 3, 4, .91) 0%, rgba(1, 3, 4, .66) 45%, rgba(1, 3, 4, .22) 100%), linear-gradient(180deg, rgba(0, 0, 0, .08), rgba(0, 0, 0, .3)), url('../pics/landing%20k%C3%A9p.jpg');
+            background-position: center 32%;
+            background-size: cover
+        }
+
+        .hero::before,
+        .hero::after {
+            content: "";
+            position: absolute;
+            border: 1px solid rgba(217, 173, 56, .43);
+            transform: rotate(43deg)
+        }
+
+        .hero::before {
+            right: 10%;
+            top: 16%;
+            width: 410px;
+            height: 410px
+        }
+
+        .hero::after {
+            right: -12%;
+            bottom: -45%;
+            width: 560px;
+            height: 560px;
+            border-color: rgba(255, 255, 255, .17)
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 860px;
+            padding: 155px 0 85px
+        }
+
+        h1 {
+            font-size: clamp(60px, 9vw, 124px);
+            line-height: .87;
+            letter-spacing: -.06em
+        }
+
+        h1 span {
+            display: block
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 23px;
+            border: 1px solid var(--gold);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .075em;
+            text-transform: uppercase;
+            transition: .2s;
+            cursor: pointer
+        }
+
+        .section {
+            padding: 100px 0
+        }
+
+        .section h2 {
+            font-size: clamp(35px, 5vw, 62px);
+            line-height: 1;
+            letter-spacing: -.045em
+        }
+
+        .section:nth-of-type(2) {
+            color: var(--black);
+            background: linear-gradient(115deg, #c99a28, #e5ba4e)
+        }
+
+        .section:nth-of-type(2) .item {
+            padding: 0;
+            border: 0;
+            border-top: 2px solid rgba(7, 9, 10, .45);
+            background: transparent
+        }
+
+        .section:nth-of-type(2) .item h3 {
+            margin: 18px 0 14px;
+            color: #332600
+        }
+
+        .section:nth-of-type(2) .item p {
+            color: #1d2422
+        }
+
+        .section:nth-of-type(3) {
+            color: var(--white);
+            background: linear-gradient(115deg, rgba(8, 12, 14, .96) 8%, rgba(15, 22, 24, .88) 55%, rgba(93, 68, 12, .7)), url('../pics/rolunk%20hatt%C3%A9rk%C3%A9p.PNG') center/cover
+        }
+
+        .section:nth-of-type(3) .item {
+            color: var(--black-soft);
+            border: 1px solid #d5d7d4;
+            border-top: 5px solid var(--gold);
+            background: var(--white)
+        }
+
+        .section:nth-of-type(3) .item p {
+            color: var(--grey-dark)
+        }
+
+        .section:nth-of-type(4) {
+            color: var(--white);
+            background: linear-gradient(128deg, #273238, #111719 72%)
+        }
+
+        .section:nth-of-type(5) {
+            color: var(--black-soft);
+            background: #f1eedc
+        }
+
+        .section:nth-of-type(5) .item {
+            min-height: 280px;
+            border: 1px solid rgba(7, 9, 10, .22);
+            border-top: 4px solid var(--gold);
+            background: var(--white);
+            box-shadow: 0 12px 26px rgba(7, 9, 10, .14)
+        }
+
+        .section:nth-of-type(5) .item p {
+            color: #465459
+        }
+
+        .section:nth-of-type(6) {
+            color: var(--black-soft);
+            background: var(--white)
+        }
+
+        .section:nth-of-type(6) .item {
+            padding: 20px 0;
+            border: 0;
+            border-top: 1px solid var(--line-dark);
+            background: transparent
+        }
+
+        .section:nth-of-type(6) .item p {
+            color: var(--grey-dark)
+        }
+
+        @media(max-width:850px) {
+            .section:nth-of-type(5) .grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+        }
+
+        @media(max-width:600px) {
+            .hero {
+                min-height: 760px
+            }
+
+            .hero-inner {
+                padding: 110px 0 80px
+            }
+
+            .section {
+                padding: 64px 0
+            }
+
+            .section:nth-of-type(5) .grid {
+                grid-template-columns: 1fr
+            }
+        }
+    </style>
+    <style>
+        .section:nth-of-type(2)::before {
+            content: "";
+            position: absolute;
+            top: -260px;
+            right: -185px;
+            width: 490px;
+            height: 490px;
+            border: 1px solid rgba(7, 9, 10, .24);
+            transform: rotate(43deg)
+        }
+
+        .section:nth-of-type(2) {
+            position: relative;
+            overflow: hidden
+        }
+
+        .section:nth-of-type(2) .container {
+            position: relative;
+            z-index: 1
+        }
+
+        .section:nth-of-type(2) .grid {
+            gap: 56px
+        }
+
+        .section:nth-of-type(2) .item ul {
+            margin: 0;
+            padding: 0;
+            list-style: none
+        }
+
+        .section:nth-of-type(2) .item li {
+            position: relative;
+            padding: 14px 0 14px 27px;
+            border-top: 1px solid rgba(7, 9, 10, .18)
+        }
+
+        .section:nth-of-type(2) .item li::before {
+            content: "+";
+            position: absolute;
+            left: 0;
+            color: #5a4104;
+            font-weight: 900
+        }
+
+        .recognise-bottom {
+            max-width: 850px;
+            margin-top: 52px;
+            padding-top: 30px;
+            border-top: 2px solid rgba(7, 9, 10, .42)
+        }
+
+        .recognise-bottom strong {
+            display: block;
+            font-size: 23px;
+            line-height: 1.25
+        }
+
+        .recognise-bottom .button {
+            margin-top: 24px
+        }
+
+        .brand-space {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(115deg, rgba(8, 12, 14, .96) 8%, rgba(15, 22, 24, .88) 55%, rgba(93, 68, 12, .7)), url('../pics/rolunk%20hatt%C3%A9rk%C3%A9p.PNG') center/cover
+        }
+
+        .brand-space::before,
+        .brand-space::after {
+            content: "";
+            position: absolute;
+            border: 1px solid rgba(217, 173, 56, .32);
+            transform: rotate(43deg)
+        }
+
+        .brand-space::before {
+            top: -210px;
+            right: 7%;
+            width: 440px;
+            height: 440px
+        }
+
+        .brand-space::after {
+            bottom: -320px;
+            left: -135px;
+            width: 530px;
+            height: 530px;
+            border-color: rgba(255, 255, 255, .1)
+        }
+
+        .brand-space>section {
+            position: relative;
+            z-index: 1
+        }
+
+        .services-intro {
+            min-height: 455px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: linear-gradient(90deg, rgba(7, 9, 10, .8), rgba(7, 9, 10, .54) 54%, rgba(7, 9, 10, .25)), url('../pics/l%C3%A1nyok%20f%C5%B1ben.jpg') center/cover
+        }
+
+        .services-intro .container {
+            width: min(1180px, calc(100% - 48px))
+        }
+
+        .services-intro-content {
+            max-width: 870px
+        }
+
+        .services-intro h2 span {
+            display: block;
+            color: var(--gold-light)
+        }
+
+        .services-intro .intro {
+            max-width: 710px;
+            color: #f0f1ed
+        }
+
+        .services-cards {
+            padding: 58px 0 105px
+        }
+
+        .service-group+.service-group {
+            margin-top: 56px
+        }
+
+        .service-group-title {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 23px;
+            color: var(--white);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .13em;
+            text-transform: uppercase
+        }
+
+        .service-group-title::after {
+            content: "";
+            height: 1px;
+            flex: 1;
+            background: rgba(255, 255, 255, .28)
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px
+        }
+
+        .services-grid.team-grid {
+            grid-template-columns: minmax(0, 1fr);
+            max-width: 600px
+        }
+
+        .service-card,
+        .founder-card {
+            color: var(--black-soft);
+            border: 1px solid #d5d7d4;
+            border-top: 5px solid var(--gold);
+            background: var(--white)
+        }
+
+        .service-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 272px;
+            padding: 29px
+        }
+
+        .service-card h3 {
+            margin: 0 0 14px;
+            color: var(--gold-dark);
+            font-size: 22px;
+            line-height: 1.12
+        }
+
+        .service-card p {
+            margin: 0 0 20px;
+            color: var(--grey-dark);
+            font-size: 15px
+        }
+
+        .service-card a {
+            margin-top: auto;
+            color: var(--gold-dark);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .07em;
+            text-transform: uppercase
+        }
+
+        .services-cta {
+            margin-top: 48px;
+            text-align: center
+        }
+
+        .about {
+            padding-top: 0
+        }
+
+        .about-divider {
+            height: 1px;
+            margin-bottom: 100px;
+            background: rgba(255, 255, 255, .2)
+        }
+
+        .about-intro {
+            max-width: 950px;
+            margin-bottom: 44px;
+            color: var(--gold-light);
+            font-size: 20px;
+            line-height: 1.6
+        }
+
+        .founders-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px
+        }
+
+        .founder-card {
+            padding: 30px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, .12)
+        }
+
+        .founder-header {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #d7d8d3
+        }
+
+        .founder-photo {
+            width: 108px;
+            height: 108px;
+            flex: 0 0 108px;
+            overflow: hidden;
+            border: 3px solid var(--gold);
+            border-radius: 50%;
+            background: #dfe2dd
+        }
+
+        .founder-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .founder-card h3 {
+            margin: 0 0 6px;
+            color: var(--black-soft);
+            font-size: 26px;
+            line-height: 1.05
+        }
+
+        .founder-role {
+            color: var(--gold-dark);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .045em;
+            text-transform: uppercase
+        }
+
+        .founder-card p {
+            margin: 22px 0 0;
+            color: var(--grey-dark);
+            font-size: 16px
+        }
+
+        .section.section.testimonials {
+            color: var(--black-soft);
+            background: #f1eedc
+        }
+
+        .testimonials .grid {
+            grid-template-columns: repeat(4, 1fr);
+            margin-top: 42px
+        }
+
+        .testimonials .item {
+            display: flex;
+            flex-direction: column;
+            min-height: 280px;
+            padding: 26px;
+            border: 1px solid rgba(7, 9, 10, .22);
+            border-top: 4px solid var(--gold);
+            background: var(--white);
+            box-shadow: 0 12px 26px rgba(7, 9, 10, .14)
+        }
+
+        .contact {
+            position: relative;
+            overflow: hidden;
+            color: var(--white);
+            background: linear-gradient(128deg, #273238, #111719 72%)
+        }
+
+        .contact::before {
+            content: "";
+            position: absolute;
+            top: -210px;
+            right: 7%;
+            width: 420px;
+            height: 420px;
+            border: 1px solid rgba(217, 173, 56, .28);
+            transform: rotate(43deg)
+        }
+
+        .contact .container {
+            position: relative;
+            z-index: 1
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: 68px;
+            align-items: start
+        }
+
+        .contact-points {
+            margin: 30px 0 0;
+            padding: 0;
+            list-style: none
+        }
+
+        .contact-points li {
+            position: relative;
+            margin: 11px 0;
+            padding-left: 25px;
+            color: #dfe3df
+        }
+
+        .contact-points li::before {
+            content: "+";
+            position: absolute;
+            left: 0;
+            color: var(--gold-light);
+            font-weight: 900
+        }
+
+        .contact-form {
+            padding: 32px;
+            border: 1px solid rgba(255, 255, 255, .17);
+            border-top: 4px solid var(--gold);
+            background: rgba(6, 11, 13, .35)
+        }
+
+        .contact-form form {
+            display: grid;
+            gap: 16px
+        }
+
+        .contact-form label {
+            display: grid;
+            gap: 7px;
+            color: #e6e9e6;
+            font-size: 13px;
+            font-weight: 700
+        }
+
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px;
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, .24);
+            border-radius: 0;
+            background: var(--graphite-panel);
+            font: inherit
+        }
+
+        .contact-form textarea {
+            min-height: 125px;
+            resize: vertical
+        }
+
+        .faq-list {
+            max-width: 870px;
+            margin-top: 35px
+        }
+
+        .faq details {
+            padding: 22px 0;
+            border-top: 1px solid var(--line-dark)
+        }
+
+        .faq details:last-child {
+            border-bottom: 1px solid var(--line-dark)
+        }
+
+        .faq summary {
+            position: relative;
+            padding-right: 32px;
+            cursor: pointer;
+            list-style: none;
+            font-size: 16px;
+            font-weight: 700
+        }
+
+        .faq summary::-webkit-details-marker {
+            display: none
+        }
+
+        .faq summary::after {
+            content: "+";
+            position: absolute;
+            right: 0;
+            color: var(--gold-dark);
+            font-size: 22px
+        }
+
+        .faq details[open] summary::after {
+            content: "−"
+        }
+
+        .faq details p {
+            max-width: 760px;
+            margin: 14px 0 0;
+            color: var(--grey-dark)
+        }
+
+        @media(max-width:850px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .testimonials .grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .contact-grid,
+            .founders-grid {
+                grid-template-columns: 1fr
+            }
+        }
+
+        @media(max-width:560px) {
+            .services-intro {
+                min-height: 380px
+            }
+
+            .services-grid,
+            .testimonials .grid {
+                grid-template-columns: 1fr
+            }
+
+            .about-divider {
+                margin-bottom: 64px
+            }
+
+            .founder-header {
+                align-items: flex-start;
+                flex-direction: column
+            }
+
+            .contact-grid {
+                gap: 40px
+            }
+        }
+    </style>
+    <style>
+        section {
+            padding: 100px 0
+        }
+
+        .contact {
+            color: var(--white);
+            background: linear-gradient(128deg, #273238, #111719 72%)
+        }
+
+        .contact-copy .kicker {
+            color: var(--gold-light)
+        }
+
+        .contact-copy h2 {
+            margin: 0 0 20px;
+            color: var(--white);
+            font-size: clamp(35px, 5vw, 62px);
+            line-height: 1;
+            letter-spacing: -.045em
+        }
+
+        .contact-copy h2 span {
+            color: var(--gold-light)
+        }
+
+        .faq {
+            color: var(--black-soft);
+            background: var(--white)
+        }
+
+        .faq__container {
+            width: min(var(--max), calc(100% - 48px));
+            margin: 0 auto
+        }
+
+        .faq h2 {
+            max-width: 870px;
+            margin-bottom: 14px;
+            font-size: clamp(32px, 4vw, 48px);
+            letter-spacing: -.035em
+        }
+
+        .faq__list {
+            max-width: 870px;
+            margin-top: 35px
+        }
+
+        .faq__item {
+            padding: 18px 0
+        }
+
+        .faq__item details {
+            padding: 22px 0;
+            border-top: 1px solid var(--line-dark)
+        }
+
+        .faq__item details:last-child {
+            border-bottom: 1px solid var(--line-dark)
+        }
+
+        .faq summary {
+            position: relative;
+            padding-right: 32px;
+            cursor: pointer;
+            list-style: none;
+            font-weight: 700
+        }
+
+        .faq summary::-webkit-details-marker {
+            display: none
+        }
+
+        .faq summary::after {
+            content: "+";
+            position: absolute;
+            right: 0;
+            color: var(--gold-dark);
+            font-size: 22px
+        }
+
+        .faq details[open] summary::after {
+            content: "−"
+        }
+
+        .faq .item p {
+            max-width: 760px;
+            margin: 14px 0 0;
+            color: var(--grey-dark)
+        }
+
+        .testimonial .stars {
+            margin-bottom: 18px;
+            color: var(--gold-dark);
+            font-size: 15px;
+            letter-spacing: .08em
+        }
+
+        .testimonial blockquote {
+            margin: 0 0 24px;
+            color: #354246;
+            font: italic 17px/1.55 Georgia, 'Times New Roman', serif
+        }
+
+        .testimonial p {
+            margin-top: auto;
+            color: #465459
+        }
+
+        .testimonial p strong {
+            display: block;
+            color: var(--black-soft)
+        }
+
+        .testimonial.placeholder blockquote {
+            color: #7d8787;
+            font-family: Arial, Helvetica, sans-serif
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            color: var(--white);
+            font-weight: 800
+        }
+
+        .footer-tagline span {
+            color: var(--gold-light)
+        }
+
+        @media(max-width:850px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px
+            }
+        }
+
+        @media(max-width:560px) {
+            .section:nth-of-type(2) .grid {
+                grid-template-columns: 1fr
+            }
+
+            .contact-form {
+                padding: 22px
+            }
+        }
+    </style>
+    <style>
+        .hero {
+            overflow: hidden
+        }
+
+        .button.dark {
+            color: var(--gold-light);
+            border-color: var(--black);
+            background: var(--black)
+        }
+
+        .contact-form .button {
+            margin-top: 4px
+        }
+
+        .faq__cta {
+            max-width: 870px;
+            margin-top: 36px
+        }
+
+        @media(max-width:850px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px
+            }
+        }
+
+        @media(max-width:560px) {
+            .section:nth-of-type(2) .grid {
+                grid-template-columns: 1fr
+            }
+        }
+    </style>
+    <style>
+        .faq h2 {
+            margin: 0 0 14px;
+            line-height: 1
+        }
+
+        .faq__list .item {
+            display: block;
+            min-height: 0;
+            padding: 18px 0;
+            border: 0;
+            border-top: 1px solid var(--line-dark);
+            background: transparent;
+            box-shadow: none
+        }
+
+        .faq__list .item:last-child {
+            border-bottom: 1px solid var(--line-dark)
+        }
+
+        .faq summary {
+            line-height: 1.4
+        }
+
+        .faq summary::after {
+            top: 50%;
+            line-height: 1;
+            transform: translateY(-50%)
+        }
+    </style>
+    <style>
+        @media(max-width:1020px) {
+
+            .services-grid,
+            .testimonials .grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+        }
+
+        @media(max-width:850px) {
+            #for-you .grid {
+                grid-template-columns: 1fr
+            }
+
+            .hero {
+                min-height: 680px;
+                background-position: 64% center
+            }
+
+            .services-intro {
+                min-height: 390px;
+                padding-left: 24px;
+                padding-right: 24px;
+                background-position: 58% center
+            }
+        }
+
+        @media(max-width:560px) {
+            .container {
+                width: min(var(--max), calc(100% - 32px))
+            }
+
+            .section {
+                padding: 70px 0
+            }
+
+            .hero {
+                min-height: 680px;
+                background-position: 64% center
+            }
+
+            .hero-inner {
+                padding: 138px 0 75px
+            }
+
+            h1 {
+                font-size: 58px
+            }
+
+            .hero p {
+                font-size: 16px
+            }
+
+            .services-intro {
+                min-height: 360px;
+                padding-top: 72px;
+                padding-bottom: 72px;
+                background-position: 62% center
+            }
+
+            .recognise-grid,
+            .services-grid,
+            .testimonials .grid,
+            .founders-grid {
+                grid-template-columns: 1fr
+            }
+
+            .recognise-grid {
+                gap: 35px
+            }
+
+            .about-divider {
+                margin-bottom: 50px
+            }
+
+            .founder-header {
+                align-items: flex-start;
+                flex-direction: row
+            }
+
+            .founder-photo {
+                width: 88px;
+                height: 88px;
+                flex-basis: 88px
+            }
+
+            .faq__container {
+                width: min(var(--max), calc(100% - 32px))
+            }
+        }
+
+        @media(min-width:561px) and (max-width:600px) {
+            .container {
+                width: min(var(--max), calc(100% - 48px))
+            }
+
+            .section {
+                padding: 100px 0
+            }
+
+            .hero {
+                min-height: 680px;
+                background-position: 64% center
+            }
+
+            .services-grid,
+            .testimonials .grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .services-intro {
+                min-height: 390px;
+                padding-left: 24px;
+                padding-right: 24px;
+                background-position: 58% center
+            }
+        }
+    </style>
+    <style>
+        .menu-icon,
+        .menu-icon::before,
+        .menu-icon::after {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: currentColor;
+            transition: transform .2s, opacity .2s
+        }
+
+        .menu-icon {
+            position: relative
+        }
+
+        .menu-icon::before,
+        .menu-icon::after {
+            content: "";
+            position: absolute;
+            left: 0
+        }
+
+        .menu-icon::before {
+            top: -6px
+        }
+
+        .menu-icon::after {
+            top: 6px
+        }
+
+        .menu-button[aria-expanded="true"] .menu-icon {
+            background: transparent
+        }
+
+        .menu-button[aria-expanded="true"] .menu-icon::before {
+            transform: translateY(6px) rotate(45deg)
+        }
+
+        .menu-button[aria-expanded="true"] .menu-icon::after {
+            transform: translateY(-6px) rotate(-45deg)
+        }
+
+        @media(max-width:850px) {
+            .menu-button {
+                position: relative;
+                z-index: 1;
+                padding: 8px 0;
+                border: 0;
+                cursor: pointer
+            }
+
+            .menu-icon,
+            .menu-icon::before,
+            .menu-icon::after {
+                width: 27px;
+                height: 3px
+            }
+
+            .menu-icon::before {
+                top: -8px
+            }
+
+            .menu-icon::after {
+                top: 8px
+            }
+
+            .menu-button[aria-expanded="true"] .menu-icon::before {
+                transform: translateY(8px) rotate(45deg)
+            }
+
+            .menu-button[aria-expanded="true"] .menu-icon::after {
+                transform: translateY(-8px) rotate(-45deg)
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container nav"><a class="brand" href="index.html" aria-label="Mental Ascend home"><img
+                    class="brand-logo" src="../pics/Logo%20vertical.jpeg" alt="Mental Ascend"></a>
+            <nav class="nav-links" aria-label="Main navigation"><a class="active" href="index.html">Home</a><a
+                    href="services.html">Services</a><a href="about.html">About us</a><a
+                    href="contact.html">Contact</a><a class="language-switch" href="../index.html"
+                    aria-label="Switch to Hungarian" title="Magyar"><img src="../pics/Magyar%20z%C3%A1szl%C3%B3.png"
+                        alt="Hungarian flag"></a><a class="nav-cta" href="#contact-form">Free
+                    consultation</a></nav><button class="menu-button" type="button" aria-label="Open menu"
+                aria-expanded="false"><span class="menu-icon"></span></button>
+        </div>
+    </header>
+    <main id="top">
+        <section class="hero">
+            <div class="container hero-inner">
+                <div class="eyebrow"></div>
+                <h1>Elevate.<span>Your mental game.</span></h1>
+                <p><strong class="gold">A mental performance system for athletes.</strong> Through coaching,
+                    elite-athlete mentoring and sports psychology, we help you handle pressure and bring your best to
+                    the moments that matter.</p><a class="button" href="#contact-form">Book a free
+                    consultation</a>
+            </div>
+        </section>
+        <section id="for-you" class="section section-dark recognise">
+            <div class="container">
+                <div class="kicker"></div>
+                <h2>Sounds familiar?</h2>
+                <div class="grid">
+                    <article class="item">
+                        <h3>Are you an <strong>athlete</strong> who...</h3>
+                        <ul>
+                            <li>Thrives in training but freezes when the stakes are high.</li>
+                            <li>Gets stuck on a mistake long after it happens.</li>
+                            <li>Knows there is more to give but struggles to show it.</li>
+                            <li>Feels overwhelmed by pressure despite putting in the work.</li>
+                            <li>Finds it hard to trust yourself in decisive moments.</li>
+                        </ul>
+                    </article>
+                    <article class="item">
+                        <h3>Are you a <strong>parent</strong> who...</h3>
+                        <ul>
+                            <li>Wants to support your child without adding extra pressure.</li>
+                            <li>Sees their potential but also sees anxiety getting in the way.</li>
+                            <li>Is unsure what to say before a match or after a setback.</li>
+                            <li>Wants to understand what kind of support your child needs.</li>
+                            <li>Is balancing expectations, letting go and protecting them.</li>
+                        </ul>
+                    </article>
+                </div>
+                <div class="recognise-bottom"><strong>You do not have to face these situations alone. We can help you
+                        find your next step.</strong><a class="button dark" href="contact.html#consultation-form">Book a
+                        free 20-minute consultation</a></div>
+            </div>
+        </section>
+        <div class="brand-space">
+            <section class="services-intro">
+                <div class="container">
+                    <div class="services-intro-content">
+                        <div class="section-kicker">Our services</div>
+                        <h2>Every athlete is unique —<span>mental preparation should be just as individual.</span></h2>
+                        <p class="intro">Here, you can choose the form of support that best suits you, tailored to your
+                            own situation and goals.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="services-cards">
+                <div class="container">
+                    <div class="service-group">
+                        <div class="service-group-title">Individual support for athletes and parents</div>
+                        <div class="services-grid">
+                            <article class="service-card">
+                                <h3>Sports mental coaching</h3>
+                                <p>Personalised mental skills training for better focus and performance under pressure.
+                                </p><a href="services.html#coaching">Find out more →</a>
+                            </article>
+                            <article class="service-card">
+                                <h3>Elite-athlete mentoring</h3>
+                                <p>First-hand guidance from Zoltán Stieber, a former Hungary international with 26 caps.
+                                </p><a href="services.html#mentoring">Find out more →</a>
+                            </article>
+                            <article class="service-card">
+                                <h3>Sports psychology</h3>
+                                <p>Professional support for deeper blocks, competition anxiety and emotional challenges.
+                                </p><a href="services.html#psychology">Find out more →</a>
+                            </article>
+                            <article class="service-card">
+                                <h3>Parent guidance</h3>
+                                <p>Practical coaching to help you support your child with greater awareness.</p><a
+                                    href="services.html#parents">Find out more →</a>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="service-group">
+                        <div class="service-group-title">For clubs, teams and coaches</div>
+                        <div class="services-grid team-grid">
+                            <article class="service-card">
+                                <h3>Sports team coaching</h3>
+                                <p>Team coaching to build cohesion, communication, shared goals and mental readiness.
+                                </p><a href="services.html#team">Find out more →</a>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="services-cta"><a class="button primary" href="contact.html#consultation-form">Book a
+                            free consultation</a></div>
+                </div>
+            </section>
+            <section class="about">
+                <div class="container">
+                    <div class="about-divider"></div>
+                    <div class="section-kicker">About us</div>
+                    <h2>Who are we?</h2>
+                    <p class="about-intro"><strong>Mental Ascend was founded by two sports mental coaches with different
+                            backgrounds and one shared goal: helping athletes become mentally prepared, self-aware and
+                            ready to perform under pressure.</strong></p>
+                    <div class="founders-grid">
+                        <article class="founder-card">
+                            <div class="founder-header">
+                                <div class="founder-photo"><img src="../pics/Zoli%20progfi%20.jpeg"
+                                        alt="Zoltán Stieber"></div>
+                                <div>
+                                    <h3>Zoltán Stieber</h3>
+                                    <div class="founder-role">Co-founder · Mentor · Sports mental coach</div>
+                                </div>
+                            </div>
+                            <p>With 20 years in professional sport, Zoltán represented Hungary 26 times and played in
+                                the Bundesliga, MLS and UEFA Euro 2016, where he scored against Austria. He understands
+                                the mental demands of competing abroad, managing injuries and performing under pressure.
+                                He combines elite-sport experience with practical mentoring to help athletes take their
+                                next step through difficult spells and important decisions.</p>
+                        </article>
+                        <article class="founder-card">
+                            <div class="founder-header">
+                                <div class="founder-photo"><img src="../pics/Zs%C3%B3fi%20profi.jpg" alt="Zsófia Boros">
+                                </div>
+                                <div>
+                                    <h3>Zsófia Boros</h3>
+                                    <div class="founder-role">Co-founder · ICF ACC coach · Sports mental &amp; team
+                                        coach</div>
+                                </div>
+                            </div>
+                            <p>After 13 years of competitive handball, Zsófia spent a decade in international business
+                                leadership, including as Central European Marketing Director at Procter &amp; Gamble,
+                                where high performance, responsibility and pressure were part of everyday life. As an
+                                ICF ACC credentialed coach, she combines this experience with structured sports mental
+                                and business coaching to help athletes, parents and teams build focus and strong mental
+                                foundations.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <section class="section testimonials">
+            <div class="container">
+                <div class="kicker">Real experiences</div>
+                <h2>Our clients said</h2>
+                <div class="grid testimonial-grid">
+                    <article class="item testimonial">
+                        <div class="stars">★★★★★</div>
+                        <blockquote>“You helped us get to know one another better. This would certainly have taken
+                            much longer without team coaching. It also helped us clarify our team rules: although they
+                            had existed informally, we agreed on them together.”<p><strong>Noémi</strong><br>Team
+                                captain, MTK Women's
+                                Handball
+                            </p>
+                        </blockquote>
+                    </article>
+                    <article class="item testimonial">
+                        <div class="stars">★★★★★</div>
+                        <blockquote>“Our work together also gave me a lot when planning my future. As a tennis coach,
+                            I know how to help others reach their goals, but this time I needed an outside perspective.”
+                            <p>
+                                <strong>Bence</strong><br>Tennis coach
+                            </p>
+                        </blockquote>
+                    </article>
+                    <article class="item testimonial placeholder">
+                        <div class="stars">★★★★★</div>
+                        <blockquote>More athlete and parent feedback will be added here soon.</blockquote>
+                        <p><strong>Coming soon</strong><br>New experience being shared</p>
+                    </article>
+                    <article class="item testimonial placeholder">
+                        <div class="stars">★★★★★</div>
+                        <blockquote>More feedback from athletes and coaches will be added here soon.</blockquote>
+                        <p><strong>Coming soon</strong><br>New experience being shared</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="contact" id="contact">
+            <div class="container contact-grid">
+                <div class="contact-copy">
+                    <div class="kicker">Free consultation</div>
+                    <h2>Let's start with a <span>conversation.</span></h2>
+                    <ul class="contact-points">
+                        <li>A relaxed, 20-minute conversation</li>
+                        <li>A chance for us to understand your situation</li>
+                        <li>Clarify what kind of support would help most</li>
+                        <li>Agree on a possible next step together</li>
+                        <li>Free, with no obligation</li>
+                    </ul>
+                </div>
+                <div class="contact-form" id="contact-form">
+                    <form action="https://formspree.io/f/mbglaznk" method="POST">
+                        <label>Name *<input required type="text" name="name" autocomplete="name"></label>
+                        <label>Email address *<input required type="email" name="email" autocomplete="email"></label>
+                        <label>Who is looking for support? *<select required name="who">
+                                <option value="">Please select</option>
+                                <option>Myself, as an athlete</option>
+                                <option>My child</option>
+                                <option>Myself, as a parent</option>
+                            </select></label>
+                        <label>Athlete's age group *<select required name="age-group">
+                                <option value="">Please select</option>
+                                <option>Under 14</option>
+                                <option>14–18</option>
+                                <option>Over 18 / adult</option>
+                            </select></label>
+                        <label>Sport<input type="text" name="sport"></label>
+                        <label>What would you like support with? *<textarea required name="message"
+                                placeholder="A few sentences about the situation where you would like support."></textarea></label>
+                        <label>When are you available for a 20-minute online consultation? *<textarea required
+                                name="availability"
+                                placeholder="Please share three possible time slots over the next seven days. We will send a Google Meet invitation."></textarea></label>
+                        <label class="check"><input required type="checkbox" name="privacy"><span>I have read and agree
+                                to the privacy notice. *</span></label>
+                        <button class="button primary" type="submit">Send enquiry</button>
+                    </form>
+                </div>
+            </div>
+            <section class="faq" aria-labelledby="faq-title">
+                <div class="faq__container">
+                    <h2 id="faq-title">Frequently asked questions</h2>
+                    <div class="faq__list">
+                        <details class="item">
+                            <summary>Who is Mental Ascend for?</summary>
+                            <p>We primarily support young athletes and elite performers who want to compete with greater
+                                mental readiness and stability. Some services are also available to teams, clubs and
+                                coaches.</p>
+                        </details>
+                        <details class="item">
+                            <summary>What can you help me with?</summary>
+                            <p>Our work may focus on confidence, concentration, motivation, competition pressure,
+                                recovering
+                                from mistakes or managing performance anxiety. The aim is to help you perform with
+                                greater
+                                awareness and stability.</p>
+                        </details>
+                        <details class="item">
+                            <summary>Do I need to have a serious problem to benefit from coaching?</summary>
+                            <p>No. Coaching can also help you build confidence, manage pressure more effectively or
+                                prepare
+                                more intentionally for upcoming challenges.</p>
+                        </details>
+                        <details class="item">
+                            <summary>What is the difference between coaching, mentoring and sports psychology?</summary>
+                            <p>Coaching uses questions and exercises to help you find your own goals and solutions.
+                                Mentoring can also draw on relevant first-hand sporting experience and practical
+                                perspectives. For deeper difficulties or significant competition anxiety, support from a
+                                sports psychologist may be more suitable.</p>
+                        </details>
+                        <details class="item">
+                            <summary>How are parents involved?</summary>
+                            <p>A parent's role can be important, especially when the athlete is under 18, so we agree on
+                                the
+                                boundaries together at the start. The athlete's own goals and motivation remain central
+                                to
+                                the work.</p>
+                        </details>
+                        <details class="item">
+                            <summary>Are conversations confidential?</summary>
+                            <p>We treat personal information shared in sessions confidentially. For under-18 athletes,
+                                we
+                                agree in advance what general feedback may be shared with a parent.</p>
+                        </details>
+                        <details class="item">
+                            <summary>Are sessions online or in person?</summary>
+                            <p>Our programmes are primarily online, making it easier to fit sessions around training,
+                                competitions and study. In-person meetings may also be possible by arrangement.</p>
+                        </details>
+                        <details class="item">
+                            <summary>How many sessions will I need?</summary>
+                            <p>That depends on your goals and current situation. A specific challenge may be addressed
+                                over
+                                a few sessions, while longer-term development can take several months.</p>
+                        </details>
+                        <details class="item">
+                            <summary>Do you work with teams, coaches and clubs?</summary>
+                            <p>Yes. We can tailor team sessions, workshops and consultations to your needs, including
+                                mental
+                                preparation, communication, cohesion and performing under pressure.</p>
+                        </details>
+                        <details class="item">
+                            <summary>What if the athlete is not ready to ask for help?</summary>
+                            <p>Coaching works best when the athlete experiences the process, at least partly, as their
+                                own
+                                choice. A parent can raise the possibility without forcing it; a free consultation lets
+                                the
+                                athlete learn about the process with no obligation.</p>
+                        </details>
+                        <details class="item">
+                            <summary>How do I know which kind of support is right for me?</summary>
+                            <p>You do not need to decide in advance whether you need coaching, mentoring or another kind
+                                of
+                                support. Book a free 20-minute consultation and we will discuss your goals and help
+                                identify
+                                a suitable option.</p>
+                        </details>
+                        <details class="item">
+                            <summary>What happens during the free 20-minute consultation?</summary>
+                            <p>We learn about your situation, discuss your goals and explore what kind of support might
+                                suit
+                                you. The consultation does not commit you to buying a programme.</p>
+                        </details>
+                    </div>
+                    <div class="faq__cta"><a class="button primary" href="#contact-form">Book a free 20-minute
+                            consultation</a></div>
+                </div>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <div class="container footer-row"><a class="footer-brand" href="index.html"><img class="footer-logo"
+                    src="../pics/Logo%20vertical.jpeg" alt=""><span class="footer-tagline">Elevate. <span>Your mental
+                        game.</span></span></a><span>© 2026 Mental Ascend. All rights
+                reserved.</span><a href="contact.html">Contact</a></div>
+    </footer>
+    <script>const menuButton = document.querySelector('.menu-button'); const navLinks = document.querySelector('.nav-links'); menuButton.addEventListener('click', () => { const open = menuButton.getAttribute('aria-expanded') === 'true'; menuButton.setAttribute('aria-expanded', String(!open)); menuButton.setAttribute('aria-label', open ? 'Open menu' : 'Close menu'); navLinks.classList.toggle('is-open', !open) }); navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { menuButton.setAttribute('aria-expanded', 'false'); navLinks.classList.remove('is-open') }));</script>
+</body>
+
+</html>

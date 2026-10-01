@@ -1072,6 +1072,33 @@
         width: 100%
       }
     }
+
+    .language-switch {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px !important
+    }
+
+    .language-switch img {
+      display: block;
+      width: 32px;
+      height: 32px;
+      flex: 0 0 auto;
+      object-fit: contain;
+      border: 0
+    }
+
+    @media(max-width:850px) {
+      .nav-links .nav-cta {
+        order: 1
+      }
+
+      .nav-links .language-switch {
+        order: 2;
+        justify-content: flex-start
+      }
+    }
   </style>
 </head>
 
@@ -1081,8 +1108,10 @@
           class="brand-logo" src="pics/Logo vertical.jpeg" alt=""></a>
       <nav class="nav-links" aria-label="Fő navigáció"><a href="index.html#top">Kezdőlap</a><a class="active"
           href="#top">Szolgáltatások</a><a href="rolunk.html">Rólunk</a><a href="kapcsolat.html">Kapcsolat</a><a
-          class="nav-cta" href="index.html#contact-form">Ingyenes konzultáció</a></nav><button class="menu-button"
-        type="button" aria-label="Menü megnyitása" aria-expanded="false"><span class="menu-icon"></span></button>
+          class="language-switch" href="eng/services.html" aria-label="Switch to English" title="English"><img
+            src="pics/brit%20z%C3%A1szl%C3%B3.png" alt="British flag"></a><a class="nav-cta"
+          href="index.html#contact-form">Ingyenes konzultáció</a></nav><button class="menu-button" type="button"
+        aria-label="Menü megnyitása" aria-expanded="false"><span class="menu-icon"></span></button>
     </div>
   </header>
   <main id="top">

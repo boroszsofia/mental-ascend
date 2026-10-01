@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explore Mental Ascend's mental coaching, athlete mentoring, sports psychology, parent guidance and team coaching services.">
+    <title>Services and Fees | Mental Ascend</title>
+    <style>
+        :root {
+            --black: #07090a;
+            --panel: #111719;
+            --white: #f8f8f4;
+            --muted: #b5bab8;
+            --gold: #d9ad38;
+            --gold-light: #f0d06b;
+            --line: rgba(255, 255, 255, .15);
+            --max: 1180px
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            padding-top: 94px;
+            background: var(--black);
+            color: var(--white);
+            font: 16px/1.7 Arial, Helvetica, sans-serif
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .container {
+            width: min(var(--max), calc(100% - 48px));
+            margin: auto
+        }
+
+        .site-header {
+            position: fixed;
+            inset: 0 0 auto;
+            z-index: 10;
+            border-bottom: 1px solid var(--line);
+            background: #000
+        }
+
+        .nav {
+            min-height: 94px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px
+        }
+
+        .brand-logo {
+            display: block;
+            width: clamp(148px, 18vw, 210px);
+            height: auto
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            color: #e9e9e5;
+            font-size: 14px
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-light)
+        }
+
+        .nav-cta,
+        .button {
+            display: inline-block;
+            padding: 12px 18px;
+            background: var(--gold);
+            color: var(--black);
+            font-weight: 800;
+            border: 1px solid var(--gold)
+        }
+
+        .language-switch {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px !important
+        }
+
+        .language-switch img {
+            display: block;
+            width: 32px;
+            height: 32px;
+            flex: 0 0 auto;
+            object-fit: contain;
+            border: 0
+        }
+
+        .menu-button {
+            display: none;
+            color: var(--white);
+            background: none;
+            border: 0;
+            padding: 8px
+        }
+
+        .container-narrow {
+            width: min(900px, calc(100% - 48px));
+            margin: auto
+        }
+
+        .hero {
+            padding: 100px 0 76px;
+            background: linear-gradient(90deg, rgba(1, 3, 4, .92), rgba(1, 3, 4, .5)), url('../pics/szolg%C3%A1ltat%C3%A1s.jpg') center/cover
+        }
+
+        .eyebrow,
+        .kicker {
+            color: var(--gold-light);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .18em;
+            text-transform: uppercase
+        }
+
+        h1 {
+            font-size: clamp(46px, 8vw, 84px);
+            line-height: .96;
+            letter-spacing: -.04em;
+            text-transform: uppercase;
+            margin: 14px 0 20px
+        }
+
+        h1 span,
+        .gold {
+            color: var(--gold)
+        }
+
+        .hero p {
+            max-width: 780px;
+            color: #e4e8e5;
+            font-size: 19px
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 21px;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .075em;
+            text-transform: uppercase
+        }
+
+        .service-picker {
+            position: sticky;
+            top: 94px;
+            z-index: 5;
+            background: #111719;
+            border-block: 1px solid var(--line)
+        }
+
+        .service-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 16px 0
+        }
+
+        .service-links a {
+            padding: 8px 12px;
+            border: 1px solid var(--line);
+            font-size: 13px
+        }
+
+        .service {
+            padding: 64px 0;
+            border-bottom: 1px solid var(--line)
+        }
+
+        .service:nth-child(even) {
+            background: #111719
+        }
+
+        .service-layout {
+            display: grid;
+            grid-template-columns: .75fr 1.25fr;
+            gap: 56px
+        }
+
+        .service-number {
+            color: var(--gold-light);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .12em;
+            text-transform: uppercase
+        }
+
+        .service h2 {
+            font-size: clamp(28px, 4vw, 42px);
+            line-height: 1.1;
+            margin: 12px 0
+        }
+
+        .service-content p {
+            color: #d6dad8
+        }
+
+        .service-content .lead {
+            color: var(--white);
+            font-size: 20px
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 26px 0
+        }
+
+        .feature {
+            padding: 12px;
+            border-left: 2px solid var(--gold);
+            background: var(--panel)
+        }
+
+        .price {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-top: 22px
+        }
+
+        .price strong {
+            font-size: 22px
+        }
+
+        .price small {
+            color: var(--muted);
+            font-size: 14px
+        }
+
+        .package {
+            padding: 60px 0;
+            background: #e9e9e3;
+            color: #101517
+        }
+
+        .package h2 {
+            font-size: 36px;
+            margin: 8px 0
+        }
+
+        .package-card {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 32px;
+            padding: 30px;
+            background: #fff
+        }
+
+        .package-card ul {
+            padding-left: 20px
+        }
+
+        .package-price {
+            min-width: 210px;
+            text-align: right
+        }
+
+        .package-price .old {
+            color: #5a6568;
+            text-decoration: line-through
+        }
+
+        .package-price .new {
+            font-size: 34px;
+            font-weight: 800
+        }
+
+        .cta {
+            padding: 64px 0;
+            background: var(--gold);
+            color: #111719
+        }
+
+        .cta-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px
+        }
+
+        .cta h2 {
+            margin: 0;
+            font-size: clamp(28px, 4vw, 44px);
+            line-height: 1.1
+        }
+
+        .cta .button {
+            background: #111719;
+            color: #fff;
+            border-color: #111719
+        }
+
+        footer {
+            padding: 28px 0;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        .footer-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px
+        }
+
+        .footer-logo {
+            width: 120px
+        }
+
+        @media(max-width:850px) {
+            .menu-button {
+                display: block
+            }
+
+            .nav {
+                min-height: 82px
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 16px;
+                right: 16px;
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 10px 0;
+                border: 1px solid var(--line);
+                background: rgba(7, 9, 10, .97);
+                opacity: 0;
+                pointer-events: none;
+                transform: translateY(-8px);
+                transition: .2s
+            }
+
+            .nav-links.is-open {
+                opacity: 1;
+                pointer-events: auto;
+                transform: none
+            }
+
+            .nav-links>a {
+                display: flex;
+                align-items: center;
+                padding: 13px 18px
+            }
+
+            .nav-links .nav-cta {
+                order: 1
+            }
+
+            .nav-links .language-switch {
+                order: 2;
+                justify-content: flex-start
+            }
+
+            .service-layout {
+                grid-template-columns: 1fr;
+                gap: 12px
+            }
+
+            .package-card {
+                grid-template-columns: 1fr
+            }
+
+            .package-price {
+                text-align: left
+            }
+        }
+
+        @media(max-width:600px) {
+
+            .container,
+            .container-narrow {
+                width: calc(100% - 36px)
+            }
+
+            .hero {
+                padding: 80px 0 60px
+            }
+
+            .service-picker {
+                top: 82px
+            }
+
+            .service-links {
+                justify-content: flex-start;
+                overflow-x: auto;
+                flex-wrap: nowrap
+            }
+
+            .service-links a {
+                white-space: nowrap
+            }
+
+            .features {
+                grid-template-columns: 1fr
+            }
+
+            .cta-row,
+            .footer-row {
+                align-items: flex-start;
+                flex-direction: column
+            }
+        }
+    </style>
+    <style>
+        :root {
+            --black-soft: #101517;
+            --white-soft: #e6e8e6;
+            --grey-dark: #5a6568;
+            --gold-dark: #9b7011;
+            --line-light: rgba(255, 255, 255, .15);
+            --line-dark: rgba(7, 9, 10, .18)
+        }
+
+        .hero {
+            position: relative;
+            min-height: 560px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding: 100px 0;
+            background-image: linear-gradient(90deg, rgba(4, 7, 8, .9) 0%, rgba(4, 7, 8, .67) 48%, rgba(4, 7, 8, .34) 100%), linear-gradient(180deg, rgba(0, 0, 0, .16), rgba(0, 0, 0, .35)), url('../pics/szolg%C3%A1ltat%C3%A1s.jpg');
+            background-size: cover;
+            background-position: center
+        }
+
+        .hero::before,
+        .hero::after {
+            content: "";
+            position: absolute;
+            border: 1px solid rgba(217, 173, 56, .43);
+            transform: rotate(43deg)
+        }
+
+        .hero::before {
+            right: 9%;
+            top: 12%;
+            width: 390px;
+            height: 390px
+        }
+
+        .hero::after {
+            right: -12%;
+            bottom: -50%;
+            width: 550px;
+            height: 550px;
+            border-color: rgba(255, 255, 255, .16)
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1
+        }
+
+        .hero h1 {
+            max-width: 900px;
+            font-size: clamp(50px, 8vw, 105px);
+            line-height: .9;
+            letter-spacing: -.06em
+        }
+
+        .service-picker {
+            position: static;
+            background: var(--black-soft);
+            border: 0;
+            border-bottom: 1px solid var(--line-light)
+        }
+
+        .service-links {
+            justify-content: flex-start;
+            gap: 20px 28px;
+            padding: 21px 0;
+            color: #d9dcda;
+            font-size: 14px
+        }
+
+        .service-links a {
+            padding: 0;
+            border: 0
+        }
+
+        .service-links a:hover {
+            color: var(--gold-light)
+        }
+
+        .service {
+            position: relative;
+            overflow: hidden;
+            color: var(--black-soft);
+            background: var(--white)
+        }
+
+        .service:nth-of-type(even) {
+            background: var(--white-soft)
+        }
+
+        .service::before {
+            content: "";
+            position: absolute;
+            right: 8%;
+            top: -275px;
+            width: 500px;
+            height: 500px;
+            border: 1px solid rgba(217, 173, 56, .3);
+            transform: rotate(43deg)
+        }
+
+        .service>.container {
+            position: relative;
+            z-index: 1
+        }
+
+        .service-layout {
+            display: block
+        }
+
+        .service-layout>aside {
+            max-width: 870px;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            align-items: center
+        }
+
+        .service-number {
+            display: block;
+            grid-column: 1 / -1;
+            margin-bottom: 18px;
+            color: var(--gold-dark);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .16em
+        }
+
+        .service h2 {
+            margin: 0;
+            font-size: clamp(35px, 5vw, 62px);
+            line-height: 1;
+            letter-spacing: -.045em
+        }
+
+        .service-content {
+            margin-top: 44px;
+            padding: 38px;
+            border: 1px solid rgba(7, 9, 10, .14);
+            border-top: 5px solid var(--gold);
+            background: rgba(255, 255, 255, .72)
+        }
+
+        .service-content .lead {
+            margin: 0 0 25px;
+            color: #314045;
+            font-size: 21px;
+            line-height: 1.48
+        }
+
+        .service-content p {
+            color: var(--grey-dark);
+            font-size: 17px
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            margin: 32px 0;
+            background: var(--line-dark)
+        }
+
+        .feature {
+            position: relative;
+            padding: 18px 18px 18px 42px;
+            border: 0;
+            background: rgba(255, 255, 255, .55);
+            color: #3e4c51;
+            font-size: 15px
+        }
+
+        .feature::before {
+            content: "+";
+            position: absolute;
+            left: 18px;
+            color: var(--gold-dark);
+            font-weight: 900
+        }
+
+        #coaching {
+            color: var(--black);
+            background: linear-gradient(115deg, #c99a28, #e5ba4e)
+        }
+
+        #coaching::before {
+            top: -260px;
+            right: -185px;
+            width: 490px;
+            height: 490px;
+            border-color: rgba(7, 9, 10, .24)
+        }
+
+        #coaching .service-number {
+            color: #5d4307
+        }
+
+        #coaching .service-content {
+            border-color: rgba(7, 9, 10, .2);
+            background: rgba(255, 255, 255, .2)
+        }
+
+        #coaching .service-content .lead,
+        #coaching .service-content p {
+            color: #332600
+        }
+
+        #coaching .feature {
+            background: rgba(255, 255, 255, .2);
+            color: #332600
+        }
+
+        #mentoring,
+        #psychology,
+        #team {
+            background: var(--white-soft)
+        }
+
+        .price {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            margin-top: 32px
+        }
+
+        .price strong {
+            padding: 10px 14px;
+            color: var(--black);
+            background: var(--gold);
+            font-size: 16px
+        }
+
+        #coaching .price strong,
+        #parents .price strong {
+            color: var(--gold-light);
+            background: var(--black)
+        }
+
+        #coaching .button,
+        #parents .button {
+            color: var(--gold-light);
+            border-color: var(--black);
+            background: var(--black)
+        }
+
+        #parents {
+            color: var(--white);
+            background: linear-gradient(128deg, #273238, #111719 72%)
+        }
+
+        #parents .service-number {
+            color: var(--gold-light)
+        }
+
+        #parents .service-content {
+            border-color: var(--line-light);
+            background: rgba(5, 9, 11, .37)
+        }
+
+        #parents .service-content .lead,
+        #parents .service-content p {
+            color: #d7dad6
+        }
+
+        #parents .feature {
+            background: rgba(255, 255, 255, .035);
+            color: #d7dad6
+        }
+
+        #parents .feature::before {
+            color: var(--gold-light)
+        }
+
+        .package {
+            position: relative;
+            overflow: hidden;
+            padding: 96px 0;
+            color: var(--white);
+            background: linear-gradient(128deg, #273238, #111719 72%)
+        }
+
+        .package::before {
+            content: "";
+            position: absolute;
+            top: -275px;
+            right: 8%;
+            width: 500px;
+            height: 500px;
+            border: 1px solid rgba(217, 173, 56, .4);
+            transform: rotate(43deg)
+        }
+
+        .package>.container {
+            position: relative;
+            z-index: 1
+        }
+
+        .package .kicker {
+            color: var(--gold-light)
+        }
+
+        .package-card {
+            grid-template-columns: 1.18fr .82fr;
+            gap: 45px;
+            margin-top: 44px;
+            padding: 38px;
+            border: 1px solid var(--line-light);
+            border-top: 5px solid var(--gold);
+            background: rgba(5, 9, 11, .37)
+        }
+
+        .package-card h3 {
+            color: var(--gold-light);
+            font-size: 31px
+        }
+
+        .package-card p,
+        .package-card li {
+            color: #e4e6e2
+        }
+
+        .package-price {
+            align-self: center;
+            padding: 29px;
+            background: var(--gold);
+            color: var(--black);
+            text-align: left
+        }
+
+        .package-price .new {
+            font-size: clamp(37px, 4vw, 54px);
+            line-height: 1
+        }
+
+        .package-price .button {
+            width: 100%;
+            color: var(--gold-light);
+            border-color: var(--black);
+            background: var(--black)
+        }
+
+        @media(max-width:850px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .service-layout {
+                grid-template-columns: 1fr
+            }
+
+            .package-card {
+                grid-template-columns: 1fr
+            }
+        }
+
+        @media(max-width:560px) {
+            .hero {
+                min-height: 460px;
+                padding: 80px 0
+            }
+
+            .service-links {
+                overflow-x: auto;
+                flex-wrap: nowrap
+            }
+
+            .service-links a {
+                white-space: nowrap
+            }
+
+            .features,
+            .services-grid {
+                grid-template-columns: 1fr
+            }
+
+            .service-content,
+            .package-card {
+                padding: 22px
+            }
+
+            .price {
+                align-items: stretch;
+                flex-direction: column
+            }
+        }
+    </style>
+    <style>
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-shrink: 0;
+            color: var(--white);
+            font-weight: 800;
+            line-height: 1.4
+        }
+
+        .footer-logo {
+            width: clamp(116px, 13vw, 150px)
+        }
+
+        .footer-tagline {
+            font-size: 13px
+        }
+
+        .footer-tagline span {
+            color: var(--gold-light)
+        }
+    </style>
+    <style>
+        .menu-icon,
+        .menu-icon::before,
+        .menu-icon::after {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: currentColor;
+            transition: transform .2s, opacity .2s
+        }
+
+        .menu-icon {
+            position: relative
+        }
+
+        .menu-icon::before,
+        .menu-icon::after {
+            content: "";
+            position: absolute;
+            left: 0
+        }
+
+        .menu-icon::before {
+            top: -6px
+        }
+
+        .menu-icon::after {
+            top: 6px
+        }
+
+        .menu-button[aria-expanded="true"] .menu-icon {
+            background: transparent
+        }
+
+        .menu-button[aria-expanded="true"] .menu-icon::before {
+            transform: translateY(6px) rotate(45deg)
+        }
+
+        .menu-button[aria-expanded="true"] .menu-icon::after {
+            transform: translateY(-6px) rotate(-45deg)
+        }
+
+        @media(max-width:850px) {
+            .menu-button {
+                position: relative;
+                z-index: 1;
+                padding: 8px 0;
+                border: 0;
+                cursor: pointer
+            }
+
+            .menu-icon,
+            .menu-icon::before,
+            .menu-icon::after {
+                width: 27px;
+                height: 3px
+            }
+
+            .menu-icon::before {
+                top: -8px
+            }
+
+            .menu-icon::after {
+                top: 8px
+            }
+
+            .menu-button[aria-expanded="true"] .menu-icon::before {
+                transform: translateY(8px) rotate(45deg)
+            }
+
+            .menu-button[aria-expanded="true"] .menu-icon::after {
+                transform: translateY(-8px) rotate(-45deg)
+            }
+        }
+
+        @media(max-width:560px) {
+            .hero h1 {
+                font-size: 58px;
+                line-height: .9;
+                letter-spacing: -.06em
+            }
+
+            .hero p {
+                font-size: 16px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container nav"><a href="index.html" aria-label="Mental Ascend home"><img class="brand-logo"
+                    src="../pics/Logo%20vertical.jpeg" alt="Mental Ascend"></a>
+            <nav class="nav-links" aria-label="Main navigation"><a href="index.html">Home</a><a class="active"
+                    href="services.html">Services</a><a href="about.html">About us</a><a
+                    href="contact.html">Contact</a><a class="language-switch" href="../szolgaltatasok.html"
+                    aria-label="Switch to Hungarian" title="Magyar"><img src="../pics/Magyar%20z%C3%A1szl%C3%B3.png"
+                        alt="Hungarian flag"></a><a class="nav-cta" href="contact.html#consultation-form">Free
+                    consultation</a></nav><button class="menu-button" type="button" aria-label="Open menu"
+                aria-expanded="false"><span class="menu-icon"></span></button>
+        </div>
+    </header>
+    <main id="top">
+        <section class="hero">
+            <div class="container">
+                <div class="eyebrow">Services and fees</div>
+                <h1>Find the support<br><span>that fits you.</span></h1>
+                <p>Mental preparation is different for every athlete. Explore individual coaching, sports psychology,
+                    elite-athlete mentoring, parent guidance and team development, tailored to your needs.</p>
+            </div>
+        </section>
+        <nav class="service-picker" aria-label="Services">
+            <div class="container service-links"><a href="#coaching">Mental coaching</a><a href="#mentoring">Athlete
+                    mentoring</a><a href="#psychology">Sports psychology</a><a href="#parents">Parent guidance</a><a
+                    href="#team">Team coaching</a></div>
+        </nav>
+        <section class="service" id="coaching">
+            <div class="container service-layout">
+                <aside><span class="service-number">01 / Individual support</span>
+                    <h2>Sports mental coaching</h2>
+                </aside>
+                <article class="service-content">
+                    <p class="lead"><strong>Personalised mental skills training for better focus and
+                            performance.</strong></p>
+                    <p>We do not rely on one-size-fits-all formulas. We build on your experiences and goals, using
+                        practical tools to help you manage pressure when it matters most.</p>
+                    <div class="features">
+                        <div class="feature">Managing pre-competition nerves</div>
+                        <div class="feature">Directing focus and attention</div>
+                        <div class="feature">Building confidence and inner stability</div>
+                        <div class="feature">Learning from mistakes and setbacks</div>
+                    </div>
+                    <div class="price"><strong>HUF 20,000 <small>/ session</small><br>HUF 100,000 <small>/ 5+1
+                                sessions</small></strong><a class="button" href="contact.html#consultation-form">Book a
+                            free consultation</a></div>
+                </article>
+            </div>
+        </section>
+        <section class="service" id="mentoring">
+            <div class="container service-layout">
+                <aside><span class="service-number">02 / Individual support</span>
+                    <h2>Elite-athlete mentoring</h2>
+                </aside>
+                <article class="service-content">
+                    <p class="lead"><strong>First-hand guidance and a professional perspective from Zoltán Stieber, a
+                            former Hungary international with 26 caps.</strong></p>
+                    <p>Professional sporting experience meets your current reality. Zoltán offers honest feedback,
+                        practical guidance and lessons drawn from his own career.</p>
+                    <div class="features">
+                        <div class="feature">Taking the next step in your career</div>
+                        <div class="feature">Changing clubs and settling abroad</div>
+                        <div class="feature">Navigating injuries and time on the bench</div>
+                        <div class="feature">Making decisions under pressure</div>
+                    </div>
+                    <div class="price"><strong>HUF 40,000 <small>/ session</small></strong><a class="button"
+                            href="contact.html#consultation-form">Book a free consultation</a></div>
+                </article>
+            </div>
+        </section>
+        <section class="package">
+            <div class="container">
+                <div class="kicker">Combined programme</div>
+                <h2>Ascend Performance Package</h2>
+                <p>Structured, longer-term support combining mental skills development with real-world elite sporting
+                    experience.</p>
+                <div class="package-card">
+                    <div>
+                        <h3>8 coaching + 2 mentoring sessions</h3>
+                        <p>Ten individual online sessions bringing together regular mental coaching and practical
+                            mentoring from professional sport.</p>
+                        <ul>
+                            <li>Eight personalised mental coaching sessions</li>
+                            <li>Two mentoring sessions with Zoltán Stieber</li>
+                            <li>Comprehensive preparation for peak performance</li>
+                            <li>Ten individual online consultations in total</li>
+                        </ul>
+                    </div>
+                    <div class="package-price">
+                        <div class="old">Regular price: HUF 240,000</div>
+                        <div class="new">HUF 199,000</div>
+                        <p>Save HUF 41,000 compared with booking separately.</p><a class="button"
+                            href="contact.html#consultation-form">Ask about the package</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="service" id="psychology">
+            <div class="container service-layout">
+                <aside><span class="service-number">03 / Individual support</span>
+                    <h2>Sports psychology</h2>
+                </aside>
+                <article class="service-content">
+                    <p class="lead"><strong>Address deeper blocks, competition anxiety and emotional challenges that get
+                            in the way of performance.</strong></p>
+                    <p>When practical techniques are not enough, professional psychological support can help explore the
+                        underlying causes of recurring fears and barriers.</p>
+                    <div class="features">
+                        <div class="feature">Exploring performance-limiting blocks</div>
+                        <div class="feature">Working with competitive fear and anxiety</div>
+                        <div class="feature">Processing emotional challenges and setbacks</div>
+                        <div class="feature">Building a steadier inner foundation</div>
+                    </div>
+                    <div class="price"><strong>HUF 25,000 <small>/ session</small></strong><a class="button"
+                            href="contact.html#consultation-form">Book a free consultation</a></div>
+                </article>
+            </div>
+        </section>
+        <section class="service" id="parents">
+            <div class="container service-layout">
+                <aside><span class="service-number">04 / For parents</span>
+                    <h2>Parent guidance</h2>
+                </aside>
+                <article class="service-content">
+                    <p class="lead"><strong>Practical guidance to help you support your child with confidence.</strong>
+                    </p>
+                    <p>Together, we find a balanced way to communicate and offer meaningful support without adding
+                        pressure.</p>
+                    <div class="features">
+                        <div class="feature">Communicating before and after competition</div>
+                        <div class="feature">Responding constructively to mistakes</div>
+                        <div class="feature">Supporting without increasing pressure</div>
+                        <div class="feature">Encouraging your child's own motivation</div>
+                    </div>
+                    <div class="price"><strong>HUF 20,000 <small>/ session</small></strong><a class="button"
+                            href="contact.html#consultation-form">Book a free consultation</a></div>
+                </article>
+            </div>
+        </section>
+        <section class="service" id="team">
+            <div class="container service-layout">
+                <aside><span class="service-number">05 / For teams</span>
+                    <h2>Sports team coaching</h2>
+                </aside>
+                <article class="service-content">
+                    <p class="lead"><strong>Stronger cohesion, communication and mental preparation for sports teams and
+                            clubs.</strong></p>
+                    <p>We work from your team's current situation to clarify shared goals, develop team dynamics and
+                        address internal challenges constructively.</p>
+                    <div class="features">
+                        <div class="feature">Clarifying shared goals and ways of working</div>
+                        <div class="feature">Building trust and stronger team dynamics</div>
+                        <div class="feature">Addressing conflict constructively</div>
+                        <div class="feature">Support for coaches and teams</div>
+                    </div>
+                    <div class="price"><strong>Tailored proposal <small>/ by arrangement</small></strong><a
+                            class="button" href="contact.html#consultation-form">Request a proposal</a></div>
+                </article>
+            </div>
+        </section>
+        <section class="cta">
+            <div class="container cta-row">
+                <h2>Not sure which approach is right for you?</h2><a class="button"
+                    href="contact.html#consultation-form">Let's start with a conversation</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container footer-row"><a class="footer-brand" href="index.html"><img class="footer-logo"
+                    src="../pics/Logo%20vertical.jpeg" alt=""><span class="footer-tagline">Elevate. <span>Your mental
+                        game.</span></span></a><span>© 2026 Mental Ascend. All rights
+                reserved.</span><a href="contact.html">Contact</a></div>
+    </footer>
+    <script>const menuButton = document.querySelector('.menu-button'); const navLinks = document.querySelector('.nav-links'); menuButton.addEventListener('click', () => { const open = menuButton.getAttribute('aria-expanded') === 'true'; menuButton.setAttribute('aria-expanded', String(!open)); menuButton.setAttribute('aria-label', open ? 'Open menu' : 'Close menu'); navLinks.classList.toggle('is-open', !open) }); navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { menuButton.setAttribute('aria-expanded', 'false'); navLinks.classList.remove('is-open') }));</script>
+</body>
+
+</html>

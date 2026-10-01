@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Contact Mental Ascend and book a free, no-obligation consultation about mental performance support.">
+    <title>Contact | Mental Ascend</title>
+    <style>
+        :root {
+            --black: #07090a;
+            --panel: #111719;
+            --white: #f8f8f4;
+            --muted: #b5bab8;
+            --gold: #d9ad38;
+            --gold-light: #f0d06b;
+            --line: rgba(255, 255, 255, .15);
+            --max: 1180px
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            padding-top: 94px;
+            background: #151b1d;
+            color: var(--white);
+            font: 16px/1.6 Arial, Helvetica, sans-serif
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .container {
+            width: min(var(--max), calc(100% - 48px));
+            margin: auto
+        }
+
+        .site-header {
+            position: fixed;
+            inset: 0 0 auto;
+            z-index: 10;
+            border-bottom: 1px solid var(--line);
+            background: #000
+        }
+
+        .nav {
+            min-height: 94px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px
+        }
+
+        .brand-logo {
+            display: block;
+            width: clamp(148px, 18vw, 210px);
+            height: auto
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+            color: #e9e9e5;
+            font-size: 14px
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-light)
+        }
+
+        .nav-cta,
+        .button {
+            display: inline-block;
+            padding: 12px 18px;
+            background: var(--gold);
+            color: var(--black);
+            font-weight: 800;
+            border: 1px solid var(--gold)
+        }
+
+        .language-switch {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px !important
+        }
+
+        .language-switch img {
+            display: block;
+            width: 32px;
+            height: 32px;
+            flex: 0 0 auto;
+            object-fit: contain;
+            border: 0
+        }
+
+        .menu-button {
+            display: none;
+            color: var(--white);
+            background: none;
+            border: 0;
+            padding: 8px
+        }
+
+        .eyebrow {
+            color: var(--gold-light);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .18em;
+            text-transform: uppercase
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr .8fr;
+            gap: 48px;
+            align-items: center;
+            padding: 70px 0
+        }
+
+        .contact-layout h1 {
+            font-size: clamp(48px, 8vw, 82px);
+            line-height: .95;
+            text-transform: uppercase;
+            margin: 12px 0
+        }
+
+        .contact-layout h1 span,
+        .consultation h2 span {
+            color: var(--gold)
+        }
+
+        .intro {
+            max-width: 650px;
+            font-size: 19px;
+            color: #d6dad8
+        }
+
+        .contact-card {
+            padding: 30px;
+            background: #0c1011;
+            border: 1px solid var(--line)
+        }
+
+        .contact-card h2 {
+            margin-top: 0
+        }
+
+        .contact-list {
+            list-style: none;
+            padding: 0;
+            margin: 0
+        }
+
+        .contact-list li {
+            padding: 14px 0;
+            border-top: 1px solid var(--line)
+        }
+
+        .contact-label {
+            display: block;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        .contact-value {
+            font-size: 18px
+        }
+
+        .consultation {
+            padding: 52px 0 80px;
+            border-top: 1px solid var(--line)
+        }
+
+        .consultation-grid {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 56px;
+            align-items: start
+        }
+
+        .consultation h2 {
+            font-size: clamp(34px, 5vw, 54px);
+            line-height: 1.05
+        }
+
+        .contact-points {
+            padding-left: 20px;
+            color: #d6dad8
+        }
+
+        .contact-points li {
+            padding: 5px 0
+        }
+
+        .contact-form {
+            padding: 30px;
+            background: #0c1011;
+            border: 1px solid var(--line)
+        }
+
+        form {
+            display: grid;
+            gap: 16px
+        }
+
+        label {
+            display: grid;
+            gap: 7px;
+            font-weight: 700
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #586164;
+            background: #151b1d;
+            color: var(--white);
+            font: inherit
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical
+        }
+
+        .check {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-weight: 400
+        }
+
+        .check input {
+            width: auto;
+            margin-top: 6px
+        }
+
+        .check a {
+            text-decoration: underline
+        }
+
+        .button {
+            cursor: pointer;
+            font: inherit
+        }
+
+        footer {
+            padding: 28px 0;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        .footer-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px
+        }
+
+        .footer-logo {
+            width: 120px
+        }
+
+        @media(max-width:850px) {
+            .menu-button {
+                display: block
+            }
+
+            .nav {
+                min-height: 82px
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 16px;
+                right: 16px;
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 10px 0;
+                border: 1px solid var(--line);
+                background: rgba(7, 9, 10, .98);
+                opacity: 0;
+                pointer-events: none;
+                transform: translateY(-8px);
+                transition: .2s
+            }
+
+            .nav-links.is-open {
+                opacity: 1;
+                pointer-events: auto;
+                transform: none
+            }
+
+            .nav-links>a {
+                display: flex;
+                align-items: center;
+                padding: 13px 18px
+            }
+
+            .nav-links .nav-cta {
+                order: 1
+            }
+
+            .nav-links .language-switch {
+                order: 2;
+                justify-content: flex-start
+            }
+
+            .contact-layout,
+            .consultation-grid {
+                grid-template-columns: 1fr;
+                gap: 24px
+            }
+        }
+
+        @media(max-width:600px) {
+            .container {
+                width: calc(100% - 36px)
+            }
+
+            .contact-layout {
+                padding: 52px 0
+            }
+
+            .consultation {
+                padding: 40px 0 60px
+            }
+
+            .contact-card,
+            .contact-form {
+                padding: 22px
+            }
+
+            .footer-row {
+                align-items: flex-start;
+                flex-direction: column
+            }
+        }
+    </style>
+    <style>
+        :root {
+            --graphite: #20282c;
+            --graphite-panel: #1b2529;
+            --grey: #b5bab8;
+            --grey-dark: #5a6568;
+            --line-light: rgba(255, 255, 255, .15)
+        }
+
+        main {
+            min-height: calc(100vh - 174px);
+            padding: 110px 0;
+            background: #151b1d
+        }
+
+        .contact-layout {
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            padding: 0
+        }
+
+        .contact-layout h1 {
+            max-width: 650px;
+            margin: 0 0 24px;
+            font-size: clamp(48px, 8vw, 96px);
+            line-height: .9;
+            letter-spacing: -.06em
+        }
+
+        .intro {
+            max-width: 570px;
+            color: var(--grey);
+            font-size: 19px
+        }
+
+        .contact-card {
+            padding: 38px;
+            border: 0;
+            border-top: 5px solid var(--gold);
+            background: var(--graphite)
+        }
+
+        .contact-card h2 {
+            margin: 0 0 26px;
+            font-size: 31px;
+            line-height: 1.1
+        }
+
+        .contact-list {
+            display: grid;
+            gap: 22px
+        }
+
+        .contact-list li {
+            padding: 0 0 18px;
+            border-top: 0;
+            border-bottom: 1px solid var(--line-light)
+        }
+
+        .contact-list li:last-child {
+            padding-bottom: 0;
+            border-bottom: 0
+        }
+
+        .contact-label {
+            margin-bottom: 3px;
+            color: var(--gold-light);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .14em;
+            text-transform: uppercase
+        }
+
+        .contact-value {
+            display: block;
+            max-width: 100%;
+            color: var(--white);
+            overflow-wrap: anywhere
+        }
+
+        .contact-value:hover,
+        footer a:hover {
+            color: var(--gold-light)
+        }
+
+        .consultation {
+            margin-top: 70px;
+            padding: 30px 0 0;
+            border-top: 1px solid var(--line-light)
+        }
+
+        .consultation-grid {
+            grid-template-columns: .9fr 1.1fr;
+            gap: 68px
+        }
+
+        .consultation h2 {
+            margin: 0 0 10px;
+            font-size: 29px;
+            line-height: 1.6
+        }
+
+        .contact-points {
+            margin: 30px 0 0;
+            padding: 0;
+            list-style: none
+        }
+
+        .contact-points li {
+            position: relative;
+            margin: 11px 0;
+            padding: 0 0 0 25px;
+            color: #dfe3df
+        }
+
+        .contact-points li::before {
+            content: "+";
+            position: absolute;
+            left: 0;
+            color: var(--gold-light);
+            font-weight: 900
+        }
+
+        .contact-form {
+            padding: 32px;
+            border: 1px solid var(--line-light);
+            border-top: 4px solid var(--gold);
+            background: rgba(6, 11, 13, .35)
+        }
+
+        label {
+            color: #e6e9e6;
+            font-size: 13px;
+            font-weight: 700
+        }
+
+        input,
+        select,
+        textarea {
+            padding: 14px;
+            color: var(--white);
+            border-color: rgba(255, 255, 255, .24);
+            border-radius: 0;
+            background: var(--graphite-panel)
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: #202c31
+        }
+
+        textarea {
+            min-height: 125px
+        }
+
+        .check {
+            color: var(--grey);
+            font-size: 13px
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 24px;
+            padding: 15px 21px;
+            font-family: Arial;
+            font-size: 13px;
+            font-weight: 800;
+            line-height: normal;
+            letter-spacing: .075em;
+            text-transform: uppercase
+        }
+
+        footer {
+            padding: 35px 0;
+            color: var(--grey);
+            background: #050606
+        }
+
+        .footer-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            color: var(--white);
+            font-weight: 800
+        }
+
+        .footer-logo {
+            width: clamp(116px, 13vw, 150px)
+        }
+
+        .footer-tagline {
+            font-size: 13px
+        }
+
+        .footer-tagline span {
+            color: var(--gold-light)
+        }
+
+        @media(max-width:850px) {
+
+            .contact-layout,
+            .consultation-grid {
+                grid-template-columns: 1fr;
+                gap: 40px
+            }
+        }
+
+        @media(max-width:560px) {
+            main {
+                padding: 70px 0
+            }
+
+            .contact-card,
+            .contact-form {
+                padding: 22px
+            }
+
+            .footer-row {
+                align-items: flex-start;
+                flex-direction: column
+            }
+        }
+    </style>
+    <style>
+        .menu-icon,
+        .menu-icon::before,
+        .menu-icon::after {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: currentColor;
+            transition: transform .2s, opacity .2s
+        }
+
+        .menu-icon {
+            position: relative
+        }
+
+        .menu-icon::before,
+        .menu-icon::after {
+            content: "";
+            position: absolute;
+            left: 0
+        }
+
+        .menu-icon::before {
+            top: -6px
+        }
+
+        .menu-icon::after {
+            top: 6px
+        }
+
+        .menu-button[aria-expanded="true"] .menu-icon {
+            background: transparent
+        }
+
+        .menu-button[aria-expanded="true"] .menu-icon::before {
+            transform: translateY(6px) rotate(45deg)
+        }
+
+        .menu-button[aria-expanded="true"] .menu-icon::after {
+            transform: translateY(-6px) rotate(-45deg)
+        }
+
+        @media(max-width:850px) {
+            .menu-button {
+                position: relative;
+                z-index: 1;
+                padding: 8px 0;
+                border: 0;
+                cursor: pointer
+            }
+
+            .menu-icon,
+            .menu-icon::before,
+            .menu-icon::after {
+                width: 27px;
+                height: 3px
+            }
+
+            .menu-icon::before {
+                top: -8px
+            }
+
+            .menu-icon::after {
+                top: 8px
+            }
+
+            .menu-button[aria-expanded="true"] .menu-icon::before {
+                transform: translateY(8px) rotate(45deg)
+            }
+
+            .menu-button[aria-expanded="true"] .menu-icon::after {
+                transform: translateY(-8px) rotate(-45deg)
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container nav"><a href="index.html" aria-label="Mental Ascend home"><img class="brand-logo"
+                    src="../pics/Logo%20vertical.jpeg" alt="Mental Ascend"></a>
+            <nav class="nav-links" aria-label="Main navigation"><a href="index.html">Home</a><a
+                    href="services.html">Services</a><a href="about.html">About us</a><a class="active"
+                    href="contact.html">Contact</a><a class="language-switch" href="../kapcsolat.html"
+                    aria-label="Switch to Hungarian" title="Magyar"><img src="../pics/Magyar%20z%C3%A1szl%C3%B3.png"
+                        alt="Hungarian flag"></a><a class="nav-cta" href="#consultation-form">Free consultation</a>
+            </nav><button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false"><span
+                    class="menu-icon"></span></button>
+        </div>
+    </header>
+    <main id="top">
+        <div class="container">
+            <div class="contact-layout">
+                <section>
+                    <div class="eyebrow">Mental Ascend</div>
+                    <h1>Get in touch<span>.</span></h1>
+                    <p class="intro">Have a question, or want to find the right kind of support? We would be glad to
+                        hear from you.</p>
+                </section>
+                <section class="contact-card" aria-label="Contact details">
+                    <h2>Contact details</h2>
+                    <ul class="contact-list">
+                        <li><span class="contact-label">Website</span><a class="contact-value"
+                                href="https://www.mentalascend.hu/">www.mentalascend.hu</a></li>
+                        <li><span class="contact-label">Email</span><a class="contact-value"
+                                href="mailto:ascendmental@gmail.com">ascendmental@gmail.com</a></li>
+                        <li><span class="contact-label">Instagram</span><a class="contact-value"
+                                href="https://www.instagram.com/mentalascend.hu/" target="_blank"
+                                rel="noreferrer">@mentalascend.hu</a></li>
+                    </ul>
+                </section>
+            </div>
+            <section class="consultation" id="consultation">
+                <div class="consultation-grid">
+                    <div>
+                        <div class="eyebrow">Free consultation</div>
+                        <h2>Let's start with a <span>conversation.</span></h2>
+                        <ul class="contact-points">
+                            <li>A relaxed, 20-minute conversation</li>
+                            <li>A chance for us to understand your situation</li>
+                            <li>Clarify what kind of support would help most</li>
+                            <li>Agree on a possible next step together</li>
+                            <li>Free, with no obligation</li>
+                        </ul>
+                    </div>
+                    <div class="contact-form" id="consultation-form">
+                        <form action="https://formspree.io/f/mbglaznk" method="POST"><label>Name *<input required
+                                    type="text" name="name" autocomplete="name"></label><label>Email address *<input
+                                    required type="email" name="email" autocomplete="email"></label><label>Who is
+                                looking for support? *<select required name="who">
+                                    <option value="">Please select</option>
+                                    <option>Myself, as an athlete</option>
+                                    <option>My child</option>
+                                    <option>Myself, as a parent</option>
+                                </select></label><label>Athlete's age group *<select required name="age-group">
+                                    <option value="">Please select</option>
+                                    <option>Under 14</option>
+                                    <option>14–18</option>
+                                    <option>Over 18 / adult</option>
+                                </select></label><label>Sport<input type="text" name="sport"></label><label>What would
+                                you like support with? *<textarea required name="message"
+                                    placeholder="A few sentences about the situation where you would like support."></textarea></label><label>When
+                                are you available for a 20-minute online consultation? *<textarea required
+                                    name="availability"
+                                    placeholder="Please share three possible time slots over the next seven days. We will send a Google Meet invitation."></textarea></label><label
+                                class="check"><input required type="checkbox" name="privacy"><span>I have read and agree
+                                    to the privacy notice. *</span></label><button class="button" type="submit">Send
+                                enquiry</button></form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container footer-row"><a class="footer-brand" href="index.html"><img class="footer-logo"
+                    src="../pics/Logo%20vertical.jpeg" alt=""><span class="footer-tagline">Elevate. <span>Your mental
+                        game.</span></span></a><span>© 2026 Mental Ascend. All rights
+                reserved.</span><a href="contact.html">Contact</a></div>
+    </footer>
+    <script>const menuButton = document.querySelector('.menu-button'); const navLinks = document.querySelector('.nav-links'); menuButton.addEventListener('click', () => { const open = menuButton.getAttribute('aria-expanded') === 'true'; menuButton.setAttribute('aria-expanded', String(!open)); menuButton.setAttribute('aria-label', open ? 'Open menu' : 'Close menu'); navLinks.classList.toggle('is-open', !open) }); navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { menuButton.setAttribute('aria-expanded', 'false'); navLinks.classList.remove('is-open') }));</script>
+</body>
+
+</html>
