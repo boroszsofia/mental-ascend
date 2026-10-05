@@ -145,6 +145,10 @@
             line-height: 1.65
         }
 
+        .hero p>.gold {
+            display: block
+        }
+
         .eyebrow,
         .kicker {
             color: var(--gold-light);
@@ -676,6 +680,14 @@
             max-width: 870px
         }
 
+        .services-intro h2 {
+            max-width: 870px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: clamp(35px, 5vw, 62px);
+            line-height: 1;
+            letter-spacing: -.045em
+        }
+
         .services-intro h2 span {
             display: block;
             color: var(--gold-light)
@@ -842,11 +854,15 @@
 
         .section.section.testimonials {
             color: var(--black-soft);
-            background: #f1eedc
+            background: linear-gradient(115deg, #c99a28, #e5ba4e)
+        }
+
+        .testimonials .kicker {
+            color: var(--black-soft)
         }
 
         .testimonials .grid {
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             margin-top: 42px
         }
 
@@ -1134,22 +1150,24 @@
         .testimonial blockquote {
             margin: 0 0 24px;
             color: #354246;
-            font: italic 17px/1.55 Georgia, 'Times New Roman', serif
+            font: italic 17px/1.55 Arial, Helvetica, sans-serif
         }
 
         .testimonial p {
             margin-top: auto;
-            color: #465459
+            color: #465459;
+            line-height: 1.15
         }
 
         .testimonial p strong {
             display: block;
-            color: var(--black-soft)
+            color: var(--black-soft);
+            line-height: 1.15
         }
 
-        .testimonial.placeholder blockquote {
-            color: #7d8787;
-            font-family: Arial, Helvetica, sans-serif
+        .testimonial p span {
+            display: block;
+            line-height: 1.15
         }
 
         .footer-brand {
@@ -1457,9 +1475,10 @@
             <div class="container hero-inner">
                 <div class="eyebrow"></div>
                 <h1>Elevate.<span>Your mental game.</span></h1>
-                <p><strong class="gold">A mental performance system for athletes.</strong> Through coaching,
-                    elite-athlete mentoring and sports psychology, we help you handle pressure and bring your best to
-                    the moments that matter.</p><a class="button" href="#contact-form">Book a free
+                <p><strong class="gold">The Mental Performance System for Athletes.</strong>
+                    Through mental
+                    coaching, former elite athlete mentoring, and sports psychology, we help you manage
+                    pressure and unlock your peak performance.</p><a class="button" href="#contact-form">Book a free
                     consultation</a>
             </div>
         </section>
@@ -1473,9 +1492,9 @@
                         <ul>
                             <li>Thrives in training but freezes when the stakes are high.</li>
                             <li>Gets stuck on a mistake long after it happens.</li>
-                            <li>Knows there is more to give but struggles to show it.</li>
-                            <li>Feels overwhelmed by pressure despite putting in the work.</li>
-                            <li>Finds it hard to trust yourself in decisive moments.</li>
+                            <li>Has more potential but struggles to show it during the games.</li>
+                            <li>Feels overwhelmed by pressure to perform.</li>
+                            <li>Finds it hard to trust yourself in key moments.</li>
                         </ul>
                     </article>
                     <article class="item">
@@ -1499,7 +1518,7 @@
                 <div class="container">
                     <div class="services-intro-content">
                         <div class="section-kicker">Our services</div>
-                        <h2>Every athlete is unique —<span>mental preparation should be just as individual.</span></h2>
+                        <h2>Every athlete is unique — <span>mental preparation should be just as individual.</span></h2>
                         <p class="intro">Here, you can choose the form of support that best suits you, tailored to your
                             own situation and goals.</p>
                     </div>
@@ -1512,22 +1531,25 @@
                         <div class="services-grid">
                             <article class="service-card">
                                 <h3>Sports mental coaching</h3>
-                                <p>Personalised mental skills training for better focus and performance under pressure.
+                                <p>Tailored mental game coaching to strengthen focus, confidence and performance in
+                                    high-pressure situations.
                                 </p><a href="services.html#coaching">Find out more →</a>
                             </article>
                             <article class="service-card">
                                 <h3>Elite-athlete mentoring</h3>
-                                <p>First-hand guidance from Zoltán Stieber, a former Hungary international with 26 caps.
+                                <p>Practical insights and guidance from Zoltán Stieber, former professional footballer
+                                    and 26-time member of the Hungarian national team.
+
                                 </p><a href="services.html#mentoring">Find out more →</a>
                             </article>
                             <article class="service-card">
                                 <h3>Sports psychology</h3>
-                                <p>Professional support for deeper blocks, competition anxiety and emotional challenges.
+                                <p>Support for deeper blocks, competition anxiety and emotional challenges.
                                 </p><a href="services.html#psychology">Find out more →</a>
                             </article>
                             <article class="service-card">
-                                <h3>Parent guidance</h3>
-                                <p>Practical coaching to help you support your child with greater awareness.</p><a
+                                <h3>Parent consulting</h3>
+                                <p>Practical discussion in coaching mindset on how to support your child.</p><a
                                     href="services.html#parents">Find out more →</a>
                             </article>
                         </div>
@@ -1537,7 +1559,8 @@
                         <div class="services-grid team-grid">
                             <article class="service-card">
                                 <h3>Sports team coaching</h3>
-                                <p>Team coaching to build cohesion, communication, shared goals and mental readiness.
+                                <p>Coaching for full teams to build cohesion, share goals, strengthen communication and
+                                    mental readiness.
                                 </p><a href="services.html#team">Find out more →</a>
                             </article>
                         </div>
@@ -1568,7 +1591,7 @@
                                 the Bundesliga, MLS and UEFA Euro 2016, where he scored against Austria. He understands
                                 the mental demands of competing abroad, managing injuries and performing under pressure.
                                 He combines elite-sport experience with practical mentoring to help athletes take their
-                                next step through difficult spells and important decisions.</p>
+                                next step through difficult times and important decisions.</p>
                         </article>
                         <article class="founder-card">
                             <div class="founder-header">
@@ -1593,37 +1616,29 @@
         </div>
         <section class="section testimonials">
             <div class="container">
-                <div class="kicker">Real experiences</div>
-                <h2>Our clients said</h2>
+                <div class="kicker">People we've worked with</div>
+                <h2>What our clients say</h2>
                 <div class="grid testimonial-grid">
                     <article class="item testimonial">
                         <div class="stars">★★★★★</div>
                         <blockquote>“You helped us get to know one another better. This would certainly have taken
                             much longer without team coaching. It also helped us clarify our team rules: although they
-                            had existed informally, we agreed on them together.”<p><strong>Noémi</strong><br>Team
-                                captain, MTK Women's
-                                Handball
-                            </p>
-                        </blockquote>
+                            had existed informally, we agreed on them together.”</blockquote>
+                        <p><strong>Noémi</strong><span>Team captain, MTK Women's Handball</span></p>
                     </article>
                     <article class="item testimonial">
                         <div class="stars">★★★★★</div>
                         <blockquote>“Our work together also gave me a lot when planning my future. As a tennis coach,
-                            I know how to help others reach their goals, but this time I needed an outside perspective.”
-                            <p>
-                                <strong>Bence</strong><br>Tennis coach
-                            </p>
-                        </blockquote>
+                            I know how to help others reach their goals, but this time I needed an outside
+                            perspective.”</blockquote>
+                        <p><strong>Bence</strong><span>Tennis coach</span></p>
                     </article>
-                    <article class="item testimonial placeholder">
+                    <article class="item testimonial">
                         <div class="stars">★★★★★</div>
-                        <blockquote>More athlete and parent feedback will be added here soon.</blockquote>
-                        <p><strong>Coming soon</strong><br>New experience being shared</p>
-                    </article>
-                    <article class="item testimonial placeholder">
-                        <div class="stars">★★★★★</div>
-                        <blockquote>More feedback from athletes and coaches will be added here soon.</blockquote>
-                        <p><strong>Coming soon</strong><br>New experience being shared</p>
+                        <blockquote>“As a footballer, mental balance is important. From the very beginning, our work
+                            together gave me such emotional and mental calm that I was able to take my focus to an even
+                            higher level.”</blockquote>
+                        <p><strong>Bendegúz</strong><span>Pro footballer</span></p>
                     </article>
                 </div>
             </div>
@@ -1634,7 +1649,7 @@
                     <div class="kicker">Free consultation</div>
                     <h2>Let's start with a <span>conversation.</span></h2>
                     <ul class="contact-points">
-                        <li>A relaxed, 20-minute conversation</li>
+                        <li>A 20-minute conversation</li>
                         <li>A chance for us to understand your situation</li>
                         <li>Clarify what kind of support would help most</li>
                         <li>Agree on a possible next step together</li>
