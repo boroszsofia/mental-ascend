@@ -14,6 +14,7 @@
             --white: #f8f8f4;
             --muted: #b5bab8;
             --gold: #d9ad38;
+            --gold-dark: #9b7011;
             --gold-light: #f0d06b;
             --line: rgba(255, 255, 255, .15);
             --max: 1180px
@@ -361,8 +362,7 @@
                 object-position: center 30%
             }
 
-            .profiles-intro,
-            .network {
+            .profiles-intro {
                 padding: 62px 0
             }
 
@@ -571,6 +571,10 @@
             letter-spacing: -.045em
         }
 
+        .network h2 {
+            margin-bottom: 22px
+        }
+
         .role {
             margin-bottom: 30px;
             color: var(--gold-light);
@@ -621,7 +625,7 @@
 
         .network .kicker {
             margin-bottom: 14px;
-            color: var(--gold-dark);
+            color: var(--gold);
             font-size: 12px;
             font-weight: 800;
             letter-spacing: .2em;
@@ -635,7 +639,7 @@
             letter-spacing: -.045em
         }
 
-        .network p {
+        .network-intro {
             max-width: 850px;
             color: var(--grey-dark);
             font-size: 18px
@@ -648,7 +652,7 @@
 
         .expert-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
             margin-top: 42px
         }
@@ -656,7 +660,6 @@
         .expert-card {
             display: flex;
             flex-direction: column;
-            min-height: 450px;
             border: 1px solid #d5d7d4;
             border-top: 4px solid var(--gold);
             background: #fbfbf9
@@ -664,7 +667,7 @@
 
         .expert-photo {
             position: relative;
-            height: 205px;
+            height: clamp(220px, 30vw, 320px);
             overflow: hidden;
             background: linear-gradient(135deg, #d1d5d3, #9da7a7)
         }
@@ -703,6 +706,9 @@
         }
 
         .expert-content {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
             padding: 26px
         }
 
@@ -716,7 +722,32 @@
             margin-bottom: 17px;
             color: var(--gold-dark);
             font-size: 12px;
-            letter-spacing: .05em
+            font-weight: 800;
+            letter-spacing: .05em;
+            text-transform: uppercase
+        }
+
+        .expert-intro {
+            min-height: 10em;
+            margin-bottom: 20px
+        }
+
+        .expert-details {
+            margin-top: auto;
+            border-top: 1px solid #d5d7d4
+        }
+
+        .expert-details summary {
+            padding: 16px 0 0;
+            color: var(--gold-dark);
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer
+        }
+
+        .expert-details-content {
+            min-height: 8em;
+            padding-top: 16px
         }
 
         .expert-card p {
@@ -780,13 +811,17 @@
     <style>
         @media(max-width:850px) {
             .expert-grid {
-                grid-template-columns: repeat(2, 1fr)
+                grid-template-columns: 1fr
             }
         }
 
         @media(max-width:560px) {
+            .network {
+                padding: 70px 0
+            }
+
             .expert-grid {
-                grid-template-columns: 1fr
+                gap: 16px
             }
         }
     </style>
@@ -1034,39 +1069,53 @@
         <div class="section-divider" aria-hidden="true"></div>
         <section class="network">
             <div class="container">
-                <div class="kicker">Expert network</div>
-                <h2>Our colleagues and professional partners</h2>
-                <p>Mental Ascend believes in a holistic approach. To support the highest level of performance, alongside
-                    sports mental coaching we provide an integrated professional network, working with experienced
-                    fellow coaches and sports psychologists.</p>
+                <div class="kicker">One team, multiple perspectives</div>
+                <h2>Our professional team</h2>
+                <p class="network-intro">At Mental Ascend, we believe in a holistic approach and that performance
+                    development is most effective when tailored to the individual needs of each athlete. That is why
+                    we work with experienced professionals across several fields, from sports mental coaching to sports
+                    psychology, so every athlete receives the support they truly need.</p>
                 <div class="expert-grid">
                     <article class="expert-card">
                         <div class="expert-photo"><span>Photo placeholder</span></div>
                         <div class="expert-content">
-                            <h3>Példa Petra</h3>
-                            <div class="role">Business &amp; Team Coach · Sports mental coach</div>
-                            <p>Her specialisation is team dynamics, collaboration around shared values and creating a
-                                shared sense of focus. She supports organisations and sports teams in developing their
-                                effectiveness and reaching common goals.</p>
+                            <h3>Fejes Dóra</h3>
+                            <div class="role">Psychologist, sports psychologist</div>
+                            <div class="expert-intro">
+                                <p>Dóri is a qualified psychologist and sports psychologist who supports professional
+                                    and amateur athletes in developing their mental performance. Her work includes,
+                                    among other things, managing competitive situations, performance anxiety,
+                                    motivation, self-confidence, and mental adaptation to injuries.</p>
+                            </div>
+                            <details class="expert-details">
+                                <summary>Learn more about Dóri</summary>
+                                <div class="expert-details-content">
+                                    <p>Her key areas include managing performance anxiety and high-stakes situations,
+                                        developing motivation and self-confidence, preventing burnout, conflicts within
+                                        teams, and mental recovery following injuries or changes in physical condition.
+                                    </p>
+                                    <p>Her own sporting experience—including completing several half-marathons, a
+                                        marathon and a half-distance triathlon—gives her personal insight into the
+                                        mental challenges of performance, competition and injury. She combines a
+                                        sports-psychology approach with practical sporting experience.</p>
+                                    <p>Dóri also focuses on the relationship between running and psychology. She
+                                        developed her own method, FDRT® running therapy, which combines cognitive
+                                        therapy tools with mindful running.</p>
+                                </div>
+                            </details>
                         </div>
                     </article>
                     <article class="expert-card">
                         <div class="expert-photo"><span>Photo placeholder</span></div>
                         <div class="expert-content">
-                            <h3>Példa Péter</h3>
-                            <div class="role">Consulting sports psychologist</div>
-                            <p>A specialist working at the intersection of clinical and performance psychology. He
-                                supports clients with deeper anxieties and blocks, the mental side of injury
-                                rehabilitation, and navigating crisis situations.</p>
-                        </div>
-                    </article>
-                    <article class="expert-card">
-                        <div class="expert-photo"><span>Photo placeholder</span></div>
-                        <div class="expert-content">
-                            <h3>Példa Noémi</h3>
-                            <div class="role">Sports mental coach · Youth development specialist</div>
-                            <p>Her focus includes mental preparation for young athletes, balancing education with elite
-                                sport, supporting parents, and sharing experience in raising young athletes.</p>
+                            <h3>Péla Ágnes</h3>
+                            <div class="role">Sports Mental Coach · Team Coach · Psychologist</div>
+                            <div class="expert-intro" aria-label="Short introduction placeholder"></div>
+                            <details class="expert-details">
+                                <summary>Learn more about Ágnes</summary>
+                                <div class="expert-details-content" aria-label="Detailed introduction placeholder">
+                                </div>
+                            </details>
                         </div>
                     </article>
                 </div>
