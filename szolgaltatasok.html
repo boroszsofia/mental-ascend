@@ -1106,7 +1106,1447 @@
         justify-content: flex-start
       }
     }
+
+    /* Új szolgáltatásoldal: a meglévő Mental Ascend arculatához igazítva */
+    .services-intro {
+      padding: 26px 0;
+      background: #07090a;
+      border-bottom: 1px solid rgba(255, 255, 255, .12)
+    }
+
+    .services-intro-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px
+    }
+
+    .services-intro p {
+      margin: 0;
+      color: #d4d8d5;
+      max-width: 720px;
+      font-size: 16px
+    }
+
+    .quick-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 18px
+    }
+
+    .quick-links a {
+      font-size: 12px;
+      font-weight: 700;
+      border: 1px solid rgba(255, 255, 255, .25);
+      padding: 8px 12px;
+      color: #f8f8f4
+    }
+
+    .quick-links a:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #07090a
+    }
+
+    .programs {
+      background: var(--white);
+      color: var(--black-soft)
+    }
+
+    .programs .section-kicker {
+      color: var(--gold-dark)
+    }
+
+    .programs h2 {
+      max-width: 760px
+    }
+
+    .section-intro {
+      max-width: 790px;
+      color: var(--grey-dark);
+      font-size: 17px;
+      margin: 20px 0 0
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 42px;
+      align-items: stretch
+    }
+
+    .program-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border: 1px solid #d9ddda;
+      border-top: 4px solid var(--gold);
+      padding: 28px;
+      min-width: 0
+    }
+
+    .program-card.featured {
+      background: var(--black-soft);
+      border-color: var(--black-soft);
+      border-top-color: var(--gold-light);
+      color: var(--white)
+    }
+
+    .program-label {
+      font-size: 11px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: var(--gold-dark);
+      margin-bottom: 15px
+    }
+
+    .program-card.featured .program-label {
+      color: var(--gold-light)
+    }
+
+    .program-card h3 {
+      font-size: clamp(22px, 2.3vw, 29px);
+      line-height: 1.1;
+      letter-spacing: -.035em;
+      margin: 0 0 14px
+    }
+
+    .program-card .program-desc {
+      color: #596467;
+      font-size: 14px;
+      min-height: 68px;
+      margin: 0 0 18px
+    }
+
+    .program-card.featured .program-desc {
+      color: #c4cbc7
+    }
+
+    .program-facts {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px
+    }
+
+    .program-facts li {
+      position: relative;
+      padding: 9px 0 9px 20px;
+      border-top: 1px solid rgba(90, 101, 104, .18);
+      font-size: 13px;
+      line-height: 1.5
+    }
+
+    .program-facts li:before {
+      content: '+';
+      position: absolute;
+      left: 0;
+      color: var(--gold-dark);
+      font-weight: 900
+    }
+
+    .program-card.featured .program-facts li {
+      border-color: rgba(255, 255, 255, .14)
+    }
+
+    .program-card.featured .program-facts li:before {
+      color: var(--gold-light)
+    }
+
+    .program-price {
+      border-top: 1px solid rgba(90, 101, 104, .2);
+      padding-top: 20px;
+      margin-top: auto
+    }
+
+    .program-card.featured .program-price {
+      border-color: rgba(255, 255, 255, .2)
+    }
+
+    .program-price strong {
+      display: block;
+      font-size: clamp(26px, 2.7vw, 34px);
+      line-height: 1.15;
+      letter-spacing: -.04em
+    }
+
+    .program-price .per-session {
+      display: block;
+      font-size: 13px;
+      color: #5a6568;
+      margin-top: 6px
+    }
+
+    .program-price .discount {
+      display: block;
+      font-size: 12px;
+      color: #72530c;
+      font-weight: 700;
+      margin-top: 6px
+    }
+
+    .program-card.featured .program-price .per-session {
+      color: #c4cbc7
+    }
+
+    .program-card.featured .program-price .discount {
+      color: var(--gold-light)
+    }
+
+    .program-card .button {
+      display: block;
+      text-align: center;
+      margin-top: 20px
+    }
+
+    .program-footnote {
+      font-size: 12px;
+      color: #5a6568;
+      margin-top: 22px
+    }
+
+    .individuals {
+      background: var(--black-soft);
+      color: var(--white)
+    }
+
+    .individuals .section-kicker {
+      color: var(--gold)
+    }
+
+    .individuals .section-intro {
+      color: #c0c6c3
+    }
+
+    .individual-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 38px
+    }
+
+    .individual-card {
+      padding: 26px;
+      border: 1px solid rgba(255, 255, 255, .16);
+      background: rgba(255, 255, 255, .025)
+    }
+
+    .individual-card h3 {
+      font-size: 23px;
+      line-height: 1.2;
+      margin: 0 0 10px
+    }
+
+    .individual-card p {
+      color: #c0c6c3;
+      margin: 0 0 18px;
+      font-size: 15px
+    }
+
+    .individual-card .price {
+      font-weight: 800;
+      color: var(--gold-light);
+      font-size: 19px
+    }
+
+    .individual-card .note {
+      display: block;
+      font-size: 12px;
+      color: #b5bab8;
+      margin-top: 4px
+    }
+
+    .team-feature {
+      background: var(--gold);
+      color: #080a0b
+    }
+
+    .team-layout-new {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 42px;
+      align-items: center
+    }
+
+    .team-feature .section-kicker {
+      color: #4b390b
+    }
+
+    .team-feature h2 {
+      max-width: 700px
+    }
+
+    .team-feature p {
+      font-size: 17px;
+      color: #3d351d;
+      max-width: 720px
+    }
+
+    .team-list {
+      border-left: 1px solid rgba(7, 9, 10, .25);
+      padding-left: 25px
+    }
+
+    .team-list div {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(7, 9, 10, .18);
+      font-weight: 700
+    }
+
+    .partner-service {
+      background: var(--white);
+      color: var(--black-soft);
+      padding: 54px 0
+    }
+
+    .partner-layout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px
+    }
+
+    .partner-service .section-kicker {
+      color: var(--gold-dark)
+    }
+
+    .partner-service h2 {
+      font-size: clamp(28px, 3.5vw, 42px);
+      margin: 0 0 10px
+    }
+
+    .partner-service p {
+      max-width: 800px;
+      color: var(--grey-dark);
+      margin: 0
+    }
+
+    @media(max-width:950px) {
+      .program-grid {
+        grid-template-columns: 1fr
+      }
+
+      .program-card .program-desc {
+        min-height: 0
+      }
+
+      .team-layout-new {
+        grid-template-columns: 1fr
+      }
+
+      .team-list {
+        border-left: 0;
+        border-top: 1px solid rgba(7, 9, 10, .25);
+        padding: 12px 0 0
+      }
+    }
+
+    @media(max-width:680px) {
+      .individual-grid {
+        grid-template-columns: 1fr
+      }
+
+      .services-intro-inner,
+      .partner-layout {
+        display: block
+      }
+
+      .quick-links {
+        margin-top: 20px
+      }
+
+      .partner-service .button {
+        margin-top: 20px
+      }
+
+      .program-card {
+        padding: 23px
+      }
+    }
+
+
+    /* V3 – vizuális hierarchia a Rólunk oldal sárga misszió-kártyája alapján */
+    .programs {
+      background: var(--black);
+      color: var(--white);
+      padding: 72px 0
+    }
+
+    .programs .section-kicker {
+      color: var(--gold-light)
+    }
+
+    .programs h2 {
+      color: var(--white)
+    }
+
+    .programs .section-intro {
+      color: #c0c6c3;
+      max-width: 900px
+    }
+
+    .program-grid {
+      gap: 22px;
+      align-items: stretch
+    }
+
+    .program-card,
+    .program-card.featured {
+      background: var(--gold);
+      color: #080a0b;
+      border: 1px solid #c79a26;
+      border-top: 4px solid var(--gold-light);
+      border-radius: 3px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, .18)
+    }
+
+    .program-card .program-label,
+    .program-card.featured .program-label {
+      color: #4b390b
+    }
+
+    .program-card h3,
+    .program-card.featured h3 {
+      color: #080a0b
+    }
+
+    .program-card .program-desc,
+    .program-card.featured .program-desc {
+      color: #332b17
+    }
+
+    .program-card .card-detail {
+      color: #171713
+    }
+
+    .program-card .program-facts li,
+    .program-card.featured .program-facts li {
+      border-color: rgba(7, 9, 10, .2);
+      color: #171713
+    }
+
+    .program-card .program-facts li:before,
+    .program-card.featured .program-facts li:before {
+      color: #4b390b
+    }
+
+    .program-card .program-price,
+    .program-card.featured .program-price {
+      border-color: rgba(7, 9, 10, .24)
+    }
+
+    .program-card .program-price .per-session,
+    .program-card.featured .program-price .per-session {
+      color: #443a22
+    }
+
+    .program-card .program-price .discount,
+    .program-card.featured .program-price .discount {
+      color: #4b390b
+    }
+
+    .program-card .button {
+      background: #07090a;
+      color: #f8f8f4;
+      border-color: #07090a
+    }
+
+    .program-card .button:hover {
+      background: #20282c
+    }
+
+    .program-footnote {
+      color: #b5bab8
+    }
+
+    /* Egyéni alkalmak: sötét grafit felület finom, absztrakt vonalmintával */
+    .individuals {
+      background: #202629;
+      color: var(--white);
+      padding: 70px 0
+    }
+
+    .individuals .section-kicker {
+      color: var(--gold-light)
+    }
+
+    .individuals h2 {
+      color: var(--white)
+    }
+
+    .individuals .section-intro {
+      color: #c0c6c3;
+      max-width: 850px
+    }
+
+    .individual-grid {
+      gap: 18px
+    }
+
+    .individual-card {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      background-color: #171d20;
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 3px;
+      background-image: repeating-linear-gradient(132deg, transparent 0, transparent 42px, rgba(255, 255, 255, .025) 43px, transparent 45px), repeating-linear-gradient(42deg, transparent 0, transparent 67px, rgba(217, 173, 56, .035) 68px, transparent 70px)
+    }
+
+    .individual-card h3 {
+      color: var(--white)
+    }
+
+    .individual-card p,
+    .individual-card .service-points {
+      color: #c0c6c3
+    }
+
+    .individual-card .service-points li::marker {
+      color: var(--gold-light)
+    }
+
+    .individual-card .price {
+      color: var(--gold-light);
+      margin-top: auto;
+      padding-top: 12px
+    }
+
+    .individual-card .note {
+      color: #b5bab8
+    }
+
+    /* Team és sportpszichológia: világos, letisztult záró szekciók */
+    .team-feature {
+      background: var(--white);
+      color: var(--black-soft);
+      padding: 60px 0;
+      border-top: 1px solid #e1e4e2
+    }
+
+    .team-feature .section-kicker {
+      color: var(--gold-dark)
+    }
+
+    .team-feature h2 {
+      color: var(--black-soft)
+    }
+
+    .team-feature p {
+      color: var(--grey-dark)
+    }
+
+    .team-list {
+      border-left: 1px solid rgba(7, 9, 10, .2)
+    }
+
+    .team-list div {
+      border-bottom: 1px solid rgba(7, 9, 10, .12);
+      color: var(--black-soft)
+    }
+
+    .team-feature .button {
+      background: var(--black);
+      color: var(--white);
+      border-color: var(--black)
+    }
+
+    .partner-service {
+      background: #eef0ec;
+      color: var(--black-soft);
+      border-top: 1px solid #dce0dc;
+      padding: 54px 0
+    }
+
+    .partner-service .section-kicker {
+      color: var(--gold-dark)
+    }
+
+    .partner-service h2 {
+      color: var(--black-soft)
+    }
+
+    .partner-service p {
+      color: var(--grey-dark)
+    }
+
+    .partner-service .button {
+      background: var(--black);
+      color: var(--white);
+      border-color: var(--black)
+    }
+
+    @media(max-width:950px) {
+      .programs {
+        padding: 54px 0
+      }
+
+      .individuals {
+        padding: 54px 0
+      }
+
+      .team-feature .team-list {
+        border-top: 1px solid rgba(7, 9, 10, .2)
+      }
+    }
+
+
+    /* A három programkártya fő tartalmi sorai igazodjanak egymáshoz. */
+    .program-card .program-label {
+      min-height: 2.8em;
+    }
+
+    .program-card h3 {
+      min-height: 2.2em;
+    }
+
+    .program-card .program-desc {
+      min-height: 84px;
+    }
+
+    @media (max-width: 950px) {
+
+      .program-card .program-label,
+      .program-card h3,
+      .program-card .program-desc {
+        min-height: 0;
+      }
+    }
+
+    /* V17 – a programkártyák CTA-gombjai is sárgák */
+    .program-card .button,
+    .program-card.featured .button {
+      background: var(--gold) !important;
+      color: #080a0b !important;
+      border-color: var(--gold) !important;
+    }
+
+    .program-card .button:hover,
+    .program-card.featured .button:hover {
+      background: var(--gold-light) !important;
+      border-color: var(--gold-light) !important;
+      color: #080a0b !important;
+    }
   </style>
+
+  <style id="revision-overrides">
+    .program-card.featured {
+      background: #fff;
+      border-color: #d9ddda;
+      border-top-color: var(--gold);
+      color: var(--black-soft)
+    }
+
+    .program-card.featured .program-label {
+      color: var(--gold-dark)
+    }
+
+    .program-card.featured .program-desc {
+      color: #596467
+    }
+
+    .program-card.featured .program-facts li {
+      border-color: #e1e4e2
+    }
+
+    .program-card.featured .program-facts li:before {
+      color: var(--gold-dark)
+    }
+
+    .program-card.featured .program-price {
+      border-color: #e1e4e2
+    }
+
+    .program-card.featured .program-price .per-session {
+      color: #596467
+    }
+
+    .program-card.featured .program-price .discount {
+      color: var(--gold-dark)
+    }
+
+    .card-detail {
+      font-size: 13px;
+      font-weight: 700;
+      margin: 0 0 8px;
+      color: var(--black-soft)
+    }
+
+    .program-facts {
+      margin-top: 0
+    }
+
+    .individual-card {
+      display: flex;
+      flex-direction: column
+    }
+
+    .service-points {
+      margin: 0 0 20px;
+      padding-left: 18px;
+      color: #c0c6c3;
+      font-size: 14px;
+      line-height: 1.55
+    }
+
+    .service-points li {
+      padding: 3px 0
+    }
+
+    .individual-card .price {
+      margin-top: auto;
+      padding-top: 12px
+    }
+
+    .team-feature {
+      background: var(--black-soft);
+      color: var(--white);
+      padding: 64px 0;
+      border-top: 1px solid rgba(255, 255, 255, .12)
+    }
+
+    .team-feature .section-kicker {
+      color: var(--gold-light)
+    }
+
+    .team-feature p {
+      color: #c0c6c3
+    }
+
+    .team-list {
+      border-left: 1px solid rgba(255, 255, 255, .2)
+    }
+
+    .team-list div {
+      border-bottom: 1px solid rgba(255, 255, 255, .14);
+      color: #f2f3f1
+    }
+
+    .partner-service {
+      background: #111617;
+      color: var(--white);
+      border-top: 1px solid rgba(255, 255, 255, .12)
+    }
+
+    .partner-service .section-kicker {
+      color: var(--gold-light)
+    }
+
+    .partner-service p {
+      color: #c0c6c3
+    }
+
+    .partner-layout .button {
+      white-space: nowrap
+    }
+
+    @media(max-width:680px) {
+      .team-feature {
+        padding: 42px 0
+      }
+
+      .partner-layout .button {
+        white-space: normal
+      }
+    }
+
+    /* Frissített vizuális hierarchia: a 10 alkalmas programok a fő ajánlatok */
+    .programs {
+      background: #f8f8f4;
+      color: #07090a;
+      padding: 68px 0
+    }
+
+    .programs .section-intro {
+      color: #3f494c
+    }
+
+    .program-card,
+    .program-card.featured {
+      background: var(--gold);
+      border: 1px solid #c79a26;
+      border-top: 4px solid #f0d06b;
+      color: #080a0b
+    }
+
+    .program-card .program-label,
+    .program-card.featured .program-label {
+      color: #4b390b
+    }
+
+    .program-card .program-desc,
+    .program-card.featured .program-desc {
+      color: #332b17
+    }
+
+    .program-card .program-facts li,
+    .program-card.featured .program-facts li {
+      border-color: rgba(7, 9, 10, .18)
+    }
+
+    .program-card .program-facts li:before,
+    .program-card.featured .program-facts li:before {
+      color: #4b390b
+    }
+
+    .program-card .program-price,
+    .program-card.featured .program-price {
+      border-color: rgba(7, 9, 10, .2)
+    }
+
+    .program-card .program-price .per-session,
+    .program-card.featured .program-price .per-session {
+      color: #443a22
+    }
+
+    .program-card .program-price .discount,
+    .program-card.featured .program-price .discount {
+      color: #4b390b
+    }
+
+    .program-card .button {
+      background: #07090a;
+      color: #f8f8f4;
+      border-color: #07090a
+    }
+
+    .program-footnote {
+      color: #4c5557
+    }
+
+    .age-label {
+      display: inline-block;
+      margin: -4px 0 14px;
+      padding: 4px 9px;
+      border: 1px solid rgba(7, 9, 10, .35);
+      border-radius: 2px;
+      font-size: 12px;
+      font-weight: 800;
+      color: #33280d
+    }
+
+    .individuals {
+      background: #f8f8f4;
+      color: #07090a;
+      border-top: 1px solid #e1e4e2
+    }
+
+    .individuals .section-kicker {
+      color: #9b7011
+    }
+
+    .individuals .section-intro {
+      color: #596467
+    }
+
+    .individual-card {
+      background: #fff;
+      color: #07090a;
+      border: 1px solid #d9ddda
+    }
+
+    .individual-card p,
+    .service-points {
+      color: #596467
+    }
+
+    .individual-card .price {
+      color: #72530c
+    }
+
+    .individual-card .note {
+      color: #596467
+    }
+
+    .team-feature {
+      background: #07090a;
+      color: #f8f8f4
+    }
+
+    .partner-service {
+      background: #101517;
+      color: #f8f8f4
+    }
+  </style>
+  <style id="requested-color-hierarchy-v4">
+    /* Fő ajánlatok: teljes szélességű sárga háttér, rajta különálló fehér kártyák */
+    .programs {
+      background: #d9ad38 !important;
+      color: #080a0b !important;
+      padding: 68px 0
+    }
+
+    .programs .section-kicker {
+      color: #4b390b !important
+    }
+
+    .programs h2,
+    .programs .section-intro {
+      color: #28271f !important
+    }
+
+    .program-card,
+    .program-card.featured {
+      background: #fff !important;
+      color: #171b1b !important;
+      border: 1px solid #e0e2df !important;
+      border-top: 4px solid #f0d06b !important;
+      border-radius: 3px;
+      box-shadow: 0 10px 26px rgba(49, 38, 8, .12)
+    }
+
+    .program-card h3,
+    .program-card.featured h3 {
+      color: #080a0b !important
+    }
+
+    .program-card .program-label,
+    .program-card.featured .program-label {
+      color: #8a6810 !important
+    }
+
+    .program-card .program-desc,
+    .program-card.featured .program-desc {
+      color: #596467 !important
+    }
+
+    .program-card .program-facts li,
+    .program-card.featured .program-facts li {
+      color: #282d2e !important;
+      border-color: #e1e4e2 !important
+    }
+
+    .program-card .program-facts li:before,
+    .program-card.featured .program-facts li:before {
+      color: #9b7011 !important
+    }
+
+    .program-card .program-price,
+    .program-card.featured .program-price {
+      border-color: #e1e4e2 !important
+    }
+
+    .program-card .program-price .per-session,
+    .program-card.featured .program-price .per-session {
+      color: #596467 !important
+    }
+
+    .program-card .program-price .discount,
+    .program-card.featured .program-price .discount {
+      color: #72530c !important
+    }
+
+    .program-card .button {
+      background: #07090a !important;
+      color: #f8f8f4 !important;
+      border-color: #07090a !important
+    }
+
+    .program-footnote {
+      color: #4b390b !important
+    }
+
+    .age-label {
+      background: #f8f8f4;
+      color: #33280d;
+      border-color: #ded4b5
+    }
+
+    /* Négy egyéni szolgáltatás: világos szürkés szekció és szürkés kártyák */
+    .individuals {
+      background: #e9ece8 !important;
+      color: #111617 !important;
+      border-top: 1px solid #d9ddda;
+      padding: 68px 0
+    }
+
+    .individuals .section-kicker {
+      color: #8a6810 !important
+    }
+
+    .individuals h2 {
+      color: #111617 !important
+    }
+
+    .individuals .section-intro {
+      color: #596467 !important
+    }
+
+    .individual-card {
+      background: #f6f7f4 !important;
+      color: #111617 !important;
+      border: 1px solid #d5dad6 !important;
+      border-radius: 3px
+    }
+
+    .individual-card h3 {
+      color: #111617 !important
+    }
+
+    .individual-card p,
+    .individual-card .service-points {
+      color: #596467 !important
+    }
+
+    .individual-card .service-points li::marker {
+      color: #9b7011 !important
+    }
+
+    .individual-card .price {
+      color: #72530c !important
+    }
+
+    .individual-card .note {
+      color: #596467 !important
+    }
+
+    /* Záró szolgáltatások: letisztult, fehér és törtfehér felületek */
+    .team-feature {
+      background: #fff !important;
+      color: #111617 !important;
+      border-top: 1px solid #e1e4e2 !important;
+      padding: 60px 0
+    }
+
+    .team-feature .section-kicker {
+      color: #8a6810 !important
+    }
+
+    .team-feature h2 {
+      color: #111617 !important
+    }
+
+    .team-feature p {
+      color: #596467 !important
+    }
+
+    .team-list {
+      border-left: 1px solid #d9ddda !important
+    }
+
+    .team-list div {
+      border-bottom: 1px solid #e1e4e2 !important;
+      color: #111617 !important
+    }
+
+    .team-feature .button,
+    .partner-service .button {
+      background: #07090a !important;
+      color: #f8f8f4 !important;
+      border-color: #07090a !important
+    }
+
+    .partner-service {
+      background: #f6f7f4 !important;
+      color: #111617 !important;
+      border-top: 1px solid #e1e4e2 !important;
+      padding: 54px 0
+    }
+
+    .partner-service .section-kicker {
+      color: #8a6810 !important
+    }
+
+    .partner-service h2 {
+      color: #111617 !important
+    }
+
+    .partner-service p {
+      color: #596467 !important
+    }
+
+    @media(max-width:950px) {
+      .programs {
+        padding: 54px 0
+      }
+
+      .individuals {
+        padding: 54px 0
+      }
+
+      .team-feature .team-list {
+        border-top: 1px solid #d9ddda !important
+      }
+    }
+  </style>
+
+  <style id="individual-section-package-background-v6">
+    /* Az egyéni szolgáltatások mögött a csomagok sötét, grafikus hátteréhez illeszkedő felület */
+    .individuals {
+      position: relative !important;
+      isolation: isolate;
+      overflow: hidden;
+      background: #20282b !important;
+      color: #f8f8f4 !important;
+      border-top: 1px solid rgba(217, 173, 56, .22) !important;
+    }
+
+    .individuals::before {
+      display: none;
+    }
+
+    .individuals::after {
+      display: none;
+    }
+
+    .individuals .section-kicker {
+      color: #e3bd55 !important
+    }
+
+    .individuals h2 {
+      color: #fff !important
+    }
+
+    .individuals .section-intro {
+      color: #d0d5d3 !important
+    }
+
+    .individual-card {
+      background: #f6f7f4 !important;
+      color: #111617 !important;
+      border: 1px solid rgba(255, 255, 255, .7) !important;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .2) !important
+    }
+
+    .individual-card h3 {
+      color: #111617 !important
+    }
+
+    .individual-card p,
+    .individual-card .service-points {
+      color: #596467 !important
+    }
+
+    .individual-card .service-points li::marker {
+      color: #9b7011 !important
+    }
+
+    .individual-card .price {
+      color: #72530c !important
+    }
+
+    .individual-card .note {
+      color: #596467 !important
+    }
+  </style>
+
+
+  <style id="cta-and-team-refresh">
+    /* Egységes, sárga CTA-k a programoknál és az egyéni alkalmaknál */
+    .program-card h3,
+    .program-card.featured h3 {
+      color: #9b7011 !important;
+    }
+
+    .program-card .program-label,
+    .program-card.featured .program-label {
+      color: #596467 !important;
+      font-weight: 600;
+    }
+
+    .individual-card h3 {
+      color: #9b7011 !important;
+    }
+
+    .program-card .program-price strong {
+      color: #72530c !important;
+    }
+
+    .program-card .button,
+    .individual-card .button,
+    .team-feature .button {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      padding: 13px 18px;
+      background: #e4b82e;
+      color: #101312;
+      border: 1px solid #e4b82e;
+      border-radius: 3px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    .program-card .button,
+    .program-card.featured .button {
+      background: #e4b82e !important;
+      color: #101312 !important;
+      border-color: #e4b82e !important;
+    }
+
+    .program-card .button:hover,
+    .individual-card .button:hover,
+    .team-feature .button:hover {
+      background: #f0ca4c;
+      border-color: #f0ca4c;
+      transform: translateY(-1px);
+    }
+
+    .program-card .button:hover,
+    .program-card.featured .button:hover {
+      background: #f0ca4c !important;
+      border-color: #f0ca4c !important;
+    }
+
+    .individual-card .button {
+      margin-top: 18px;
+    }
+
+    .team-feature .button {
+      background: #e4b82e !important;
+      color: #101312 !important;
+      border-color: #e4b82e !important;
+    }
+
+    .team-list div {
+      color: #72530c !important;
+    }
+
+    .team-feature .button:hover {
+      background: #f0ca4c !important;
+      border-color: #f0ca4c !important;
+    }
+
+    /* Modernebb, világos és friss csapatfejlesztési szekció */
+    .team-feature {
+      position: relative;
+      overflow: hidden;
+      padding: 76px 0;
+      background: linear-gradient(120deg, #f4f4ed 0%, #e8eee7 100%);
+      border-top: 1px solid #dce3d9;
+      border-bottom: 1px solid #dce3d9;
+    }
+
+    .team-feature:before {
+      display: none;
+    }
+
+    .team-feature::after {
+      display: none;
+    }
+
+    .team-layout-new {
+      position: relative;
+      gap: clamp(28px, 5vw, 64px);
+    }
+
+    .team-feature .section-kicker {
+      color: #596467 !important;
+      font-weight: 800;
+      letter-spacing: .13em;
+    }
+
+    .team-feature h2 {
+      color: #9b7011 !important;
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.06;
+      letter-spacing: -.04em;
+    }
+
+    .partner-service h2 {
+      color: #9b7011 !important;
+    }
+
+    .team-feature p {
+      max-width: 650px;
+      font-size: 16px;
+      line-height: 1.75;
+      color: #48534d;
+    }
+
+    .team-list,
+    .team-feature .team-list {
+      border: 0 !important;
+      padding: 8px 0 !important;
+    }
+
+    .team-list div {
+      position: relative;
+      margin: 0;
+      padding: 9px 0 9px 24px;
+      border: 0 !important;
+      border-radius: 0;
+      background: transparent !important;
+      color: #72530c !important;
+      box-shadow: none !important
+    }
+
+    .team-list div::before {
+      content: "+";
+      position: absolute;
+      left: 0;
+      color: #9b7011;
+      font-weight: 900
+    }
+
+    .team-list div:last-child {
+      margin-bottom: 0;
+    }
+
+    .team-feature .button {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 14px 24px;
+    }
+
+    @media(max-width:950px) {
+      .team-feature {
+        padding: 56px 0
+      }
+
+      .team-list,
+      .team-feature .team-list {
+        border: 0 !important;
+        padding: 14px 0 !important
+      }
+
+      .team-list div {
+        padding: 9px 0 9px 24px
+      }
+    }
+
+    .service-contact {
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+      background: linear-gradient(128deg, #273238, #111719 72%)
+    }
+
+    .service-contact .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .service-contact-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 68px;
+      align-items: start
+    }
+
+    .service-contact .section-kicker {
+      color: var(--gold-light);
+    }
+
+    .service-contact-copy h2 {
+      color: var(--white);
+    }
+
+    .service-contact-copy h2 span {
+      color: var(--gold-light);
+    }
+
+    .service-contact-copy p {
+      color: var(--grey);
+      font-size: 18px;
+    }
+
+    .service-contact-points {
+      margin: 30px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .service-contact-points li {
+      position: relative;
+      margin: 11px 0;
+      padding-left: 25px;
+      color: #dfe3df
+    }
+
+    .service-contact-points li::before {
+      content: "+";
+      position: absolute;
+      left: 0;
+      color: var(--gold-light);
+      font-weight: 900
+    }
+
+    .service-contact-form {
+      padding: 32px;
+      border: 1px solid rgba(255, 255, 255, .17);
+      border-top: 4px solid var(--gold);
+      background: rgba(6, 11, 13, .35);
+      scroll-margin-top: 112px
+    }
+
+    .service-contact-form form {
+      display: grid;
+      gap: 16px;
+    }
+
+    .service-contact-form label {
+      display: grid;
+      gap: 7px;
+      color: #e6e9e6;
+      font-size: 13px;
+      font-weight: 700
+    }
+
+    .service-contact-form input:not([type="checkbox"]),
+    .service-contact-form select,
+    .service-contact-form textarea {
+      width: 100%;
+      padding: 14px;
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, .24);
+      border-radius: 0;
+      background: #20282c;
+      font: inherit
+    }
+
+    .service-contact-form input:focus,
+    .service-contact-form select:focus,
+    .service-contact-form textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+      background: #202c31
+    }
+
+    .service-contact-form textarea {
+      min-height: 125px;
+      resize: vertical;
+    }
+
+    .service-contact-form .check {
+      display: flex;
+      align-items: start;
+      gap: 10px;
+      color: var(--grey);
+      font-size: 13px;
+      font-weight: 400
+    }
+
+    .service-contact-form .check input {
+      width: auto;
+      margin-top: 4px;
+    }
+
+    .service-contact-form .button {
+      margin-top: 4px;
+    }
+
+    @media(max-width:850px) {
+      .service-contact-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+    }
+
+    @media(max-width:560px) {
+      .service-contact-form {
+        padding: 22px;
+      }
+    }
+  </style>
+
 </head>
 
 <body>
@@ -1117,7 +2557,7 @@
           href="#top">Szolgáltatások</a><a href="rolunk.html">Rólunk</a><a href="kapcsolat.html">Kapcsolat</a><a
           class="language-switch" href="eng/services.html" aria-label="Switch to English" title="English"><img
             src="pics/brit%20z%C3%A1szl%C3%B3.png" alt="British flag"></a><a class="nav-cta"
-          href="index.html#contact-form">Ingyenes konzultáció</a></nav><button class="menu-button" type="button"
+          href="#service-contact-form">Ingyenes konzultáció</a></nav><button class="menu-button" type="button"
         aria-label="Menü megnyitása" aria-expanded="false"><span class="menu-icon"></span></button>
     </div>
   </header>
@@ -1125,184 +2565,199 @@
     <section class="page-hero">
       <div class="container">
         <div class="eyebrow">Szolgáltatások</div>
-        <h1>Találd meg a hozzád illő <span>támogatást.</span></h1>
-        <p class="hero-copy">A mentális felkészülés nem egyforma minden sportolónál. Egyéni coaching, sportpszichológia,
-          élsportolói mentoring, szülői támogatás és csapatfejlesztés – a te helyzetedhez igazítva.</p>
+        <h1>Találd meg a hozzád illő<br /><span>mentális támogatást!</span></h1>
       </div>
     </section>
-    <section class="service-picker" aria-label="Szolgáltatások gyorsmenü">
+    <section class="programs" id="programok">
       <div class="container">
-        <nav class="decision-tree-services" aria-label="Szolgáltatások listája">
-          <a href="#coaching">Sport mental coaching</a>
-          <a href="#mentoring">Élsportolói mentoring</a>
-          <a href="#pszichologia">Sportpszichológia</a>
-          <a href="#szulok">Szülői tanácsadás</a>
-          <a href="#team">Sport team coaching</a>
-        </nav>
-      </div>
-    </section>
-    <section class="service-row coaching-highlight" id="coaching">
-      <div class="container service-layout">
-        <aside class="service-meta"><span class="service-number">01 / EGYÉNI TÁMOGATÁS</span>
-          <h2>Sport mental coaching</h2>
-        </aside>
-        <article class="service-content">
-          <p class="lead"><strong>Személyre szabott mentális fejlesztés a jobb fókuszért és a
-              teljesítménynövelésért.</strong></p>
-          <p>Nem kész sablonokat adunk: saját élményekből és helyzetekből építkezünk. Gyakorlati eszközökkel segítünk,
-            hogy a legélesebb meccshelyzetekben is urald a nyomást.</p>
-          <div class="feature-list">
-            <div class="feature">Verseny előtti feszültség kezelése</div>
-            <div class="feature">Fókusz és figyelem tudatos irányítása</div>
-            <div class="feature">Önbizalom és belső stabilitás építése</div>
-            <div class="feature">Hibák és kudarcok tudatos feldolgozása</div>
-          </div>
-          <div class="service-actions"><span class="service-price"><span>Ár – konzultáción megbeszélés szerint</span></span><a class="button"
-              href="index.html#contact">Kérek ingyenes konzultációt</a></div>
-        </article>
-      </div>
-    </section>
-    <section class="service-row alt" id="mentoring">
-      <div class="container service-layout">
-        <aside class="service-meta"><span class="service-number">02 / EGYÉNI TÁMOGATÁS</span>
-          <h2>Élsportolói mentoring</h2>
-        </aside>
-        <article class="service-content">
-          <p class="lead"><strong>Konkrét tapasztalatátadás, útmutatás és profi szemléletmód Stieber Zoltán 26-szoros
-              válogatott
-              labdarúgótól.</p>
-          <p>Az élsportban szerzett tapasztalat találkozik a te jeleneddel. Zoli őszinte visszajelzésekkel,
-            gyakorlati útmutatással és saját élményeivel segít. </p>
-          <div class="feature-list">
-            <div class="feature">Szintlépés és a tudatos karrierépítés</div>
-            <div class="feature">Klubváltás és beilleszkedés külföldön</div>
-            <div class="feature">Nehéz időszakok, sérülések, kispad</div>
-            <div class="feature">Döntési helyzetek és nyomáskezelés</div>
-          </div>
-          <div class="service-actions"><span class="service-price"><span>Ár – konzultáción megbeszélés szerint</span></span><a class="button" href="index.html#contact">Kérek ingyenes
-              konzultációt</a></div>
-        </article>
-      </div>
-    </section>
-    <section class="package" id="csomag">
-      <div class="container">
-        <div class="package-head">
-          <div class="section-kicker">Csomagajánlat</div>
-          <h2>Ascend Performance csomag</h2>
-          <p>Hosszabb távú, strukturált támogatás a mentális fejlődés és az élsportolói tapasztalat ötvözésével.</p>
-        </div>
-        <div class="package-card">
-          <div>
-            <h3>8 Coaching + 2 Mentoring</h3>
-            <p>A rendszeres mentális fejlesztést és a profi sportból hozott, valós mentori tapasztalat egy csomagban.
-            </p>
-            <ul class="package-items">
-              <li>8 alkalom személyre szabott mentálcoaching</li>
-              <li>2 alkalom élsportolói mentoring Stieber Zoltánna</li>
-              <li>Komplex mentális felkészítés a csúcsteljesítményért</li>
-              <li>Összesen 10 egyéni, online konzultációs alkalom</li>
+        <div class="section-kicker">Hosszú távú együttműködés</div>
+        <h2>Performance programjaink</h2>
+        <p class="section-intro">Tízalkalmas programjainkat úgy alakítottuk ki, hogy a sportoló a szakemberink
+          támogatásával, több hónapon keresztül dolgozhasson mentális fejlődésén. A közös munka során
+          meghatározzuk a célokat, gyakoroljuk a sportban alkalmazható mentális eszközöket, és nyomon követjük a
+          fejlődést. Mindez segíti a sportolót abban, hogy tudatosabban készüljön, és fokozatosan beépítse a tanultakat
+          a mindennapjaiba.</p>
+        <div class="program-grid">
+          <article class="program-card">
+            <div class="program-label">10 alkalom sport mentál coaching</div>
+            <h3>Mental Ascend<br />Performance</h3>
+            <p class="program-desc">Személyre szabott mentális felkészítés sportolóknak, hogy magabiztosabban kezeljék a
+              kihívásokat, és kihozzák magukból a legtöbbet.</p>
+            <p class="card-detail">A közös munka többek között ezekben támogathat:</p>
+            <ul class="program-facts">
+              <li>Verseny előtti feszültség és nyomás kezelése</li>
+              <li>Fókusz és figyelem tudatos irányítása</li>
+              <li>Önbizalom és belső stabilitás építése</li>
+              <li>Hibák, kudarcok és nehéz meccshelyzetek feldolgozása</li>
+              <li>Személyre szabott mentális eszközök gyakorlása</li>
             </ul>
-          </div>
-          <div class="package-price">
-            <div class="consultation-price">Ár – konzultáción megbeszélés szerint</div>
-            <a class="button" href="index.html#contact">Érdekel a
-              csomag</a>
-          </div>
+            <div class="program-price"><strong>180 000 Ft</strong><span class="per-session">10 alkalom × 50 perc /
+                alkalom</span></div><a class="button" href="#service-contact-form">Érdekel a program</a>
+          </article>
+          <article class="program-card">
+            <div class="program-label">8 coaching + 2 élsportolói mentoring</div>
+            <h3>Mental Ascend<br />Pro Performance</h3>
+            <p class="program-desc">Komplex támogatás élsportolóknak és versenysportolóknak, coachinggal és mentoringgal
+              egy folyamatban.</p>
+            <p class="card-detail">A program tartalma:</p>
+            <ul class="program-facts">
+              <li>8 személyre szabott sport mentál coaching alkalom</li>
+              <li>2 élsportolói mentoring Stieber Zoltánnal, 26-szoros válogatott labdarúgóval</li>
+              <li>Fókusz, önbizalom és nyomáskezelés fejlesztése</li>
+              <li>Karrierépítés, klubváltás vagy nehezebb sportolói időszakok átbeszélése</li>
+              <li>Coaching és valódi sportolói tapasztalat egy folyamatban</li>
+            </ul>
+            <div class="program-price"><strong>198 000 Ft</strong><span class="per-session">10 alkalom × 50 perc /
+                alkalom</span></div><a class="button" href="#service-contact-form">Érdekel a program</a>
+          </article>
+          <article class="program-card">
+            <div class="program-label">10 alkalom sport mentál coaching</div>
+            <h3>Mental Ascend<br />Performance Junior</h3>
+            <p class="program-desc">Mentális támogatás 14 év alatti sportolóknak, a szülő kezdeti részvételével és
+              folyamatos kapcsolattartással.</p>
+            <p class="card-detail">A folyamat segíthet többek között:</p>
+            <ul class="program-facts">
+              <li>Motiváció és sportolói önbizalom fejlesztése</li>
+              <li>Koncentráció és figyelem támogatása</li>
+              <li>Versenyhelyzetek és izgulás kezelése életkornak megfelelően</li>
+              <li>Hibákhoz, kudarcokhoz való viszony alakítása</li>
+              <li>Szülővel együttműködve, a gyermek fejlődését szem előtt tartva</li>
+            </ul>
+            <div class="program-price"><strong>148 500 Ft</strong><span class="per-session">10 alkalom × 50 perc /
+                alkalom</span></div><a class="button" href="#service-contact-form">Érdekel a program</a>
+          </article>
+        </div>
+    </section>
+    <section class="individuals" id="egyeni">
+      <div class="container">
+        <h2>Egyéni alkalmak</h2>
+        <p class="section-intro">Ha egy konkrét kérdés vagy élethelyzet kapcsán keresel mentális támogatást, vagy
+          először csak kipróbálnád, milyen egy mentális coaching alkalom, egyetlen alkalmat is foglalhatsz
+          szakemberünkhöz.</p>
+        <div class="individual-grid">
+          <article class="individual-card">
+            <h3>Sport mentál coaching</h3>
+            <p>Személyre szabott mentális fejlesztés a jobb fókuszért és a teljesítmény támogatásáért. Nem kész
+              sablonokkal dolgozunk: a saját élményeidből és sporthelyzeteidből indulunk ki, és gyakorlati eszközöket
+              keresünk, amelyek a versenyhelyzetekben is használhatók.</p>
+            <ul class="service-points">
+              <li>Verseny előtti feszültség kezelése</li>
+              <li>Fókusz és figyelem tudatos irányítása</li>
+              <li>Önbizalom, belső stabilitás</li>
+              <li>Hibák és kudarcok feldolgozása</li>
+            </ul>
+            <div class="price">20 000 Ft / alkalom</div><a class="button" href="#service-contact-form">Érdekel</a>
+          </article>
+          <article class="individual-card">
+            <h3>Sport mentál coaching Junior</h3>
+            <p>14 év alatti gyermekeknek szóló, életkorukhoz igazított mentális támogatás. A cél, hogy a gyermek a saját
+              tempójában tanuljon meg eszközöket használni a sporthelyzetekben, a szülő megfelelő bevonásával és
+              együttműködésével.</p>
+            <ul class="service-points">
+              <li>Motiváció és sportolói önbizalom</li>
+              <li>Koncentráció és figyelem</li>
+              <li>Izgulás, hibák és kudarcok kezelése</li>
+              <li>Szülővel egyeztetett, életkorhoz illő támogatás</li>
+            </ul>
+            <div class="price">16 500 Ft / alkalom</div><a class="button" href="#service-contact-form">Érdekel</a>
+          </article>
+          <article class="individual-card">
+            <h3>Élsportolói mentoring</h3>
+            <p>Konkrét tapasztalatátadás, útmutatás és profi szemléletmód Stieber Zoltántól, 26-szoros válogatott
+              labdarúgótól. Az élsportban szerzett tapasztalat találkozik a te jeleneddel: őszinte visszajelzésekkel,
+              gyakorlati útmutatással és saját élmények megosztásával.</p>
+            <ul class="service-points">
+              <li>Szintlépés és tudatos karrierépítés</li>
+              <li>Klubváltás és külföldi beilleszkedés</li>
+              <li>Nehéz időszakok, sérülések, kispad</li>
+              <li>Döntési helyzetek és nyomás</li>
+            </ul>
+            <div class="price">30 000 Ft / alkalom</div><a class="button" href="#service-contact-form">Érdekel</a>
+          </article>
+          <article class="individual-card">
+            <h3>Szülői tanácsadás</h3>
+            <p>Gyakorlati útmutatás és támogatás ahhoz, hogy tudatosan segíthesd a gyermeked sportolói útját. Közösen
+              keressük a megfelelő egyensúlyt és kommunikációt, amellyel valódi támogatást adhatsz neki anélkül, hogy
+              extra nyomást helyeznél rá.</p>
+            <ul class="service-points">
+              <li>Eredményes kommunikáció meccs előtt és után</li>
+              <li>Reakciók hibákra és kudarcokra</li>
+              <li>Kiegyensúlyozott támogatás nyomás nélkül</li>
+              <li>A gyermek belső motivációjának erősítése</li>
+            </ul>
+            <div class="price">20 000 Ft / alkalom</div><a class="button" href="#service-contact-form">Érdekel</a>
+          </article>
         </div>
       </div>
     </section>
-    <section class="service-row alt" id="pszichologia">
-      <div class="container service-layout">
-        <aside class="service-meta"><span class="service-number">03 / EGYÉNI TÁMOGATÁS</span>
+    <section class="team-feature" id="team">
+      <div class="container team-layout-new">
+        <div>
+          <div class="section-kicker">Csapatoknak és egyesületeknek</div>
+          <h2>Mental Ascend<br />Team Performance</h2>
+          <p>Csapatkohézió, kommunikáció és mentális felkészülés sportközösségeknek és egyesületeknek. A csapat aktuális
+            helyzetére építve segítünk a közös célok kijelölésében, a csapatdinamika fejlesztésében és az esetleges
+            belső konfliktusok hatékony rendezésében.</p><a class="button" href="#service-contact-form">Egyedi ajánlatot
+            kérek</a>
+        </div>
+        <div class="team-list">
+          <div>Közös csapatcélok és működés tisztázása</div>
+          <div>Csapatdinamika és bizalom fejlesztése</div>
+          <div>Belső konfliktusok hatékony kezelése</div>
+          <div>Edzői és csapatdinamikai támogatás</div>
+        </div>
+      </div>
+    </section>
+    <section class="partner-service" id="pszichologia">
+      <div class="container partner-layout">
+        <div>
           <h2>Sportpszichológia</h2>
-        </aside>
-        <article class="service-content">
-          <p class="lead"><strong>A teljesítményt gátló mélyebb belső blokkok, meccsszorongás és érzelmi elakadások
-              feldolgozása.</strong></p>
-          <p>Ahol a tudatos technika nem elég, ott a mélyebb okokat fejtjük fel. Célzott szakmai kerete a visszatérő
-            félelmek és a teljesítménygátló elakadások feloldásához.</p>
-          <div class="feature-list">
-            <div class="feature">Teljesítménygátló belső blokkok feltárása</div>
-            <div class="feature">Versenyhelyzeti félelmek és szorongás</div>
-            <div class="feature">Érzelmi elakadások és kudarckezelés</div>
-            <div class="feature">Stabil, ingadozásmentes belső alapok</div>
-          </div>
-          <div class="service-actions"><span class="service-price"><span>Ár – konzultáción megbeszélés szerint</span></span><a class="button" href="index.html#contact">Kérek ingyenes
-              konzultációt</a></div>
-        </article>
-      </div>
-    </section>
-    <section class="service-row dark" id="szulok">
-      <div class="container service-layout">
-        <aside class="service-meta"><span class="service-number">04 / SZÜLŐKNEK</span>
-          <h2>Szülői tanácsadás</h2>
-        </aside>
-        <article class="service-content">
-          <p class="lead">Gyakorlati útmutatás és támogatás ahhoz, hogy tudatosan segíthesd a gyermeked.</p>
-          <p>A közös munka során megtaláljuk azt a jó egyensúlyt és kommunikációt, amellyel valódi támogatást adhatsz
-            neki – anélkül, hogy extra nyomást helyeznél rá.</p>
-          <div class="feature-list">
-            <div class="feature">Eredményes kommunikáció meccs előtt és után</div>
-            <div class="feature">Helyes szülői reakciók a hibákra, kudarcra</div>
-            <div class="feature">Kiegyensúlyozott támogatás nyomás nélkül</div>
-            <div class="feature">A gyermek belső motivációjának építése</div>
-          </div>
-          <div class="service-actions"><span class="service-price"><span>Ár – konzultáción megbeszélés szerint</span></span><a class="button" href="index.html#contact">Kérek ingyenes
-              konzultációt</a></div>
-        </article>
-      </div>
-    </section>
-    <section class="service-row alt" id="team">
-      <div class="container service-layout">
-        <aside class="service-meta"><span class="service-number">05 / CSAPATOKNAK</span>
-          <h2>Sport team coaching</h2>
-        </aside>
-        <article class="service-content">
-          <p class="lead">Csapatkohézió, kommunikáció és mentális felkészülés sportközösségeknek és egyesületeknek.</p>
-          <p>A csapat aktuális helyzetére építve segítünk a közös célok kijelölésében, a csapatdinamika fejlesztésében
-            és az esetleges belső konfliktusok hatékony rendezésében.</p>
-          <div class="feature-list">
-            <div class="feature">Közös csapatcélok és működés tisztázása</div>
-            <div class="feature">Csapatdinamika és bizalom fejlesztése</div>
-            <div class="feature">Belső konfliktusok hatékony kezelése</div>
-            <div class="feature">Edzői és csapatdinamikai támogatás</div>
-          </div>
-          <div class="service-actions"><span class="service-price"><span>Ár – konzultáción megbeszélés szerint</span></span><a class="button" href="index.html#contact">Kérek egyedi ajánlatot</a>
-          </div>
-        </article>
-      </div>
-    </section>
-    <section class="workbooks" id="munkafuzetek" hidden>
-      <div class="container">
-        <div class="section-kicker">Az első lépés lehet egy gyakorlat</div>
-        <h2>Ingyenes munkafüzetek</h2>
-        <p class="intro">Két ingyenes, gyakorlatias munkafüzet, ami segíthet elindíulni a mentális felkészülésben.
-          – sportolóknak és szülőknek. Add meg az e-mail címed és küldjük is.</p>
-        <div class="workbook-grid">
-          <article class="workbook">
-            <h3>Sportolói munkafüzet</h3>
-            <form class="workbook-form"><input type="email" name="athlete-workbook-email" placeholder="E-mail-cím"
-                aria-label="E-mail-cím a sportolói munkafüzethez" required><button class="button" type="submit">Kérem a
-                munkafüzetet</button></form>
-          </article>
-          <article class="workbook">
-            <h3>Szülői munkafüzet</h3>
-            <form class="workbook-form"><input type="email" name="parent-workbook-email" placeholder="E-mail-cím"
-                aria-label="E-mail-cím a szülői munkafüzethez" required><button class="button" type="submit">Kérem a
-                munkafüzetet</button></form>
-          </article>
+          <p>Csapatunkban sportpszichológus szakember is dolgozik, így ha a sportoló élethelyzete mélyebb támogatást
+            vagy egy elakadás miatt másfajta segítséget igényel, a megfelelő szakemberhez irányítjuk.</p>
+          <p>Hogy milyen támogatásra van szükség, azt az ingyenes online konzultáción közösen átbeszéljük.</p>
         </div>
       </div>
     </section>
-    <section class="cta">
-      <div class="container cta-inner">
-        <h2>Nem tudod, melyik támogatási forma lenne a legjobb? Kezdjük egy beszélgetéssel. </h2><a class="button"
-          href="index.html#contact">Foglalj ingyenes konzultációt</a>
-      </div>
-    </section>
-    <section class="decision-tree" aria-label="Szolgáltatásválasztó döntési fa">
-      <div class="container">
-        <img src="pics/döntési fa.png" alt="Döntési fa a megfelelő Mental Ascend szolgáltatás kiválasztásához">
+    <section class="service-contact" id="contact">
+      <div class="container service-contact-grid">
+        <div class="service-contact-copy">
+          <div class="section-kicker">Ingyenes konzultáció</div>
+          <h2>Nem tudod, melyik támogatási forma lenne a legjobb? <span>Kezdjünk egy ingyenes konzultációval.</span>
+          </h2>
+          <ul class="service-contact-points">
+            <li>20 perces, kötetlen online beszélgetés</li>
+            <li>Röviden megismerjük a helyzetedet</li>
+            <li>Tisztázzuk, mire lenne most a legnagyobb szükség</li>
+            <li>Közösen kiválasztjuk a lehetséges következő lépést</li>
+            <li>Kötelezettségtől mentes, és ingyenes</li>
+          </ul>
+        </div>
+        <div class="service-contact-form" id="service-contact-form">
+          <form action="https://formspree.io/f/mbglaznk" method="POST">
+            <label>Név *<input required type="text" name="name"></label>
+            <label>E-mail-cím *<input required type="email" name="email"></label>
+            <label>Ki szeretne segítséget kérni? *<select required name="who">
+                <option value="">Válassz...</option>
+                <option>Sportolóként magamnak</option>
+                <option>Gyermekemnek</option>
+                <option>Szülőként magamnak</option>
+              </select></label>
+            <label>Sportoló korosztálya *<select required name="age-group">
+                <option value="">Válassz...</option>
+                <option>14 év alatti</option>
+                <option>14–18 év közötti</option>
+                <option>18 év feletti / felnőtt</option>
+              </select></label>
+            <label>Sportág<input type="text" name="sport"></label>
+            <label>Miben szeretnél segítséget kapni? *<textarea required name="message"
+                placeholder="Írj néhány mondatot arról, milyen helyzetben szeretnél támogatást."></textarea></label>
+            <label>Mikor tudnál részt venni egy 20 perces online konzultáción? *<textarea required name="availability"
+                placeholder="Adj meg 3 lehetséges idősávot a következő 7 napból (például: hétfő délelőtt, szerda 14:00–16:00). A megbeszéléshez Google Meet-meghívót küldünk."></textarea></label>
+            <label class="check"><input required type="checkbox" name="privacy"><span>Elolvastam és elfogadom az
+                adatkezelési tájékoztatót. *</span></label>
+            <button class="button primary" type="submit">Elküldés</button>
+          </form>
+        </div>
       </div>
     </section>
   </main>
@@ -1310,7 +2765,7 @@
     <div class="container footer-inner"><a class="footer-brand" href="index.html#top"
         aria-label="Mental Ascend főoldal"><img class="footer-logo" src="pics/Logo vertical.jpeg" alt=""><span
           class="footer-tagline">Csúcsforma. <span>Fejben is.</span></span></a><span>© 2026 Mental Ascend. Minden jog
-        fenntartva.</span><span><a href="index.html#contact">Kapcsolat</a> · <a href="#">Adatkezelési
+        fenntartva.</span><span><a href="#service-contact-form">Kapcsolat</a> · <a href="#">Adatkezelési
           tájékoztató</a></span></div>
   </footer>
   <script>
