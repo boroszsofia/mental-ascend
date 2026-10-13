@@ -2,1113 +2,2793 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Explore Mental Ascend's mental coaching, athlete mentoring, sports psychology, parent guidance and team coaching services.">
-    <title>Services | Mental Ascend</title>
-    <style>
-        :root {
-            --black: #07090a;
-            --panel: #111719;
-            --white: #f8f8f4;
-            --muted: #b5bab8;
-            --gold: #d9ad38;
-            --gold-light: #f0d06b;
-            --line: rgba(255, 255, 255, .15);
-            --max: 1180px
-        }
-
-        * {
-            box-sizing: border-box
-        }
-
-        html {
-            scroll-behavior: smooth
-        }
-
-        body {
-            margin: 0;
-            padding-top: 94px;
-            background: var(--black);
-            color: var(--white);
-            font: 16px/1.7 Arial, Helvetica, sans-serif
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none
-        }
-
-        .container {
-            width: min(var(--max), calc(100% - 48px));
-            margin: auto
-        }
-
-        .site-header {
-            position: fixed;
-            inset: 0 0 auto;
-            z-index: 10;
-            border-bottom: 1px solid var(--line);
-            background: #000
-        }
-
-        .nav {
-            min-height: 94px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 24px
-        }
-
-        .brand-logo {
-            display: block;
-            width: clamp(148px, 18vw, 210px);
-            height: auto
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 28px;
-            color: #e9e9e5;
-            font-size: 14px
-        }
-
-        .nav-links a:hover {
-            color: var(--gold-light)
-        }
-
-        .nav-cta,
-        .button {
-            display: inline-block;
-            padding: 12px 18px;
-            background: var(--gold);
-            color: var(--black);
-            font-weight: 800;
-            border: 1px solid var(--gold)
-        }
-
-        .language-switch {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 6px !important
-        }
-
-        .language-switch img {
-            display: block;
-            width: 32px;
-            height: 32px;
-            flex: 0 0 auto;
-            object-fit: contain;
-            border: 0
-        }
-
-        .menu-button {
-            display: none;
-            color: var(--white);
-            background: none;
-            border: 0;
-            padding: 8px
-        }
-
-        .container-narrow {
-            width: min(900px, calc(100% - 48px));
-            margin: auto
-        }
-
-        .hero {
-            padding: 100px 0 76px;
-            background: linear-gradient(90deg, rgba(1, 3, 4, .92), rgba(1, 3, 4, .5)), url('../pics/szolg%C3%A1ltat%C3%A1s.jpg') center/cover
-        }
-
-        .eyebrow,
-        .kicker {
-            color: var(--gold-light);
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: .18em;
-            text-transform: uppercase
-        }
-
-        h1 {
-            font-size: clamp(46px, 8vw, 84px);
-            line-height: .96;
-            letter-spacing: -.04em;
-            text-transform: uppercase;
-            margin: 14px 0 20px
-        }
-
-        h1 span,
-        .gold {
-            color: var(--gold)
-        }
-
-        .hero p {
-            max-width: 780px;
-            color: #e4e8e5;
-            font-size: 19px
-        }
-
-        .button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 15px 21px;
-            font-size: 13px;
-            font-weight: 800;
-            letter-spacing: .075em;
-            text-transform: uppercase
-        }
-
-        .service-picker {
-            position: sticky;
-            top: 94px;
-            z-index: 5;
-            background: #111719;
-            border-block: 1px solid var(--line)
-        }
-
-        .service-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 8px;
-            padding: 16px 0
-        }
-
-        .service-links a {
-            padding: 8px 12px;
-            border: 1px solid var(--line);
-            font-size: 13px
-        }
-
-        .service {
-            padding: 64px 0;
-            border-bottom: 1px solid var(--line)
-        }
-
-        .service:nth-child(even) {
-            background: #111719
-        }
-
-        .service-layout {
-            display: grid;
-            grid-template-columns: .75fr 1.25fr;
-            gap: 56px
-        }
-
-        .service-number {
-            color: var(--gold-light);
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: .12em;
-            text-transform: uppercase
-        }
-
-        .service h2 {
-            font-size: clamp(28px, 4vw, 42px);
-            line-height: 1.1;
-            margin: 12px 0
-        }
-
-        .service-content p {
-            color: #d6dad8
-        }
-
-        .service-content .lead {
-            color: var(--white);
-            font-size: 20px
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin: 26px 0
-        }
-
-        .feature {
-            padding: 12px;
-            border-left: 2px solid var(--gold);
-            background: var(--panel)
-        }
-
-        .price {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 18px;
-            flex-wrap: wrap;
-            margin-top: 22px
-        }
-
-        .price strong {
-            font-size: 22px
-        }
-
-        .price small {
-            color: var(--muted);
-            font-size: 14px
-        }
-
-        .package {
-            padding: 60px 0;
-            background: #e9e9e3;
-            color: #101517
-        }
-
-        .package h2 {
-            font-size: 36px;
-            margin: 8px 0
-        }
-
-        .package-card {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 32px;
-            padding: 30px;
-            background: #fff
-        }
-
-        .package-card ul {
-            padding-left: 20px
-        }
-
-        .package-price {
-            min-width: 210px;
-            text-align: right
-        }
-
-        .package-price .old {
-            color: #5a6568;
-            text-decoration: line-through
-        }
-
-        .package-price .new {
-            font-size: 34px;
-            font-weight: 800
-        }
-
-        .package-price .consultation-price {
-            margin: 14px 0 24px;
-            font-size: 22px;
-            font-weight: 800;
-            line-height: 1.3
-        }
-
-        .cta {
-            padding: 64px 0;
-            background: var(--gold);
-            color: #111719
-        }
-
-        .cta-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px
-        }
-
-        .cta h2 {
-            margin: 0;
-            font-size: clamp(28px, 4vw, 44px);
-            line-height: 1.1
-        }
-
-        .cta .button {
-            background: #111719;
-            color: #fff;
-            border-color: #111719
-        }
-
-        footer {
-            padding: 28px 0;
-            color: var(--muted);
-            font-size: 13px
-        }
-
-        .footer-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px
-        }
-
-        .footer-logo {
-            width: 120px
-        }
-
-        @media(max-width:850px) {
-            .menu-button {
-                display: block
-            }
-
-            .nav {
-                min-height: 82px
-            }
-
-            .nav-links {
-                position: absolute;
-                top: 100%;
-                left: 16px;
-                right: 16px;
-                display: flex;
-                flex-direction: column;
-                align-items: stretch;
-                gap: 0;
-                padding: 10px 0;
-                border: 1px solid var(--line);
-                background: rgba(7, 9, 10, .97);
-                opacity: 0;
-                pointer-events: none;
-                transform: translateY(-8px);
-                transition: .2s
-            }
-
-            .nav-links.is-open {
-                opacity: 1;
-                pointer-events: auto;
-                transform: none
-            }
-
-            .nav-links>a {
-                display: flex;
-                align-items: center;
-                padding: 13px 18px
-            }
-
-            .nav-links .nav-cta {
-                order: 1
-            }
-
-            .nav-links .language-switch {
-                order: 2;
-                justify-content: flex-start
-            }
-
-            .service-layout {
-                grid-template-columns: 1fr;
-                gap: 12px
-            }
-
-            .package-card {
-                grid-template-columns: 1fr
-            }
-
-            .package-price {
-                text-align: left
-            }
-        }
-
-        @media(max-width:600px) {
-
-            .container,
-            .container-narrow {
-                width: calc(100% - 36px)
-            }
-
-            .hero {
-                padding: 80px 0 60px
-            }
-
-            .service-picker {
-                top: 82px
-            }
-
-            .service-links {
-                justify-content: flex-start;
-                overflow-x: auto;
-                flex-wrap: nowrap
-            }
-
-            .service-links a {
-                white-space: nowrap
-            }
-
-            .features {
-                grid-template-columns: 1fr
-            }
-
-            .cta-row,
-            .footer-row {
-                align-items: flex-start;
-                flex-direction: column
-            }
-        }
-    </style>
-    <style>
-        :root {
-            --black-soft: #101517;
-            --white-soft: #e6e8e6;
-            --grey-dark: #5a6568;
-            --gold-dark: #9b7011;
-            --line-light: rgba(255, 255, 255, .15);
-            --line-dark: rgba(7, 9, 10, .18)
-        }
-
-        .hero {
-            position: relative;
-            min-height: 560px;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-            padding: 100px 0;
-            background-image: linear-gradient(90deg, rgba(4, 7, 8, .9) 0%, rgba(4, 7, 8, .67) 48%, rgba(4, 7, 8, .34) 100%), linear-gradient(180deg, rgba(0, 0, 0, .16), rgba(0, 0, 0, .35)), url('../pics/szolg%C3%A1ltat%C3%A1s.jpg');
-            background-size: cover;
-            background-position: center
-        }
-
-        .hero::before,
-        .hero::after {
-            content: "";
-            position: absolute;
-            border: 1px solid rgba(217, 173, 56, .43);
-            transform: rotate(43deg)
-        }
-
-        .hero::before {
-            right: 9%;
-            top: 12%;
-            width: 390px;
-            height: 390px
-        }
-
-        .hero::after {
-            right: -12%;
-            bottom: -50%;
-            width: 550px;
-            height: 550px;
-            border-color: rgba(255, 255, 255, .16)
-        }
-
-        .hero .container {
-            position: relative;
-            z-index: 1
-        }
-
-        .hero h1 {
-            max-width: 900px;
-            font-size: clamp(50px, 8vw, 105px);
-            line-height: .9;
-            letter-spacing: -.06em
-        }
-
-        .service-picker {
-            position: static;
-            background: var(--black-soft);
-            border: 0;
-            border-bottom: 1px solid var(--line-light)
-        }
-
-        .service-links {
-            justify-content: flex-start;
-            gap: 20px 28px;
-            padding: 21px 0;
-            color: #d9dcda;
-            font-size: 14px
-        }
-
-        .service-links a {
-            padding: 0;
-            border: 0
-        }
-
-        .service-links a:hover {
-            color: var(--gold-light)
-        }
-
-        .service {
-            position: relative;
-            overflow: hidden;
-            color: var(--black-soft);
-            background: var(--white)
-        }
-
-        .service:nth-of-type(even) {
-            background: var(--white-soft)
-        }
-
-        .service::before {
-            content: "";
-            position: absolute;
-            right: 8%;
-            top: -275px;
-            width: 500px;
-            height: 500px;
-            border: 1px solid rgba(217, 173, 56, .3);
-            transform: rotate(43deg)
-        }
-
-        .service>.container {
-            position: relative;
-            z-index: 1
-        }
-
-        .service-layout {
-            display: block
-        }
-
-        .service-layout>aside {
-            max-width: 870px;
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) auto;
-            align-items: center
-        }
-
-        .service-number {
-            display: block;
-            grid-column: 1 / -1;
-            margin-bottom: 18px;
-            color: var(--gold-dark);
-            font-size: 13px;
-            font-weight: 800;
-            letter-spacing: .16em
-        }
-
-        .service h2 {
-            margin: 0;
-            font-size: clamp(35px, 5vw, 62px);
-            line-height: 1;
-            letter-spacing: -.045em
-        }
-
-        .service-content {
-            margin-top: 44px;
-            padding: 38px;
-            border: 1px solid rgba(7, 9, 10, .14);
-            border-top: 5px solid var(--gold);
-            background: rgba(255, 255, 255, .72)
-        }
-
-        .service-content .lead {
-            margin: 0 0 25px;
-            color: #314045;
-            font-size: 21px;
-            line-height: 1.48
-        }
-
-        .service-content p {
-            color: var(--grey-dark);
-            font-size: 17px
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1px;
-            margin: 32px 0;
-            background: var(--line-dark)
-        }
-
-        .feature {
-            position: relative;
-            padding: 18px 18px 18px 42px;
-            border: 0;
-            background: rgba(255, 255, 255, .55);
-            color: #3e4c51;
-            font-size: 15px
-        }
-
-        .feature::before {
-            content: "+";
-            position: absolute;
-            left: 18px;
-            color: var(--gold-dark);
-            font-weight: 900
-        }
-
-        #coaching {
-            color: var(--black);
-            background: linear-gradient(115deg, #c99a28, #e5ba4e)
-        }
-
-        #coaching::before {
-            top: -260px;
-            right: -185px;
-            width: 490px;
-            height: 490px;
-            border-color: rgba(7, 9, 10, .24)
-        }
-
-        #coaching .service-number {
-            color: #5d4307
-        }
-
-        #coaching .service-content {
-            border-color: rgba(7, 9, 10, .2);
-            background: rgba(255, 255, 255, .2)
-        }
-
-        #coaching .service-content .lead,
-        #coaching .service-content p {
-            color: #332600
-        }
-
-        #coaching .feature {
-            background: rgba(255, 255, 255, .2);
-            color: #332600
-        }
-
-        #mentoring,
-        #psychology,
-        #team {
-            background: var(--white-soft)
-        }
-
-        .price {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 24px;
-            margin-top: 32px
-        }
-
-        .price strong {
-            padding: 10px 14px;
-            color: var(--black);
-            background: var(--gold);
-            font-size: 16px
-        }
-
-        #coaching .price strong,
-        #parents .price strong {
-            color: var(--gold-light);
-            background: var(--black)
-        }
-
-        #coaching .button,
-        #parents .button {
-            color: var(--gold-light);
-            border-color: var(--black);
-            background: var(--black)
-        }
-
-        #parents {
-            color: var(--white);
-            background: linear-gradient(128deg, #273238, #111719 72%)
-        }
-
-        #parents .service-number {
-            color: var(--gold-light)
-        }
-
-        #parents .service-content {
-            border-color: var(--line-light);
-            background: rgba(5, 9, 11, .37)
-        }
-
-        #parents .service-content .lead,
-        #parents .service-content p {
-            color: #d7dad6
-        }
-
-        #parents .feature {
-            background: rgba(255, 255, 255, .035);
-            color: #d7dad6
-        }
-
-        #parents .feature::before {
-            color: var(--gold-light)
-        }
-
-        .package {
-            position: relative;
-            overflow: hidden;
-            padding: 96px 0;
-            color: var(--white);
-            background: linear-gradient(128deg, #273238, #111719 72%)
-        }
-
-        .package::before {
-            content: "";
-            position: absolute;
-            top: -275px;
-            right: 8%;
-            width: 500px;
-            height: 500px;
-            border: 1px solid rgba(217, 173, 56, .4);
-            transform: rotate(43deg)
-        }
-
-        .package>.container {
-            position: relative;
-            z-index: 1
-        }
-
-        .package .kicker {
-            color: var(--gold-light)
-        }
-
-        .package-card {
-            grid-template-columns: 1.18fr .82fr;
-            gap: 45px;
-            margin-top: 44px;
-            padding: 38px;
-            border: 1px solid var(--line-light);
-            border-top: 5px solid var(--gold);
-            background: rgba(5, 9, 11, .37)
-        }
-
-        .package-card h3 {
-            color: var(--gold-light);
-            font-size: 31px
-        }
-
-        .package-card p,
-        .package-card li {
-            color: #e4e6e2
-        }
-
-        .package-price {
-            align-self: center;
-            padding: 29px;
-            background: var(--gold);
-            color: var(--black);
-            text-align: left
-        }
-
-        .package-price .new {
-            font-size: clamp(37px, 4vw, 54px);
-            line-height: 1
-        }
-
-        .package-price .button {
-            width: 100%;
-            color: var(--gold-light);
-            border-color: var(--black);
-            background: var(--black)
-        }
-
-        @media(max-width:850px) {
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr)
-            }
-
-            .service-layout {
-                grid-template-columns: 1fr
-            }
-
-            .package-card {
-                grid-template-columns: 1fr
-            }
-        }
-
-        @media(max-width:560px) {
-            .hero {
-                min-height: 460px;
-                padding: 80px 0
-            }
-
-            .service-links {
-                overflow-x: auto;
-                flex-wrap: nowrap
-            }
-
-            .service-links a {
-                white-space: nowrap
-            }
-
-            .features,
-            .services-grid {
-                grid-template-columns: 1fr
-            }
-
-            .service-content,
-            .package-card {
-                padding: 22px
-            }
-
-            .price {
-                align-items: stretch;
-                flex-direction: column
-            }
-        }
-    </style>
-    <style>
-        .footer-brand {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            flex-shrink: 0;
-            color: var(--white);
-            font-weight: 800;
-            line-height: 1.4
-        }
-
-        .footer-logo {
-            width: clamp(116px, 13vw, 150px)
-        }
-
-        .footer-tagline {
-            font-size: 13px
-        }
-
-        .footer-tagline span {
-            color: var(--gold-light)
-        }
-    </style>
-    <style>
-        .menu-icon,
-        .menu-icon::before,
-        .menu-icon::after {
-            display: block;
-            width: 20px;
-            height: 2px;
-            background: currentColor;
-            transition: transform .2s, opacity .2s
-        }
-
-        .menu-icon {
-            position: relative
-        }
-
-        .menu-icon::before,
-        .menu-icon::after {
-            content: "";
-            position: absolute;
-            left: 0
-        }
-
-        .menu-icon::before {
-            top: -6px
-        }
-
-        .menu-icon::after {
-            top: 6px
-        }
-
-        .menu-button[aria-expanded="true"] .menu-icon {
-            background: transparent
-        }
-
-        .menu-button[aria-expanded="true"] .menu-icon::before {
-            transform: translateY(6px) rotate(45deg)
-        }
-
-        .menu-button[aria-expanded="true"] .menu-icon::after {
-            transform: translateY(-6px) rotate(-45deg)
-        }
-
-        @media(max-width:850px) {
-            .menu-button {
-                position: relative;
-                z-index: 1;
-                padding: 8px 0;
-                border: 0;
-                cursor: pointer
-            }
-
-            .menu-icon,
-            .menu-icon::before,
-            .menu-icon::after {
-                width: 27px;
-                height: 3px
-            }
-
-            .menu-icon::before {
-                top: -8px
-            }
-
-            .menu-icon::after {
-                top: 8px
-            }
-
-            .menu-button[aria-expanded="true"] .menu-icon::before {
-                transform: translateY(8px) rotate(45deg)
-            }
-
-            .menu-button[aria-expanded="true"] .menu-icon::after {
-                transform: translateY(-8px) rotate(-45deg)
-            }
-        }
-
-        @media(max-width:560px) {
-            .hero h1 {
-                font-size: 58px;
-                line-height: .9;
-                letter-spacing: -.06em
-            }
-
-            .hero p {
-                font-size: 16px
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mental Ascend coaching and performance programmes for athletes, parents and teams.">
+  <title>Services | Mental Ascend</title>
+  <style>
+    :root {
+      --black: #07090a;
+      --black-soft: #101517;
+      --graphite: #20282c;
+      --white: #f8f8f4;
+      --white-soft: #e6e8e6;
+      --grey: #b5bab8;
+      --grey-dark: #5a6568;
+      --gold: #d9ad38;
+      --gold-light: #f0d06b;
+      --gold-dark: #9b7011;
+      --line-light: rgba(255, 255, 255, .15);
+      --line-dark: rgba(7, 9, 10, .18);
+      --max: 1180px
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      padding-top: 94px;
+      background: var(--black);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto
+    }
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 20;
+      background: #000;
+      border-bottom: 1px solid var(--line-light)
+    }
+
+    .nav {
+      min-height: 94px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      position: relative
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--white)
+    }
+
+    .brand-logo {
+      display: block;
+      width: clamp(148px, 18vw, 210px);
+      height: auto
+    }
+
+    .tagline {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .2em;
+      text-transform: uppercase
+    }
+
+    .tagline span {
+      color: var(--gold-light)
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      color: #e9e9e5;
+      font-size: 14px
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      color: var(--gold-light)
+    }
+
+    .nav-links a.nav-cta,
+    .nav-links a.nav-cta:hover {
+      padding: 11px 16px;
+      color: var(--black);
+      border: 1px solid var(--gold);
+      background: var(--gold);
+      font-weight: 800;
+      white-space: nowrap
+    }
+
+    .menu-button {
+      display: none;
+      padding: 8px 10px;
+      color: var(--white);
+      border: 1px solid var(--line-light);
+      background: transparent
+    }
+
+    .menu-icon,
+    .menu-icon::before,
+    .menu-icon::after {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: currentColor;
+      transition: transform .2s, opacity .2s
+    }
+
+    .menu-icon {
+      position: relative
+    }
+
+    .menu-icon::before,
+    .menu-icon::after {
+      content: "";
+      position: absolute;
+      left: 0
+    }
+
+    .menu-icon::before {
+      top: -6px
+    }
+
+    .menu-icon::after {
+      top: 6px
+    }
+
+    .menu-button[aria-expanded="true"] .menu-icon {
+      background: transparent
+    }
+
+    .menu-button[aria-expanded="true"] .menu-icon::before {
+      transform: translateY(6px) rotate(45deg)
+    }
+
+    .menu-button[aria-expanded="true"] .menu-icon::after {
+      transform: translateY(-6px) rotate(-45deg)
+    }
+
+    /* The uploaded collage is used as the services page hero background. */
+    .page-hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 560px;
+      display: flex;
+      align-items: center;
+      padding: 100px 0;
+      background-image: linear-gradient(90deg, rgba(4, 7, 8, .9) 0%, rgba(4, 7, 8, .67) 48%, rgba(4, 7, 8, .34) 100%), linear-gradient(180deg, rgba(0, 0, 0, .16), rgba(0, 0, 0, .35)), url('../pics/szolgáltatás.jpg');
+      background-size: cover;
+      background-position: center
+    }
+
+    .page-hero::before {
+      content: "";
+      position: absolute;
+      right: 9%;
+      top: 12%;
+      width: 390px;
+      height: 390px;
+      border: 1px solid rgba(217, 173, 56, .43);
+      transform: rotate(43deg)
+    }
+
+    .page-hero::after {
+      content: "";
+      position: absolute;
+      right: -12%;
+      bottom: -50%;
+      width: 550px;
+      height: 550px;
+      border: 1px solid rgba(255, 255, 255, .16);
+      transform: rotate(43deg)
+    }
+
+    .page-hero .container {
+      position: relative;
+      z-index: 1
+    }
+
+    .eyebrow {
+      margin-bottom: 18px;
+      color: var(--gold-light);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .2em;
+      text-transform: uppercase
+    }
+
+    h1 {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(50px, 8vw, 105px);
+      line-height: .9;
+      letter-spacing: -.06em;
+      text-transform: uppercase
+    }
+
+    h1 span {
+      color: var(--gold)
+    }
+
+    .hero-copy {
+      max-width: 780px;
+      margin: 28px 0 0;
+      color: #e4e8e5;
+      font-size: 19px
+    }
+
+    section {
+      padding: 96px 0
+    }
+
+    .section-kicker {
+      margin-bottom: 14px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .2em;
+      text-transform: uppercase
+    }
+
+    h2 {
+      margin: 0 0 22px;
+      font-size: clamp(35px, 5vw, 62px);
+      line-height: 1;
+      letter-spacing: -.045em
+    }
+
+    .intro {
+      max-width: 800px;
+      color: var(--grey-dark);
+      font-size: 18px
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 21px;
+      border: 1px solid var(--gold);
+      background: var(--gold);
+      color: var(--black);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .075em;
+      text-transform: uppercase;
+      transition: .2s
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: var(--gold-light);
+      border-color: var(--gold-light)
+    }
+
+    .service-nav {
+      background: var(--black-soft);
+      border-bottom: 1px solid var(--line-light)
+    }
+
+    .service-nav-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px 28px;
+      padding: 21px 0;
+      color: #d9dcda;
+      font-size: 14px
+    }
+
+    .service-nav a:hover {
+      color: var(--gold-light)
+    }
+
+    .service-row {
+      position: relative;
+      overflow: hidden;
+      color: var(--black-soft);
+      background: var(--white)
+    }
+
+    .service-row.alt {
+      background: var(--white-soft)
+    }
+
+    .service-row.dark {
+      color: var(--white);
+      background: linear-gradient(128deg, #273238, #111719 72%)
+    }
+
+    .service-row::before {
+      content: "";
+      position: absolute;
+      right: 8%;
+      top: -275px;
+      width: 500px;
+      height: 500px;
+      border: 1px solid rgba(217, 173, 56, .3);
+      transform: rotate(43deg)
+    }
+
+    .service-row .container {
+      position: relative;
+      z-index: 1
+    }
+
+    .service-layout {
+      display: block
+    }
+
+    .service-meta {
+      max-width: 870px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      padding-top: 0
+    }
+
+    .service-number {
+      display: block;
+      grid-column: 1 / -1;
+      margin-bottom: 18px;
+      color: var(--gold-dark);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .16em
+    }
+
+    .service-meta h2 {
+      margin: 0
+    }
+
+    .service-row.dark .service-number {
+      color: var(--gold-light)
+    }
+
+    .service-row.dark .service-content .lead {
+      color: #e7e9e5
+    }
+
+    .service-row.dark .service-content p {
+      color: var(--grey)
+    }
+
+    .service-row.coaching-highlight {
+      color: var(--black);
+      background: linear-gradient(115deg, #c99a28, #e5ba4e)
+    }
+
+    .service-row.coaching-highlight::before {
+      top: -260px;
+      right: -185px;
+      width: 490px;
+      height: 490px;
+      border-color: rgba(7, 9, 10, .24)
+    }
+
+    .service-row.coaching-highlight::after {
+      content: "";
+      position: absolute;
+      left: -150px;
+      bottom: -310px;
+      width: 430px;
+      height: 430px;
+      border: 1px solid rgba(7, 9, 10, .18);
+      transform: rotate(43deg)
+    }
+
+    .service-row.coaching-highlight .service-number {
+      color: #5d4307
+    }
+
+    .service-row.coaching-highlight .service-content {
+      border-color: rgba(7, 9, 10, .2);
+      background: rgba(255, 255, 255, .2)
+    }
+
+    .service-row.coaching-highlight .service-content .lead {
+      color: #332600
+    }
+
+    .service-row.coaching-highlight .service-content p {
+      color: #3b3318
+    }
+
+    .service-row.coaching-highlight .feature-list {
+      background: rgba(7, 9, 10, .22)
+    }
+
+    .service-row.coaching-highlight .feature {
+      background: rgba(255, 255, 255, .2);
+      color: #332600
+    }
+
+    .service-row.coaching-highlight .feature::before {
+      color: #5d4307
+    }
+
+    .service-row.coaching-highlight .service-actions .service-price {
+      color: var(--black);
+      background: transparent
+    }
+
+    .service-row.coaching-highlight .service-actions .service-price>span {
+      color: var(--gold-light);
+      background: var(--black)
+    }
+
+    .service-row.coaching-highlight .service-actions .service-price>span+span {
+      border-color: transparent
+    }
+
+    .service-row.coaching-highlight .service-actions .button {
+      color: var(--gold-light);
+      border-color: var(--black);
+      background: var(--black)
+    }
+
+    .service-row.coaching-highlight .service-actions .button:hover {
+      color: var(--black);
+      border-color: var(--white);
+      background: var(--white)
+    }
+
+    .service-price {
+      display: flex;
+      gap: 10px;
+      margin-left: 28px;
+      padding: 0;
+      color: var(--black);
+      background: transparent;
+      font-size: 16px;
+      font-weight: 800
+    }
+
+    .service-price small {
+      display: block;
+      margin-top: 1px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase
+    }
+
+    .service-price>span {
+      display: block;
+      padding: 10px 14px;
+      background: var(--gold)
+    }
+
+    .service-price>span+span {
+      margin: 0;
+      padding: 10px 14px;
+      border-top: 0
+    }
+
+    .service-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-top: 32px
+    }
+
+    .service-actions .service-price {
+      flex: 0 0 auto;
+      margin: 0
+    }
+
+    .service-actions .button {
+      margin-left: auto
+    }
+
+    .service-content .lead {
+      margin: 0 0 25px;
+      color: #314045;
+      font-size: 21px;
+      line-height: 1.48
+    }
+
+    .service-content {
+      margin-top: 44px;
+      padding: 38px;
+      border: 1px solid rgba(7, 9, 10, .14);
+      border-top: 5px solid var(--gold);
+      background: rgba(255, 255, 255, .72)
+    }
+
+    .service-row.dark .service-content {
+      border-color: var(--line-light);
+      background: rgba(5, 9, 11, .37)
+    }
+
+    .service-content p {
+      margin: 0 0 20px;
+      color: var(--grey-dark);
+      font-size: 17px
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      margin: 32px 0;
+      background: var(--line-dark)
+    }
+
+    .feature {
+      position: relative;
+      padding: 18px 18px 18px 42px;
+      background: rgba(255, 255, 255, .55);
+      color: #3e4c51;
+      font-size: 15px
+    }
+
+    .feature::before {
+      content: "+";
+      position: absolute;
+      left: 18px;
+      color: var(--gold-dark);
+      font-weight: 900
+    }
+
+    .service-row .feature::before {
+      color: var(--gold-dark)
+    }
+
+    .service-row.dark .feature-list {
+      background: var(--line-light)
+    }
+
+    .service-row.dark .feature {
+      background: rgba(255, 255, 255, .035);
+      color: #d7dad6
+    }
+
+    .service-row.dark .feature::before {
+      color: var(--gold-light)
+    }
+
+    .package {
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+      background: linear-gradient(128deg, #273238, #111719 72%)
+    }
+
+    .package::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      right: 8%;
+      top: -275px;
+      border: 1px solid rgba(217, 173, 56, .4);
+      transform: rotate(43deg)
+    }
+
+    .package .container {
+      position: relative;
+      z-index: 1
+    }
+
+    .package .section-kicker {
+      color: var(--gold-light)
+    }
+
+    .package-head {
+      max-width: 870px
+    }
+
+    .package-head p {
+      margin: 0;
+      color: var(--grey);
+      font-size: 19px
+    }
+
+    .package-card {
+      display: grid;
+      grid-template-columns: 1.18fr .82fr;
+      gap: 45px;
+      margin-top: 44px;
+      padding: 38px;
+      border: 1px solid var(--line-light);
+      border-top: 5px solid var(--gold);
+      background: rgba(5, 9, 11, .37)
+    }
+
+    .package-card h3 {
+      margin: 0 0 15px;
+      color: var(--gold-light);
+      font-size: 31px;
+      line-height: 1.1
+    }
+
+    .package-card p {
+      margin: 0;
+      color: var(--grey)
+    }
+
+    .package-items {
+      margin: 27px 0 0;
+      padding: 0;
+      list-style: none
+    }
+
+    .package-items li {
+      position: relative;
+      padding: 11px 0 11px 28px;
+      border-top: 1px solid var(--line-light);
+      color: #e4e6e2
+    }
+
+    .package-items li::before {
+      content: "+";
+      position: absolute;
+      left: 0;
+      color: var(--gold-light);
+      font-weight: 900
+    }
+
+    .package-price {
+      align-self: center;
+      padding: 29px;
+      background: var(--gold);
+      color: var(--black)
+    }
+
+    .package-price .old {
+      margin-bottom: 6px;
+      color: #59430b;
+      font-size: 16px;
+      text-decoration: line-through
+    }
+
+    .package-price .new {
+      font-size: clamp(37px, 4vw, 54px);
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -.05em
+    }
+
+    .package-price .currency {
+      font-size: 19px;
+      letter-spacing: normal
+    }
+
+    .package-price .consultation-price {
+      margin-bottom: 25px;
+      font-size: clamp(20px, 2vw, 25px);
+      font-weight: 800;
+      line-height: 1.3
+    }
+
+    .package-price p {
+      margin: 13px 0 25px;
+      color: #4b3907;
+      font-size: 14px
+    }
+
+    .package-price .button {
+      width: 100%;
+      color: var(--gold-light);
+      border-color: var(--black);
+      background: var(--black)
+    }
+
+    .package-price .button:hover {
+      color: var(--black);
+      background: var(--white)
+    }
+
+    .workbooks {
+      color: var(--black-soft);
+      background: var(--white)
+    }
+
+    .workbook-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 42px
+    }
+
+    .workbook {
+      display: flex;
+      flex-direction: column;
+      min-height: 270px;
+      padding: 32px;
+      border: 1px solid #d5d7d4;
+      border-top: 5px solid var(--gold);
+      background: #fbfbf9
+    }
+
+    .workbook h3 {
+      margin: 0 0 13px;
+      color: var(--gold-dark);
+      font-size: 27px
+    }
+
+    .workbook p {
+      margin: 0 0 24px;
+      color: var(--grey-dark)
+    }
+
+    .workbook .button {
+      margin-top: auto;
+      align-self: flex-start
+    }
+
+    .workbook-form {
+      display: grid;
+      gap: 10px;
+      margin-top: auto
+    }
+
+    .workbook-form input {
+      width: 100%;
+      padding: 13px 14px;
+      color: var(--black-soft);
+      border: 1px solid #aeb5b0;
+      background: var(--white);
+      font: inherit
+    }
+
+    .workbook-form input:focus {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px
+    }
+
+    .workbook-form .button {
+      width: 100%;
+      margin-top: 0
+    }
+
+    .cta {
+      color: var(--black);
+      background: var(--gold)
+    }
+
+    .cta-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px
+    }
+
+    .cta h2 {
+      max-width: 720px;
+      margin: 0
+    }
+
+    .cta .button {
+      color: var(--gold-light);
+      border-color: var(--black);
+      background: var(--black)
+    }
+
+    .cta .button:hover {
+      color: var(--black);
+      background: var(--white)
+    }
+
+    .decision-tree {
+      padding: 0 0 70px;
+      background: var(--gold)
+    }
+
+    .service-picker {
+      padding: 0;
+      background: var(--white)
+    }
+
+    .service-picker .container {
+      width: 100%;
+      max-width: none
+    }
+
+    .service-picker .decision-tree-services {
+      max-width: none;
+      margin-top: 0;
+      background: var(--white)
+    }
+
+    .decision-tree img {
+      display: block;
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      margin: 0 auto
+    }
+
+    .decision-tree-services {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 900px;
+      margin: 28px auto 0;
+      padding: 24px;
+      color: var(--black-soft);
+      background: var(--white)
+    }
+
+    .decision-tree-services a {
+      display: flex;
+      min-height: 72px;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 10px;
+      border-top: 4px solid var(--gold);
+      color: var(--black-soft);
+      background: var(--off-white);
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.2;
+      text-align: center
+    }
+
+    .decision-tree-services a:hover {
+      color: var(--black);
+      background: #f4e4ad
+    }
+
+    footer {
+      padding: 35px 0;
+      color: #aeb3b1;
+      background: #050606;
+      font-size: 13px
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+      color: var(--white);
+      font-weight: 800;
+      line-height: 1.4
+    }
+
+    .footer-logo {
+      display: block;
+      width: clamp(116px, 13vw, 150px);
+      height: auto
+    }
+
+    .footer-tagline {
+      font-size: 13px
+    }
+
+    .footer-tagline span {
+      color: var(--gold-light)
+    }
+
+    footer a:hover {
+      color: var(--gold-light)
+    }
+
+    @media(max-width:850px) {
+      body {
+        padding-top: 94px
+      }
+
+      .site-header {
+        position: fixed;
+        inset: 0 0 auto;
+        z-index: 20;
+        background: #000
+      }
+
+      .menu-button {
+        padding: 8px 0;
+        border: 0
+      }
+
+      .menu-icon,
+      .menu-icon::before,
+      .menu-icon::after {
+        width: 27px;
+        height: 3px
+      }
+
+      .menu-icon::before {
+        top: -8px
+      }
+
+      .menu-icon::after {
+        top: 8px
+      }
+
+      .menu-button[aria-expanded="true"] .menu-icon::before {
+        transform: translateY(8px) rotate(45deg)
+      }
+
+      .menu-button[aria-expanded="true"] .menu-icon::after {
+        transform: translateY(-8px) rotate(-45deg)
+      }
+
+      .nav-links {
+        display: flex;
+        position: absolute;
+        top: calc(100% - 1px);
+        left: 24px;
+        right: 24px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 0;
+        border: 1px solid var(--line-light);
+        background: rgba(7, 9, 10, .97);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-8px);
+        transition: opacity .2s, transform .2s
+      }
+
+      .nav-links.is-open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0)
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 13px 18px
+      }
+
+      .nav-links a.nav-cta,
+      .nav-links a.nav-cta:hover {
+        padding: 13px 18px
+      }
+
+      .menu-button {
+        display: block;
+        position: relative;
+        z-index: 1;
+        cursor: pointer
+      }
+
+      .tagline {
+        display: none
+      }
+
+      .footer-inner {
+        display: grid;
+        gap: 18px
+      }
+
+      .page-hero {
+        min-height: 500px;
+        background-position: center
+      }
+
+      .service-layout,
+      .package-card {
+        grid-template-columns: 1fr;
+        gap: 36px
+      }
+
+      .decision-tree-services {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+      }
+
+      .service-picker {
+        display: none
+      }
+
+      .service-meta {
+        position: static
+      }
+
+      .cta-inner {
+        display: block
+      }
+
+      .cta .button {
+        margin-top: 25px
+      }
+    }
+
+    @media(max-width:560px) {
+      .container {
+        width: min(var(--max), calc(100% - 32px))
+      }
+
+      section {
+        padding: 70px 0
+      }
+
+      .page-hero {
+        padding: 84px 0 75px
+      }
+
+      h1 {
+        font-size: 58px
+      }
+
+      .hero-copy {
+        font-size: 16px
+      }
+
+      .service-nav-inner {
+        gap: 12px 18px
+      }
+
+      .feature-list,
+      .workbook-grid,
+      .decision-tree-services {
+        grid-template-columns: 1fr
+      }
+
+      .package-card {
+        padding: 24px
+      }
+
+      .service-content {
+        margin-top: 32px;
+        padding: 24px
+      }
+
+      .service-actions {
+        display: grid;
+        gap: 16px
+      }
+
+      .service-actions .button {
+        width: 100%;
+        margin-left: 0
+      }
+
+      .service-actions .service-price {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin-left: 0
+      }
+
+      .package-price {
+        padding: 24px
+      }
+
+      .footer-inner {
+        display: grid
+      }
+
+      .button {
+        width: 100%
+      }
+    }
+
+    .language-switch {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px !important
+    }
+
+    .language-switch img {
+      display: block;
+      width: 32px;
+      height: 32px;
+      flex: 0 0 auto;
+      object-fit: contain;
+      border: 0
+    }
+
+    @media(max-width:850px) {
+      .nav-links .nav-cta {
+        order: 1
+      }
+
+      .nav-links .language-switch {
+        order: 2;
+        justify-content: flex-start
+      }
+    }
+
+    /* Új szolgáltatásoldal: a meglévő Mental Ascend arculatához igazítva */
+    .services-intro {
+      padding: 26px 0;
+      background: #07090a;
+      border-bottom: 1px solid rgba(255, 255, 255, .12)
+    }
+
+    .services-intro-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px
+    }
+
+    .services-intro p {
+      margin: 0;
+      color: #d4d8d5;
+      max-width: 720px;
+      font-size: 16px
+    }
+
+    .quick-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 18px
+    }
+
+    .quick-links a {
+      font-size: 12px;
+      font-weight: 700;
+      border: 1px solid rgba(255, 255, 255, .25);
+      padding: 8px 12px;
+      color: #f8f8f4
+    }
+
+    .quick-links a:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #07090a
+    }
+
+    .programs {
+      background: var(--white);
+      color: var(--black-soft)
+    }
+
+    .programs .section-kicker {
+      color: var(--gold-dark)
+    }
+
+    .programs h2 {
+      max-width: 760px
+    }
+
+    .section-intro {
+      max-width: 790px;
+      color: var(--grey-dark);
+      font-size: 17px;
+      margin: 20px 0 0
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 42px;
+      align-items: stretch
+    }
+
+    .program-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border: 1px solid #d9ddda;
+      border-top: 4px solid var(--gold);
+      padding: 28px;
+      min-width: 0
+    }
+
+    .program-card.featured {
+      background: var(--black-soft);
+      border-color: var(--black-soft);
+      border-top-color: var(--gold-light);
+      color: var(--white)
+    }
+
+    .program-label {
+      font-size: 11px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: var(--gold-dark);
+      margin-bottom: 15px
+    }
+
+    .program-card.featured .program-label {
+      color: var(--gold-light)
+    }
+
+    .program-card h3 {
+      font-size: clamp(22px, 2.3vw, 29px);
+      line-height: 1.1;
+      letter-spacing: -.035em;
+      margin: 0 0 14px
+    }
+
+    .program-card .program-desc {
+      color: #596467;
+      font-size: 14px;
+      min-height: 68px;
+      margin: 0 0 18px
+    }
+
+    .program-card.featured .program-desc {
+      color: #c4cbc7
+    }
+
+    .program-facts {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px
+    }
+
+    .program-facts li {
+      position: relative;
+      padding: 9px 0 9px 20px;
+      border-top: 1px solid rgba(90, 101, 104, .18);
+      font-size: 13px;
+      line-height: 1.5
+    }
+
+    .program-facts li:before {
+      content: '+';
+      position: absolute;
+      left: 0;
+      color: var(--gold-dark);
+      font-weight: 900
+    }
+
+    .program-card.featured .program-facts li {
+      border-color: rgba(255, 255, 255, .14)
+    }
+
+    .program-card.featured .program-facts li:before {
+      color: var(--gold-light)
+    }
+
+    .program-price {
+      border-top: 1px solid rgba(90, 101, 104, .2);
+      padding-top: 20px;
+      margin-top: auto
+    }
+
+    .program-card.featured .program-price {
+      border-color: rgba(255, 255, 255, .2)
+    }
+
+    .program-price strong {
+      display: block;
+      font-size: clamp(26px, 2.7vw, 34px);
+      line-height: 1.15;
+      letter-spacing: -.04em
+    }
+
+    .program-price .per-session {
+      display: block;
+      font-size: 13px;
+      color: #5a6568;
+      margin-top: 6px
+    }
+
+    .program-price .discount {
+      display: block;
+      font-size: 12px;
+      color: #72530c;
+      font-weight: 700;
+      margin-top: 6px
+    }
+
+    .program-card.featured .program-price .per-session {
+      color: #c4cbc7
+    }
+
+    .program-card.featured .program-price .discount {
+      color: var(--gold-light)
+    }
+
+    .program-card .button {
+      display: block;
+      text-align: center;
+      margin-top: 20px
+    }
+
+    .program-footnote {
+      font-size: 12px;
+      color: #5a6568;
+      margin-top: 22px
+    }
+
+    .individuals {
+      background: var(--black-soft);
+      color: var(--white)
+    }
+
+    .individuals .section-kicker {
+      color: var(--gold)
+    }
+
+    .individuals .section-intro {
+      color: #c0c6c3
+    }
+
+    .individual-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 38px
+    }
+
+    .individual-card {
+      padding: 26px;
+      border: 1px solid rgba(255, 255, 255, .16);
+      background: rgba(255, 255, 255, .025)
+    }
+
+    .individual-card h3 {
+      font-size: 23px;
+      line-height: 1.2;
+      margin: 0 0 10px
+    }
+
+    .individual-card p {
+      color: #c0c6c3;
+      margin: 0 0 18px;
+      font-size: 15px
+    }
+
+    .individual-card .price {
+      font-weight: 800;
+      color: var(--gold-light);
+      font-size: 19px
+    }
+
+    .individual-card .note {
+      display: block;
+      font-size: 12px;
+      color: #b5bab8;
+      margin-top: 4px
+    }
+
+    .team-feature {
+      background: var(--gold);
+      color: #080a0b
+    }
+
+    .team-layout-new {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 42px;
+      align-items: center
+    }
+
+    .team-feature .section-kicker {
+      color: #4b390b
+    }
+
+    .team-feature h2 {
+      max-width: 700px
+    }
+
+    .team-feature p {
+      font-size: 17px;
+      color: #3d351d;
+      max-width: 720px
+    }
+
+    .team-list {
+      border-left: 1px solid rgba(7, 9, 10, .25);
+      padding-left: 25px
+    }
+
+    .team-list div {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(7, 9, 10, .18);
+      font-weight: 700
+    }
+
+    .partner-service {
+      background: var(--white);
+      color: var(--black-soft);
+      padding: 54px 0
+    }
+
+    .partner-layout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px
+    }
+
+    .partner-service .section-kicker {
+      color: var(--gold-dark)
+    }
+
+    .partner-service h2 {
+      font-size: clamp(28px, 3.5vw, 42px);
+      margin: 0 0 10px
+    }
+
+    .partner-service p {
+      max-width: 800px;
+      color: var(--grey-dark);
+      margin: 0
+    }
+
+    @media(max-width:950px) {
+      .program-grid {
+        grid-template-columns: 1fr
+      }
+
+      .program-card .program-desc {
+        min-height: 0
+      }
+
+      .team-layout-new {
+        grid-template-columns: 1fr
+      }
+
+      .team-list {
+        border-left: 0;
+        border-top: 1px solid rgba(7, 9, 10, .25);
+        padding: 12px 0 0
+      }
+    }
+
+    @media(max-width:680px) {
+      .individual-grid {
+        grid-template-columns: 1fr
+      }
+
+      .services-intro-inner,
+      .partner-layout {
+        display: block
+      }
+
+      .quick-links {
+        margin-top: 20px
+      }
+
+      .partner-service .button {
+        margin-top: 20px
+      }
+
+      .program-card {
+        padding: 23px
+      }
+    }
+
+
+    /* V3 – visual hierarchy inspired by the yellow mission card on the About page. */
+    .programs {
+      background: var(--black);
+      color: var(--white);
+      padding: 72px 0
+    }
+
+    .programs .section-kicker {
+      color: var(--gold-light)
+    }
+
+    .programs h2 {
+      color: var(--white)
+    }
+
+    .programs .section-intro {
+      color: #c0c6c3;
+      max-width: 900px
+    }
+
+    .program-grid {
+      gap: 22px;
+      align-items: stretch
+    }
+
+    .program-card,
+    .program-card.featured {
+      background: var(--gold);
+      color: #080a0b;
+      border: 1px solid #c79a26;
+      border-top: 4px solid var(--gold-light);
+      border-radius: 3px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, .18)
+    }
+
+    .program-card .program-label,
+    .program-card.featured .program-label {
+      color: #4b390b
+    }
+
+    .program-card h3,
+    .program-card.featured h3 {
+      color: #080a0b
+    }
+
+    .program-card .program-desc,
+    .program-card.featured .program-desc {
+      color: #332b17
+    }
+
+    .program-card .card-detail {
+      color: #171713
+    }
+
+    .program-card .program-facts li,
+    .program-card.featured .program-facts li {
+      border-color: rgba(7, 9, 10, .2);
+      color: #171713
+    }
+
+    .program-card .program-facts li:before,
+    .program-card.featured .program-facts li:before {
+      color: #4b390b
+    }
+
+    .program-card .program-price,
+    .program-card.featured .program-price {
+      border-color: rgba(7, 9, 10, .24)
+    }
+
+    .program-card .program-price .per-session,
+    .program-card.featured .program-price .per-session {
+      color: #443a22
+    }
+
+    .program-card .program-price .discount,
+    .program-card.featured .program-price .discount {
+      color: #4b390b
+    }
+
+    .program-card .button {
+      background: #07090a;
+      color: #f8f8f4;
+      border-color: #07090a
+    }
+
+    .program-card .button:hover {
+      background: #20282c
+    }
+
+    .program-footnote {
+      color: #b5bab8
+    }
+
+    /* Individual sessions: dark graphite surface with a subtle abstract line pattern. */
+    .individuals {
+      background: #202629;
+      color: var(--white);
+      padding: 70px 0
+    }
+
+    .individuals .section-kicker {
+      color: var(--gold-light)
+    }
+
+    .individuals h2 {
+      color: var(--white)
+    }
+
+    .individuals .section-intro {
+      color: #c0c6c3;
+      max-width: 850px
+    }
+
+    .individual-grid {
+      gap: 18px
+    }
+
+    .individual-card {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      background-color: #171d20;
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 3px;
+      background-image: repeating-linear-gradient(132deg, transparent 0, transparent 42px, rgba(255, 255, 255, .025) 43px, transparent 45px), repeating-linear-gradient(42deg, transparent 0, transparent 67px, rgba(217, 173, 56, .035) 68px, transparent 70px)
+    }
+
+    .individual-card h3 {
+      color: var(--white)
+    }
+
+    .individual-card p,
+    .individual-card .service-points {
+      color: #c0c6c3
+    }
+
+    .individual-card .service-points li::marker {
+      color: var(--gold-light)
+    }
+
+    .individual-card .price {
+      color: var(--gold-light);
+      margin-top: auto;
+      padding-top: 12px
+    }
+
+    .individual-card .note {
+      color: #b5bab8
+    }
+
+    /* Light, clean closing sections for team coaching and sports psychology. */
+    .team-feature {
+      background: var(--white);
+      color: var(--black-soft);
+      padding: 60px 0;
+      border-top: 1px solid #e1e4e2
+    }
+
+    .team-feature .section-kicker {
+      color: var(--gold-dark)
+    }
+
+    .team-feature h2 {
+      color: var(--black-soft)
+    }
+
+    .team-feature p {
+      color: var(--grey-dark)
+    }
+
+    .team-list {
+      border-left: 1px solid rgba(7, 9, 10, .2)
+    }
+
+    .team-list div {
+      border-bottom: 1px solid rgba(7, 9, 10, .12);
+      color: var(--black-soft)
+    }
+
+    .team-feature .button {
+      background: var(--black);
+      color: var(--white);
+      border-color: var(--black)
+    }
+
+    .partner-service {
+      background: #eef0ec;
+      color: var(--black-soft);
+      border-top: 1px solid #dce0dc;
+      padding: 54px 0
+    }
+
+    .partner-service .section-kicker {
+      color: var(--gold-dark)
+    }
+
+    .partner-service h2 {
+      color: var(--black-soft)
+    }
+
+    .partner-service p {
+      color: var(--grey-dark)
+    }
+
+    .partner-service .button {
+      background: var(--black);
+      color: var(--white);
+      border-color: var(--black)
+    }
+
+    @media(max-width:950px) {
+      .programs {
+        padding: 54px 0
+      }
+
+      .individuals {
+        padding: 54px 0
+      }
+
+      .team-feature .team-list {
+        border-top: 1px solid rgba(7, 9, 10, .2)
+      }
+    }
+
+
+    /* A három programkártya fő tartalmi sorai igazodjanak egymáshoz. */
+    .program-card .program-label {
+      min-height: 2.8em;
+    }
+
+    .program-card h3 {
+      min-height: 2.2em;
+    }
+
+    .program-card .program-desc {
+      min-height: 84px;
+    }
+
+    @media (max-width: 950px) {
+
+      .program-card .program-label,
+      .program-card h3,
+      .program-card .program-desc {
+        min-height: 0;
+      }
+    }
+
+    /* V17 – a programkártyák CTA-gombjai is sárgák */
+    .program-card .button,
+    .program-card.featured .button {
+      background: var(--gold) !important;
+      color: #080a0b !important;
+      border-color: var(--gold) !important;
+    }
+
+    .program-card .button:hover,
+    .program-card.featured .button:hover {
+      background: var(--gold-light) !important;
+      border-color: var(--gold-light) !important;
+      color: #080a0b !important;
+    }
+  </style>
+
+  <style id="revision-overrides">
+    .program-card.featured {
+      background: #fff;
+      border-color: #d9ddda;
+      border-top-color: var(--gold);
+      color: var(--black-soft)
+    }
+
+    .program-card.featured .program-label {
+      color: var(--gold-dark)
+    }
+
+    .program-card.featured .program-desc {
+      color: #596467
+    }
+
+    .program-card.featured .program-facts li {
+      border-color: #e1e4e2
+    }
+
+    .program-card.featured .program-facts li:before {
+      color: var(--gold-dark)
+    }
+
+    .program-card.featured .program-price {
+      border-color: #e1e4e2
+    }
+
+    .program-card.featured .program-price .per-session {
+      color: #596467
+    }
+
+    .program-card.featured .program-price .discount {
+      color: var(--gold-dark)
+    }
+
+    .card-detail {
+      font-size: 13px;
+      font-weight: 700;
+      margin: 0 0 8px;
+      color: var(--black-soft)
+    }
+
+    .program-facts {
+      margin-top: 0
+    }
+
+    .individual-card {
+      display: flex;
+      flex-direction: column
+    }
+
+    .service-points {
+      margin: 0 0 20px;
+      padding-left: 18px;
+      color: #c0c6c3;
+      font-size: 14px;
+      line-height: 1.55
+    }
+
+    .service-points li {
+      padding: 3px 0
+    }
+
+    .individual-card .price {
+      margin-top: auto;
+      padding-top: 12px
+    }
+
+    .team-feature {
+      background: var(--black-soft);
+      color: var(--white);
+      padding: 64px 0;
+      border-top: 1px solid rgba(255, 255, 255, .12)
+    }
+
+    .team-feature .section-kicker {
+      color: var(--gold-light)
+    }
+
+    .team-feature p {
+      color: #c0c6c3
+    }
+
+    .team-list {
+      border-left: 1px solid rgba(255, 255, 255, .2)
+    }
+
+    .team-list div {
+      border-bottom: 1px solid rgba(255, 255, 255, .14);
+      color: #f2f3f1
+    }
+
+    .partner-service {
+      background: #111617;
+      color: var(--white);
+      border-top: 1px solid rgba(255, 255, 255, .12)
+    }
+
+    .partner-service .section-kicker {
+      color: var(--gold-light)
+    }
+
+    .partner-service p {
+      color: #c0c6c3
+    }
+
+    .partner-layout .button {
+      white-space: nowrap
+    }
+
+    @media(max-width:680px) {
+      .team-feature {
+        padding: 42px 0
+      }
+
+      .partner-layout .button {
+        white-space: normal
+      }
+    }
+
+    /* Frissített vizuális hierarchia: a 10 alkalmas programok a fő ajánlatok */
+    .programs {
+      background: #f8f8f4;
+      color: #07090a;
+      padding: 68px 0
+    }
+
+    .programs .section-intro {
+      color: #3f494c
+    }
+
+    .program-card,
+    .program-card.featured {
+      background: var(--gold);
+      border: 1px solid #c79a26;
+      border-top: 4px solid #f0d06b;
+      color: #080a0b
+    }
+
+    .program-card .program-label,
+    .program-card.featured .program-label {
+      color: #4b390b
+    }
+
+    .program-card .program-desc,
+    .program-card.featured .program-desc {
+      color: #332b17
+    }
+
+    .program-card .program-facts li,
+    .program-card.featured .program-facts li {
+      border-color: rgba(7, 9, 10, .18)
+    }
+
+    .program-card .program-facts li:before,
+    .program-card.featured .program-facts li:before {
+      color: #4b390b
+    }
+
+    .program-card .program-price,
+    .program-card.featured .program-price {
+      border-color: rgba(7, 9, 10, .2)
+    }
+
+    .program-card .program-price .per-session,
+    .program-card.featured .program-price .per-session {
+      color: #443a22
+    }
+
+    .program-card .program-price .discount,
+    .program-card.featured .program-price .discount {
+      color: #4b390b
+    }
+
+    .program-card .button {
+      background: #07090a;
+      color: #f8f8f4;
+      border-color: #07090a
+    }
+
+    .program-footnote {
+      color: #4c5557
+    }
+
+    .age-label {
+      display: inline-block;
+      margin: -4px 0 14px;
+      padding: 4px 9px;
+      border: 1px solid rgba(7, 9, 10, .35);
+      border-radius: 2px;
+      font-size: 12px;
+      font-weight: 800;
+      color: #33280d
+    }
+
+    .individuals {
+      background: #f8f8f4;
+      color: #07090a;
+      border-top: 1px solid #e1e4e2
+    }
+
+    .individuals .section-kicker {
+      color: #9b7011
+    }
+
+    .individuals .section-intro {
+      color: #596467
+    }
+
+    .individual-card {
+      background: #fff;
+      color: #07090a;
+      border: 1px solid #d9ddda
+    }
+
+    .individual-card p,
+    .service-points {
+      color: #596467
+    }
+
+    .individual-card .price {
+      color: #72530c
+    }
+
+    .individual-card .note {
+      color: #596467
+    }
+
+    .team-feature {
+      background: #07090a;
+      color: #f8f8f4
+    }
+
+    .partner-service {
+      background: #101517;
+      color: #f8f8f4
+    }
+  </style>
+  <style id="requested-color-hierarchy-v4">
+    /* Fő ajánlatok: teljes szélességű sárga háttér, rajta különálló fehér kártyák */
+    .programs {
+      background: #d9ad38 !important;
+      color: #080a0b !important;
+      padding: 68px 0
+    }
+
+    .programs .section-kicker {
+      color: #4b390b !important
+    }
+
+    .programs h2,
+    .programs .section-intro {
+      color: #28271f !important
+    }
+
+    .program-card,
+    .program-card.featured {
+      background: #fff !important;
+      color: #171b1b !important;
+      border: 1px solid #e0e2df !important;
+      border-top: 4px solid #f0d06b !important;
+      border-radius: 3px;
+      box-shadow: 0 10px 26px rgba(49, 38, 8, .12)
+    }
+
+    .program-card h3,
+    .program-card.featured h3 {
+      color: #080a0b !important
+    }
+
+    .program-card .program-label,
+    .program-card.featured .program-label {
+      color: #8a6810 !important
+    }
+
+    .program-card .program-desc,
+    .program-card.featured .program-desc {
+      color: #596467 !important
+    }
+
+    .program-card .program-facts li,
+    .program-card.featured .program-facts li {
+      color: #282d2e !important;
+      border-color: #e1e4e2 !important
+    }
+
+    .program-card .program-facts li:before,
+    .program-card.featured .program-facts li:before {
+      color: #9b7011 !important
+    }
+
+    .program-card .program-price,
+    .program-card.featured .program-price {
+      border-color: #e1e4e2 !important
+    }
+
+    .program-card .program-price .per-session,
+    .program-card.featured .program-price .per-session {
+      color: #596467 !important
+    }
+
+    .program-card .program-price .discount,
+    .program-card.featured .program-price .discount {
+      color: #72530c !important
+    }
+
+    .program-card .button {
+      background: #07090a !important;
+      color: #f8f8f4 !important;
+      border-color: #07090a !important
+    }
+
+    .program-footnote {
+      color: #4b390b !important
+    }
+
+    .age-label {
+      background: #f8f8f4;
+      color: #33280d;
+      border-color: #ded4b5
+    }
+
+    /* Négy egyéni szolgáltatás: világos szürkés szekció és szürkés kártyák */
+    .individuals {
+      background: #e9ece8 !important;
+      color: #111617 !important;
+      border-top: 1px solid #d9ddda;
+      padding: 68px 0
+    }
+
+    .individuals .section-kicker {
+      color: #8a6810 !important
+    }
+
+    .individuals h2 {
+      color: #111617 !important
+    }
+
+    .individuals .section-intro {
+      color: #596467 !important
+    }
+
+    .individual-card {
+      background: #f6f7f4 !important;
+      color: #111617 !important;
+      border: 1px solid #d5dad6 !important;
+      border-radius: 3px
+    }
+
+    .individual-card h3 {
+      color: #111617 !important
+    }
+
+    .individual-card p,
+    .individual-card .service-points {
+      color: #596467 !important
+    }
+
+    .individual-card .service-points li::marker {
+      color: #9b7011 !important
+    }
+
+    .individual-card .price {
+      color: #72530c !important
+    }
+
+    .individual-card .note {
+      color: #596467 !important
+    }
+
+    /* Clean white and off-white surfaces for the closing service sections. */
+    .team-feature {
+      background: #fff !important;
+      color: #111617 !important;
+      border-top: 1px solid #e1e4e2 !important;
+      padding: 60px 0
+    }
+
+    .team-feature .section-kicker {
+      color: #8a6810 !important
+    }
+
+    .team-feature h2 {
+      color: #111617 !important
+    }
+
+    .team-feature p {
+      color: #596467 !important
+    }
+
+    .team-list {
+      border-left: 1px solid #d9ddda !important
+    }
+
+    .team-list div {
+      border-bottom: 1px solid #e1e4e2 !important;
+      color: #111617 !important
+    }
+
+    .team-feature .button,
+    .partner-service .button {
+      background: #07090a !important;
+      color: #f8f8f4 !important;
+      border-color: #07090a !important
+    }
+
+    .partner-service {
+      background: #f6f7f4 !important;
+      color: #111617 !important;
+      border-top: 1px solid #e1e4e2 !important;
+      padding: 54px 0
+    }
+
+    .partner-service .section-kicker {
+      color: #8a6810 !important
+    }
+
+    .partner-service h2 {
+      color: #111617 !important
+    }
+
+    .partner-service p {
+      color: #596467 !important
+    }
+
+    @media(max-width:950px) {
+      .programs {
+        padding: 54px 0
+      }
+
+      .individuals {
+        padding: 54px 0
+      }
+
+      .team-feature .team-list {
+        border-top: 1px solid #d9ddda !important
+      }
+    }
+  </style>
+
+  <style id="individual-section-package-background-v6">
+    /* Surface behind individual services, coordinated with the programmes' dark graphic background. */
+    .individuals {
+      position: relative !important;
+      isolation: isolate;
+      overflow: hidden;
+      background: #20282b !important;
+      color: #f8f8f4 !important;
+      border-top: 1px solid rgba(217, 173, 56, .22) !important;
+    }
+
+    .individuals::before {
+      display: none;
+    }
+
+    .individuals::after {
+      display: none;
+    }
+
+    .individuals .section-kicker {
+      color: #e3bd55 !important
+    }
+
+    .individuals h2 {
+      color: #fff !important
+    }
+
+    .individuals .section-intro {
+      color: #d0d5d3 !important
+    }
+
+    .individual-card {
+      background: #f6f7f4 !important;
+      color: #111617 !important;
+      border: 1px solid rgba(255, 255, 255, .7) !important;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .2) !important
+    }
+
+    .individual-card h3 {
+      color: #111617 !important
+    }
+
+    .individual-card p,
+    .individual-card .service-points {
+      color: #596467 !important
+    }
+
+    .individual-card .service-points li::marker {
+      color: #9b7011 !important
+    }
+
+    .individual-card .price {
+      color: #72530c !important
+    }
+
+    .individual-card .note {
+      color: #596467 !important
+    }
+  </style>
+
+
+  <style id="cta-and-team-refresh">
+    /* Consistent yellow calls to action for programmes and individual sessions. */
+    .program-card h3,
+    .program-card.featured h3 {
+      color: #9b7011 !important;
+    }
+
+    .program-card .program-label,
+    .program-card.featured .program-label {
+      color: #596467 !important;
+      font-weight: 600;
+    }
+
+    .individual-card h3 {
+      color: #9b7011 !important;
+    }
+
+    .program-card .program-price strong {
+      color: #72530c !important;
+    }
+
+    .program-card .button,
+    .individual-card .button,
+    .team-feature .button {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      padding: 13px 18px;
+      background: #e4b82e;
+      color: #101312;
+      border: 1px solid #e4b82e;
+      border-radius: 3px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    .program-card .button,
+    .program-card.featured .button {
+      background: #e4b82e !important;
+      color: #101312 !important;
+      border-color: #e4b82e !important;
+    }
+
+    .program-card .button:hover,
+    .individual-card .button:hover,
+    .team-feature .button:hover {
+      background: #f0ca4c;
+      border-color: #f0ca4c;
+      transform: translateY(-1px);
+    }
+
+    .program-card .button:hover,
+    .program-card.featured .button:hover {
+      background: #f0ca4c !important;
+      border-color: #f0ca4c !important;
+    }
+
+    .individual-card .button {
+      margin-top: 18px;
+    }
+
+    .team-feature .button {
+      background: #e4b82e !important;
+      color: #101312 !important;
+      border-color: #e4b82e !important;
+    }
+
+    .team-list div {
+      color: #72530c !important;
+    }
+
+    .team-feature .button:hover {
+      background: #f0ca4c !important;
+      border-color: #f0ca4c !important;
+    }
+
+    /* Modernebb, világos és friss csapatfejlesztési szekció */
+    .team-feature {
+      position: relative;
+      overflow: hidden;
+      padding: 76px 0;
+      background: linear-gradient(120deg, #f4f4ed 0%, #e8eee7 100%);
+      border-top: 1px solid #dce3d9;
+      border-bottom: 1px solid #dce3d9;
+    }
+
+    .team-feature:before {
+      display: none;
+    }
+
+    .team-feature::after {
+      display: none;
+    }
+
+    .team-layout-new {
+      position: relative;
+      gap: clamp(28px, 5vw, 64px);
+    }
+
+    .team-feature .section-kicker {
+      color: #596467 !important;
+      font-weight: 800;
+      letter-spacing: .13em;
+    }
+
+    .team-feature h2 {
+      color: #9b7011 !important;
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.06;
+      letter-spacing: -.04em;
+    }
+
+    .partner-service h2 {
+      color: #9b7011 !important;
+    }
+
+    .team-feature p {
+      max-width: 650px;
+      font-size: 16px;
+      line-height: 1.75;
+      color: #48534d;
+    }
+
+    .team-list,
+    .team-feature .team-list {
+      border: 0 !important;
+      padding: 8px 0 !important;
+    }
+
+    .team-list div {
+      position: relative;
+      margin: 0;
+      padding: 9px 0 9px 24px;
+      border: 0 !important;
+      border-radius: 0;
+      background: transparent !important;
+      color: #72530c !important;
+      box-shadow: none !important
+    }
+
+    .team-list div::before {
+      content: "+";
+      position: absolute;
+      left: 0;
+      color: #9b7011;
+      font-weight: 900
+    }
+
+    .team-list div:last-child {
+      margin-bottom: 0;
+    }
+
+    .team-feature .button {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 14px 24px;
+    }
+
+    @media(max-width:950px) {
+      .team-feature {
+        padding: 56px 0
+      }
+
+      .team-list,
+      .team-feature .team-list {
+        border: 0 !important;
+        padding: 14px 0 !important
+      }
+
+      .team-list div {
+        padding: 9px 0 9px 24px
+      }
+    }
+
+    .service-contact {
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+      background: linear-gradient(128deg, #273238, #111719 72%)
+    }
+
+    .service-contact .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .service-contact-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 68px;
+      align-items: start
+    }
+
+    .service-contact .section-kicker {
+      color: var(--gold-light);
+    }
+
+    .service-contact-copy h2 {
+      color: var(--white);
+    }
+
+    .service-contact-copy h2 span {
+      color: var(--gold-light);
+    }
+
+    .service-contact-copy p {
+      color: var(--grey);
+      font-size: 18px;
+    }
+
+    .service-contact-points {
+      margin: 30px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .service-contact-points li {
+      position: relative;
+      margin: 11px 0;
+      padding-left: 25px;
+      color: #dfe3df
+    }
+
+    .service-contact-points li::before {
+      content: "+";
+      position: absolute;
+      left: 0;
+      color: var(--gold-light);
+      font-weight: 900
+    }
+
+    .service-contact-form {
+      padding: 32px;
+      border: 1px solid rgba(255, 255, 255, .17);
+      border-top: 4px solid var(--gold);
+      background: rgba(6, 11, 13, .35);
+      scroll-margin-top: 112px
+    }
+
+    .service-contact-form form {
+      display: grid;
+      gap: 16px;
+    }
+
+    .service-contact-form label {
+      display: grid;
+      gap: 7px;
+      color: #e6e9e6;
+      font-size: 13px;
+      font-weight: 700
+    }
+
+    .service-contact-form input:not([type="checkbox"]),
+    .service-contact-form select,
+    .service-contact-form textarea {
+      width: 100%;
+      padding: 14px;
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, .24);
+      border-radius: 0;
+      background: #20282c;
+      font: inherit
+    }
+
+    .service-contact-form input:focus,
+    .service-contact-form select:focus,
+    .service-contact-form textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+      background: #202c31
+    }
+
+    .service-contact-form textarea {
+      min-height: 125px;
+      resize: vertical;
+    }
+
+    .service-contact-form .check {
+      display: flex;
+      align-items: start;
+      gap: 10px;
+      color: var(--grey);
+      font-size: 13px;
+      font-weight: 400
+    }
+
+    .service-contact-form .check input {
+      width: auto;
+      margin-top: 4px;
+    }
+
+    .service-contact-form .button {
+      margin-top: 4px;
+    }
+
+    @media(max-width:850px) {
+      .service-contact-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+    }
+
+    @media(max-width:560px) {
+      .service-contact-form {
+        padding: 22px;
+      }
+    }
+  </style>
+
 </head>
 
 <body>
-    <header class="site-header">
-        <div class="container nav"><a href="index.html" aria-label="Mental Ascend home"><img class="brand-logo"
-                    src="../pics/Logo%20vertical.jpeg" alt="Mental Ascend"></a>
-            <nav class="nav-links" aria-label="Main navigation"><a href="index.html">Home</a><a class="active"
-                    href="services.html">Services</a><a href="about.html">About us</a><a
-                    href="contact.html">Contact</a><a class="language-switch" href="../szolgaltatasok.html"
-                    aria-label="Switch to Hungarian" title="Magyar"><img src="../pics/Magyar%20z%C3%A1szl%C3%B3.png"
-                        alt="Hungarian flag"></a><a class="nav-cta" href="contact.html#consultation-form">Free
-                    consultation</a></nav><button class="menu-button" type="button" aria-label="Open menu"
-                aria-expanded="false"><span class="menu-icon"></span></button>
+  <header class="site-header">
+    <div class="container nav"><a class="brand" href="index.html" aria-label="Mental Ascend home"><img
+          class="brand-logo" src="../pics/Logo%20vertical.jpeg" alt="Mental Ascend"></a>
+      <nav class="nav-links" aria-label="Main navigation"><a href="index.html#top">Home</a><a class="active"
+          href="#top">Services</a><a href="about.html">About us</a><a href="contact.html">Contact</a><a
+          class="language-switch" href="../szolgaltatasok.html" aria-label="Switch to Hungarian" title="Magyar"><img
+            src="../pics/Magyar%20z%C3%A1szl%C3%B3.png" alt="Hungarian flag"></a><a class="nav-cta"
+          href="#service-contact-form">Free consultation</a></nav><button class="menu-button" type="button"
+        aria-label="Open menu" aria-expanded="false"><span class="menu-icon"></span></button>
+    </div>
+  </header>
+  <main id="top">
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow">Services</div>
+        <h1>Find the right<br /><span>mental support for you.</span></h1>
+      </div>
+    </section>
+    <section class="programs" id="programok">
+      <div class="container">
+        <div class="section-kicker"></div>
+        <h2>Long-term programs</h2>
+        <p class="section-intro">Our ten-session programs support athletes in developing their mental skills over time,
+          with guidance from one or more of our specialists. Together, we set goals, discover and practise mental
+          strategies, and reflect on progress along the way. The aim is to help athletes approach their sport with
+          greater awareness and confidence, and apply what they learn in their everyday training and competition.</p>
+        <div class="program-grid">
+          <article class="program-card">
+            <div class="program-label">10 sports mental coaching sessions</div>
+            <h3>Mental Ascend<br />Performance</h3>
+            <p class="program-desc">Personalised mental preparation to help athletes handle challenges with confidence
+              and perform at their best.</p>
+            <p class="card-detail">Our work can support you with:</p>
+            <ul class="program-facts">
+              <li>Managing pre-competition nerves and pressure</li>
+              <li>Directing focus and attention intentionally</li>
+              <li>Building confidence and inner stability</li>
+              <li>Working through mistakes, setbacks and difficult match situations</li>
+              <li>Practising personalised mental skills</li>
+            </ul>
+            <div class="program-price"><strong>HUF 180,000</strong><span class="per-session">10 sessions × 50
+                minutes</span></div><a class="button" href="#service-contact-form">I'm interested</a>
+          </article>
+          <article class="program-card">
+            <div class="program-label">8 coaching + 2 elite-athlete mentoring</div>
+            <h3>Mental Ascend<br />Pro Performance</h3>
+            <p class="program-desc">Comprehensive support for elite and competitive athletes, combining coaching and
+              mentoring in one programme.</p>
+            <p class="card-detail">The programme includes:</p>
+            <ul class="program-facts">
+              <li>8 personalised sports mental coaching sessions</li>
+              <li>2 mentoring sessions with Zoltán Stieber, a former Hungary international</li>
+              <li>Developing focus, confidence and pressure management</li>
+              <li>Guidance on career development, changing clubs and challenging periods in sport</li>
+              <li>Coaching combined with first-hand sporting experience</li>
+            </ul>
+            <div class="program-price"><strong>HUF 198,000</strong><span class="per-session">10 sessions × 50
+                minutes</span></div><a class="button" href="#service-contact-form">I'm interested</a>
+          </article>
+          <article class="program-card">
+            <div class="program-label">10 sports mental coaching sessions</div>
+            <h3>Mental Ascend<br />Performance Junior</h3>
+            <p class="program-desc">Age-appropriate mental support for athletes under 14, with initial parental
+              involvement and regular communication.</p>
+            <p class="card-detail">The programme can help with:</p>
+            <ul class="program-facts">
+              <li>Developing motivation and confidence as an athlete</li>
+              <li>Strengthening concentration and attention</li>
+              <li>Managing competition nerves in an age-appropriate way</li>
+              <li>Building a constructive approach to mistakes and setbacks</li>
+              <li>Working with parents while keeping the child's development in focus</li>
+            </ul>
+            <div class="program-price"><strong>HUF 148,500</strong><span class="per-session">10 sessions × 50
+                minutes</span></div><a class="button" href="#service-contact-form">I'm interested</a>
+          </article>
         </div>
-    </header>
-    <main id="top">
-        <section class="hero">
-            <div class="container">
-                <div class="eyebrow">Services</div>
-                <h1>Find the support<br><span>that fits you.</span></h1>
-                <p>Mental preparation is different for every athlete. Explore individual coaching, sports psychology,
-                    elite-athlete mentoring, parent guidance and team development, tailored to your needs.</p>
-            </div>
-        </section>
-        <nav class="service-picker" aria-label="Services">
-            <div class="container service-links"><a href="#coaching">Mental coaching</a><a href="#mentoring">Athlete
-                    mentoring</a><a href="#psychology">Sports psychology</a><a href="#parents">Parent guidance</a><a
-                    href="#team">Team coaching</a></div>
-        </nav>
-        <section class="service" id="coaching">
-            <div class="container service-layout">
-                <aside><span class="service-number">01 / Individual support</span>
-                    <h2>Sports mental coaching</h2>
-                </aside>
-                <article class="service-content">
-                    <p class="lead"><strong>Personalised mental skills training for better focus and
-                            performance.</strong></p>
-                    <p>We do not rely on one-size-fits-all formulas. We build on your experiences and goals, using
-                        practical tools to help you manage pressure when it matters most.</p>
-                    <div class="features">
-                        <div class="feature">Managing pre-competition nerves</div>
-                        <div class="feature">Directing focus and attention</div>
-                        <div class="feature">Building confidence and inner stability</div>
-                        <div class="feature">Learning from mistakes and setbacks</div>
-                    </div>
-                    <div class="price"><strong>Price – to be discussed during consultation</strong><a class="button" href="contact.html#consultation-form">Book a
-                            free consultation</a></div>
-                </article>
-            </div>
-        </section>
-        <section class="service" id="mentoring">
-            <div class="container service-layout">
-                <aside><span class="service-number">02 / Individual support</span>
-                    <h2>Elite-athlete mentoring</h2>
-                </aside>
-                <article class="service-content">
-                    <p class="lead"><strong>First-hand guidance and a professional perspective from Zoltán Stieber, a
-                            former Hungary international with 26 caps.</strong></p>
-                    <p>Professional sporting experience meets your current reality. Zoltán offers honest feedback,
-                        practical guidance and lessons drawn from his own career.</p>
-                    <div class="features">
-                        <div class="feature">Taking the next step in your career</div>
-                        <div class="feature">Changing clubs and settling abroad</div>
-                        <div class="feature">Navigating injuries and time on the bench</div>
-                        <div class="feature">Making decisions under pressure</div>
-                    </div>
-                    <div class="price"><strong>Price – to be discussed during consultation</strong><a class="button"
-                            href="contact.html#consultation-form">Book a free consultation</a></div>
-                </article>
-            </div>
-        </section>
-        <section class="package">
-            <div class="container">
-                <div class="kicker">Combined programme</div>
-                <h2>Ascend Performance Package</h2>
-                <p>Structured, longer-term support combining mental skills development with real-world elite sporting
-                    experience.</p>
-                <div class="package-card">
-                    <div>
-                        <h3>8 coaching + 2 mentoring sessions</h3>
-                        <p>Ten individual online sessions bringing together regular mental coaching and practical
-                            mentoring from professional sport.</p>
-                        <ul>
-                            <li>Eight personalised mental coaching sessions</li>
-                            <li>Two mentoring sessions with Zoltán Stieber</li>
-                            <li>Comprehensive preparation for peak performance</li>
-                            <li>Ten individual online consultations in total</li>
-                        </ul>
-                    </div>
-                    <div class="package-price">
-                        <div class="consultation-price">Price – to be discussed during consultation</div><a class="button"
-                            href="contact.html#consultation-form">Ask about the package</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="service" id="psychology">
-            <div class="container service-layout">
-                <aside><span class="service-number">03 / Individual support</span>
-                    <h2>Sports psychology</h2>
-                </aside>
-                <article class="service-content">
-                    <p class="lead"><strong>Address deeper blocks, competition anxiety and emotional challenges that get
-                            in the way of performance.</strong></p>
-                    <p>When practical techniques are not enough, professional psychological support can help explore the
-                        underlying causes of recurring fears and barriers.</p>
-                    <div class="features">
-                        <div class="feature">Exploring performance-limiting blocks</div>
-                        <div class="feature">Working with competitive fear and anxiety</div>
-                        <div class="feature">Processing emotional challenges and setbacks</div>
-                        <div class="feature">Building a steadier inner foundation</div>
-                    </div>
-                    <div class="price"><strong>Price – to be discussed during consultation</strong><a class="button"
-                            href="contact.html#consultation-form">Book a free consultation</a></div>
-                </article>
-            </div>
-        </section>
-        <section class="service" id="parents">
-            <div class="container service-layout">
-                <aside><span class="service-number">04 / For parents</span>
-                    <h2>Parent guidance</h2>
-                </aside>
-                <article class="service-content">
-                    <p class="lead"><strong>Practical guidance to help you support your child with confidence.</strong>
-                    </p>
-                    <p>Together, we find a balanced way to communicate and offer meaningful support without adding
-                        pressure.</p>
-                    <div class="features">
-                        <div class="feature">Communicating before and after competition</div>
-                        <div class="feature">Responding constructively to mistakes</div>
-                        <div class="feature">Supporting without increasing pressure</div>
-                        <div class="feature">Encouraging your child's own motivation</div>
-                    </div>
-                    <div class="price"><strong>Price – to be discussed during consultation</strong><a class="button"
-                            href="contact.html#consultation-form">Book a free consultation</a></div>
-                </article>
-            </div>
-        </section>
-        <section class="service" id="team">
-            <div class="container service-layout">
-                <aside><span class="service-number">05 / For teams</span>
-                    <h2>Sports team coaching</h2>
-                </aside>
-                <article class="service-content">
-                    <p class="lead"><strong>Stronger cohesion, communication and mental preparation for sports teams and
-                            clubs.</strong></p>
-                    <p>We work from your team's current situation to clarify shared goals, develop team dynamics and
-                        address internal challenges constructively.</p>
-                    <div class="features">
-                        <div class="feature">Clarifying shared goals and ways of working</div>
-                        <div class="feature">Building trust and stronger team dynamics</div>
-                        <div class="feature">Addressing conflict constructively</div>
-                        <div class="feature">Support for coaches and teams</div>
-                    </div>
-                    <div class="price"><strong>Price – to be discussed during consultation</strong><a
-                            class="button" href="contact.html#consultation-form">Request a proposal</a></div>
-                </article>
-            </div>
-        </section>
-        <section class="cta">
-            <div class="container cta-row">
-                <h2>Not sure which approach is right for you?</h2><a class="button"
-                    href="contact.html#consultation-form">Let's start with a conversation</a>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <div class="container footer-row"><a class="footer-brand" href="index.html"><img class="footer-logo"
-                    src="../pics/Logo%20vertical.jpeg" alt=""><span class="footer-tagline">Elevate. <span>Your mental
-                        game.</span></span></a><span>© 2026 Mental Ascend. All rights
-                reserved.</span><a href="contact.html">Contact</a></div>
-    </footer>
-    <script>const menuButton = document.querySelector('.menu-button'); const navLinks = document.querySelector('.nav-links'); menuButton.addEventListener('click', () => { const open = menuButton.getAttribute('aria-expanded') === 'true'; menuButton.setAttribute('aria-expanded', String(!open)); menuButton.setAttribute('aria-label', open ? 'Open menu' : 'Close menu'); navLinks.classList.toggle('is-open', !open) }); navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { menuButton.setAttribute('aria-expanded', 'false'); navLinks.classList.remove('is-open') }));</script>
+    </section>
+    <section class="individuals" id="egyeni">
+      <div class="container">
+        <h2>Individual sessions</h2>
+        <p class="section-intro">If you are looking for support with a specific question or situation, or would first
+          like to try a mental coaching session, you can book a single session with one of our specialists.</p>
+        <div class="individual-grid">
+          <article class="individual-card">
+            <h3>Sports mental coaching</h3>
+            <p>Personalised mental skills development to strengthen focus and support performance. We do not rely on
+              one-size-fits-all formulas: we start with your experiences and sporting situations, finding practical
+              tools you can use when competition matters.</p>
+            <ul class="service-points">
+              <li>Managing pre-competition nerves</li>
+              <li>Directing focus and attention</li>
+              <li>Building confidence and inner stability</li>
+              <li>Learning from mistakes and setbacks</li>
+            </ul>
+            <div class="price">HUF 20,000 / session</div><a class="button" href="#service-contact-form">I'm
+              interested</a>
+          </article>
+          <article class="individual-card">
+            <h3>Junior sports mental coaching</h3>
+            <p>Age-appropriate mental support for children under 14. The aim is to help each child learn to use tools
+              in sporting situations at their own pace, with parents appropriately involved and kept informed.</p>
+            <ul class="service-points">
+              <li>Motivation and confidence as an athlete</li>
+              <li>Concentration and attention</li>
+              <li>Managing nerves, mistakes and setbacks</li>
+              <li>Age-appropriate support in collaboration with parents</li>
+            </ul>
+            <div class="price">HUF 16,500 / session</div><a class="button" href="#service-contact-form">I'm
+              interested</a>
+          </article>
+          <article class="individual-card">
+            <h3>Elite-athlete mentoring</h3>
+            <p>First-hand guidance and a professional perspective from Zoltán Stieber, a former Hungary international
+              with 26 caps. His elite-sport experience meets your current reality through honest feedback, practical
+              guidance and lessons from his own career.</p>
+            <ul class="service-points">
+              <li>Taking the next step and building your career intentionally</li>
+              <li>Changing clubs and settling in abroad</li>
+              <li>Navigating difficult periods, injuries and time on the bench</li>
+              <li>Making decisions under pressure</li>
+            </ul>
+            <div class="price">HUF 30,000 / session</div><a class="button" href="#service-contact-form">I'm
+              interested</a>
+          </article>
+          <article class="individual-card">
+            <h3>Parent guidance</h3>
+            <p>Practical guidance to help you support your child's sporting journey. Together, we find a balanced way
+              to communicate and offer meaningful support without adding pressure.</p>
+            <ul class="service-points">
+              <li>Communicating effectively before and after competition</li>
+              <li>Responding constructively to mistakes and setbacks</li>
+              <li>Providing balanced support without pressure</li>
+              <li>Encouraging your child's inner motivation</li>
+            </ul>
+            <div class="price">HUF 20,000 / session</div><a class="button" href="#service-contact-form">I'm
+              interested</a>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="team-feature" id="team">
+      <div class="container team-layout-new">
+        <div>
+          <div class="section-kicker">For teams and clubs</div>
+          <h2>Mental Ascend<br />Team Performance</h2>
+          <p>Stronger cohesion, communication and mental preparation for sports teams and clubs. We work from your
+            team's current situation to clarify shared goals, strengthen team dynamics and address internal challenges
+            constructively.</p><a class="button" href="#service-contact-form">Request a tailored proposal</a>
+        </div>
+        <div class="team-list">
+          <div>Clarifying shared goals and ways of working</div>
+          <div>Building trust and stronger team dynamics</div>
+          <div>Addressing internal conflict constructively</div>
+          <div>Support for coaches and team dynamics</div>
+        </div>
+      </div>
+    </section>
+    <section class="partner-service" id="pszichologia">
+      <div class="container partner-layout">
+        <div>
+          <h2>Sports psychology</h2>
+          <p>Our team includes a sports psychologist. If an athlete's situation calls for deeper support or a
+            different kind of help, we can connect them with the right specialist.</p>
+          <p>We can discuss what kind of support may be appropriate during a free online consultation.</p>
+        </div>
+      </div>
+    </section>
+    <section class="service-contact" id="contact">
+      <div class="container service-contact-grid">
+        <div class="service-contact-copy">
+          <div class="section-kicker">Free consultation</div>
+          <h2>Not sure which type of support would suit you best? <span>Let's start with a free consultation.</span>
+          </h2>
+          <ul class="service-contact-points">
+            <li>A relaxed 20-minute online conversation</li>
+            <li>A chance for us to understand your situation</li>
+            <li>Clarifying what kind of support you need most right now</li>
+            <li>Choosing possible next steps together</li>
+            <li>No obligation and completely free</li>
+          </ul>
+        </div>
+        <div class="service-contact-form" id="service-contact-form">
+          <form action="https://formspree.io/f/mbglaznk" method="POST">
+            <label>Name *<input required type="text" name="name"></label>
+            <label>Email address *<input required type="email" name="email"></label>
+            <label>Who are you seeking support for? *<select required name="who">
+                <option value="">Please choose...</option>
+                <option>Myself as an athlete</option>
+                <option>My child</option>
+                <option>Myself as a parent</option>
+              </select></label>
+            <label>Athlete's age group *<select required name="age-group">
+                <option value="">Please choose...</option>
+                <option>Under 14</option>
+                <option>14–18</option>
+                <option>Over 18 / adult</option>
+              </select></label>
+            <label>Sport<input type="text" name="sport"></label>
+            <label>What would you like support with? *<textarea required name="message"
+                placeholder="Tell us briefly about the situation you would like support with."></textarea></label>
+            <label>When would you be available for a 20-minute online consultation? *<textarea required
+                name="availability"
+                placeholder="Please suggest three possible time slots over the next 7 days (for example: Monday morning, Wednesday 2–4 pm). We will send you a Google Meet invitation."></textarea></label>
+            <label class="check"><input required type="checkbox" name="privacy"><span>I have read and agree to the
+                privacy notice. *</span></label>
+            <button class="button primary" type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container footer-inner"><a class="footer-brand" href="index.html#top"
+        aria-label="Mental Ascend home"><img class="footer-logo" src="../pics/Logo%20vertical.jpeg" alt=""><span
+          class="footer-tagline">Elevate. <span>Your mental game.</span></span></a><span>© 2026 Mental Ascend. All
+        rights
+        reserved.</span><span><a href="#service-contact-form">Contact</a> · <a href="#">Privacy notice</a></span></div>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuButton = document.querySelector('.menu-button');
+      const navLinks = document.querySelector('.nav-links');
+
+      menuButton.addEventListener('click', () => {
+        const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', String(!isOpen));
+        menuButton.setAttribute('aria-label', isOpen ? 'Open menu' : 'Close menu');
+        navLinks.classList.toggle('is-open', !isOpen);
+      });
+
+      navLinks.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          menuButton.setAttribute('aria-expanded', 'false');
+          menuButton.setAttribute('aria-label', 'Open menu');
+          navLinks.classList.remove('is-open');
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
