@@ -383,6 +383,11 @@
       top: 30px
     }
 
+    .profile-photos {
+      display: grid;
+      gap: 36px
+    }
+
     .profile-photo {
       width: 100%;
       min-height: 470px;
@@ -494,7 +499,7 @@
 
     .expert-photo {
       position: relative;
-      width: min(100%, 420px);
+      width: min(100%, 320px);
       aspect-ratio: 4 / 5;
       margin-inline: auto;
       overflow: hidden;
@@ -542,6 +547,7 @@
     }
 
     .expert-card .role {
+      min-height: 3em;
       margin-bottom: 17px;
       color: var(--gold-dark);
       font-size: 12px;
@@ -551,7 +557,7 @@
     }
 
     .expert-intro {
-      min-height: 10em;
+      min-height: 12em;
       margin-bottom: 20px
     }
 
@@ -570,7 +576,12 @@
 
     .expert-details-content {
       min-height: 8em;
-      padding-top: 16px
+      padding-top: 16px;
+      line-height: 1.55
+    }
+
+    .expert-details-content p+p {
+      margin-top: 10px
     }
 
     .expert-card p {
@@ -763,6 +774,39 @@
         position: static
       }
 
+      .profile-inner {
+        display: flex;
+        flex-direction: column
+      }
+
+      .profile-aside,
+      .profile-photos,
+      .profile-main {
+        display: contents
+      }
+
+      .profile-main>.section-kicker,
+      .profile-main>.profile-name,
+      .profile-main>.profile-role {
+        order: 1
+      }
+
+      .profile-photos .profile-photo:first-child {
+        order: 2
+      }
+
+      .profile-main> :not(.section-kicker):not(.profile-name):not(.profile-role):not(.value-box) {
+        order: 3
+      }
+
+      .profile-main>.value-box {
+        order: 4
+      }
+
+      .profile-photos .profile-photo:last-child {
+        order: 5
+      }
+
       .profile-photo,
       .profile-photo img {
         min-height: 330px
@@ -811,11 +855,42 @@
       }
 
       .profile-inner {
-        gap: 38px
+        gap: 14px
+      }
+
+      .profile-main>.section-kicker {
+        margin-bottom: 4px
+      }
+
+      .profile-name {
+        margin-bottom: 4px
+      }
+
+      .profile-role {
+        margin-bottom: 0
+      }
+
+      .quote {
+        margin-bottom: 20px;
+        padding: 16px 0 16px 20px
       }
 
       .expert-grid {
         gap: 16px
+      }
+
+      .profile-photos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px
+      }
+
+      .profile-photo,
+      .profile-photo img {
+        min-height: 0
+      }
+
+      .profile-photo {
+        aspect-ratio: 4 / 5
       }
 
       .footer-inner {
@@ -900,9 +975,12 @@
       <article class="profile" id="zoltan">
         <div class="container profile-inner">
           <aside class="profile-aside">
-            <div class="profile-photo"><img src="pics/Zoli gól.jpg" alt="Stieber Zoltán portréja"></div>
+            <div class="profile-photos">
+              <div class="profile-photo"><img src="pics/Zoli gól.jpg" alt="Stieber Zoltán portréja"></div>
+              <div class="profile-photo"><img src="pics/Zoli%20progfi%20.jpeg" alt="Stieber Zoltán portréja"></div>
+            </div>
           </aside>
-          <div>
+          <div class="profile-main">
             <div class="section-kicker">Társalapító</div>
             <h2 class="profile-name">Stieber Zoltán</h2>
             <div class="profile-role">Mentor · Sport mentál coach · Korábbi válogatott labdarúgó</div>
@@ -934,9 +1012,13 @@
       <article class="profile" id="zsofi">
         <div class="container profile-inner">
           <aside class="profile-aside">
-            <div class="profile-photo"><img src="pics/Zsofi mikrofon.png" alt="Boros Zsófia portréja"></div>
+            <div class="profile-photos">
+              <div class="profile-photo"><img src="pics/Zsofi mikrofon.png" alt="Boros Zsófia portréja"></div>
+              <div class="profile-photo"><img src="pics/Zsofi%20futoversenyen.png" alt="Boros Zsófia egy futóversenyen">
+              </div>
+            </div>
           </aside>
-          <div>
+          <div class="profile-main">
             <div class="section-kicker">Társalapító</div>
             <h2 class="profile-name">Boros Zsófia</h2>
             <div class="profile-role">Sport mentál &amp; Team coach · ICF ACC minősített coach</div>
@@ -950,9 +1032,8 @@
               <p>Tíz évet töltöttem multinacionális környezetben vezetőként, éltem külföldön és vezettem multikulturális
                 csapatokat. Legutóbb a Procter &amp; Gamble közép-európai marketingigazgatójaként dolgoztam,
                 ahol a magas teljesítmény, a folyamatos nyomás és a felelősségvállalás a mindennapok része volt.</p>
-              <p>ICF ACC minősítésű coachként törekszem a sportból és vállalati életből hozott tapasztalataimat, a sport
-                mentál
-                és business coaching strukturált módszertanával összekapcsolni. Hiszek abban, hogy a mentális
+              <p>ICF ACC minősítésű coachként törekszem a sportból és vállalati életből hozott tapasztalataimat, a
+                coaching strukturált módszertanával összekapcsolni. Hiszek abban, hogy a mentális
                 felkészülés ugyanúgy
                 a sportolói fejlődés szerves része, mint a technikai, taktikai vagy fizikai edzés.</p>
             </div>
@@ -971,7 +1052,7 @@
     <section class="network">
       <div class="container">
         <div class="section-kicker">Egy csapat, több nézőpont</div>
-        <h2>Szakmai csapatunk</h2>
+        <h2>További szakembereink</h2>
         <p class="network-intro">A Mental Ascendnél hiszünk a holisztikus szemléletben, és abban, hogy a
           teljesítményfejlesztés akkor igazán hatékony, ha a sportoló egyéni igényeire van szabva. Ezért több terület
           tapasztalt szakembereivel is együtt dolgozunk, a sport mentál coachingtól a sportpszichológiáig, hogy minden
@@ -979,28 +1060,72 @@
         </p>
         <div class="expert-grid">
           <article class="expert-card">
-            <div class="expert-photo"><img src="pics/Dori%20pic.png" alt="Fejes Dóra"></div>
+            <div class="expert-photo"><img src="pics/D%C3%B3ri%20futas.jpeg" alt="Fejes Dóra futóruhában"></div>
             <div class="expert-content">
               <h3>Fejes Dóra</h3>
-              <div class="role">Okleveles Pszichológus · Sportpszichológus</div>
+              <div class="role">OKLEVELES PSZICHOLÓGUS · SPORTPSZICHOLÓGUS · FUTÓTERAPEUTA</div>
               <div class="expert-intro">
-                <p>Dóri okleveles pszichológus és sportpszichológus, aki profi és amatőr sportolókat támogat a mentális
-                  teljesítményük fejlesztésében. Munkájában többek között a versenyhelyzetek kezelésével,
-                  teljesítményszorongással, motivációval, önbizalommal és a sérülésekhez való mentális alkalmazkodással
-                  foglalkozik.</p>
+                <p>Dóri okleveles pszichológus, sportpszichológus, futóterapeuta és a Fútóterápia című könyv szerzője,
+                  aki a Mental Ascend sportpszichológusaként támogatja a sportolók mentális felkészülését. Szakterülete
+                  a
+                  teljesítményszorongás kezelése, a motiváció és az önbizalom fejlesztése, valamint a sérülésekhez
+                  kapcsolódó mentális kihívások feldolgozása.</p>
               </div>
               <details class="expert-details">
                 <summary>Tudj meg többet Dóriról</summary>
                 <div class="expert-details-content">
-                  <p>Kiemelt területei közé tartozik a teljesítményszorongás és a téthelyzetek kezelése, a motiváció és
-                    önbizalom fejlesztése, a kiégés megelőzése, a csapaton belüli konfliktusok, valamint a sérülésekből
-                    vagy megváltozott fizikai állapotból való mentális felépülés.</p>
-                  <p>Saját sportolói tapasztalatai – több félmaraton, maraton és egy féltávú triatlon teljesítése –
-                    révén személyesen is ismeri a teljesítményhez, versenyzéshez és sérülésekhez kapcsolódó mentális
-                    kihívásokat. Munkájában a sportpszichológiai szemléletet és gyakorlati sporttapasztalatait is
-                    ötvözi.</p>
-                  <p>Dóri a futás és a pszichológia kapcsolatával is kiemelten foglalkozik: saját módszert, az FDRT®
-                    futóterápiát is létrehozta, amely a kognitív terápiás eszközöket mindful futással ötvözi.</p>
+                  <p>Dóri hobbi sportolóként számos félmaratont, két maratont és egy féltávú triatlont teljesített.
+                    Saját
+                    sportolói élményei, valamint egy sérülést követő rehabilitációja során személyesen is
+                    megtapasztalta,
+                    milyen fontos szerepet játszik a mentális felkészültség a sportban és a felépülésben.</p>
+                  <p> Az egyetemen megismerkedett a testedzéspszichológiával, ami a sportot, mint eszközt használja
+                    életvezetés korrekcióra, szorongás csökkentésre és a depresszióval való megküzdésre.
+
+                    Létrehozta a saját, futással kapcsolatos
+                    terápiáját, az FDRT © futóterápiát, ami kifejezetten olyanokat céloz, akik szeretnének egy hatékony
+                    eszközt kapni a stresszkezeléshez és visszavenni a kontrollt életük felett. Futóterápia című könyve
+                    idén márciusban jelent meg.
+                  </p>
+                  <p>Sportpszichológusként edzőket, egyéni és csapatsportolókat (profi és amatőr, felnőtt és gyermek)
+                    vár, akiket hozzásegít egy magasabb teljesítmény eléréséhez, a sérülések leküzdéséhez. Munkájában a
+                    sportpszichológiai ismereteket saját sportolói tapasztalataival ötvözi, legyen szó versenyhelyzetek
+                    kezeléséről, a motiváció fenntartásáról, a kiégés megelőzéséről vagy a sérülések utáni mentális
+                    visszatérésről.</p>
+                </div>
+              </details>
+            </div>
+          </article>
+          <article class="expert-card">
+            <div class="expert-photo"><img src="pics/%C3%81gi%20erd%C5%91s%20k%C3%A9p.jpg" alt="Nagy Ágnes"></div>
+            <div class="expert-content">
+              <h3>Nagy Ágnes</h3>
+              <div class="role">SPORTMENTÁL COACH · TEAM COACH · OKLEVELES PSZICHOLÓGUS</div>
+              <div class="expert-intro">
+                <p>Ági sport mentál coachként a Mental Ascend programjaiban támogatja a sportolók mentális fejlődését,
+                  tudatos felkészülését és a bennük rejlő lehetőségek kibontakoztatását. Felnőtt és fiatal sportolókkal
+                  egyaránt szívesen dolgozik; a fiatalok támogatásában fontos szerepet kap a szülőkkel való
+                  együttműködés is.</p>
+              </div>
+              <details class="expert-details">
+                <summary>Tudj meg többet Ágiról</summary>
+                <div class="expert-details-content">
+                  <p>Ági sportmentál coach, team coach, okleveles pszichológus és közgazdász. 14 évet töltött
+                    multinacionális vállalati környezetben, szakértői és vezetői pozíciókban. Különösen szívesen
+                    dolgozik fiatal sportolókkal. Ebben a folyamatban a szülőkkel való
+                    együttműködést is fontosnak tartja, hiszen a támogató környezet meghatározó szerepet játszhat a
+                    fiatalok sporthoz való viszonyában és fejlődésében.
+                  <p>Vállalati tapasztalatai révén közelről ismerte
+                    meg a teljesítményhez kapcsolódó elvárásokat, a
+                    változások kezelését és a célok megvalósításának kihívásait. Ezeket a tapasztalatokat a sportolók
+                    támogatásában is hasznosítja, hiszen a tudatos felkészülés, a belső erőforrások felismerése és a
+                    nyomáshelyzetek kezelése a sportban és a munka világában egyaránt fontos.</p>
+                  <p>A sport gyermekkora óta az élete része, és ma is szívesen fedez fel új sportágakat. Sportmentál
+                    coachként abban hisz, hogy a fejlődés nem csupán az eredményekről szól: legalább ilyen fontos, hogy
+                    a sportolók jobban megismerjék önmagukat, felismerjék erősségeiket, és megtanuljanak tudatosan
+                    támaszkodni saját erőforrásaikra.</p>
+                  <p></p>
+
                 </div>
               </details>
             </div>

@@ -357,9 +357,9 @@
                 grid-template-columns: 1fr
             }
 
+            .profile-photo,
             .profile-photo img {
-                max-height: 420px;
-                object-position: center 30%
+                min-height: 330px
             }
 
             .profiles-intro {
@@ -541,6 +541,11 @@
             gap: 74px
         }
 
+        .profile-photos {
+            display: grid;
+            gap: 36px
+        }
+
         .profile-photo {
             min-height: 470px;
             position: relative;
@@ -569,6 +574,10 @@
             font-size: clamp(37px, 4vw, 58px);
             line-height: .95;
             letter-spacing: -.045em
+        }
+
+        .profile-role {
+            margin-bottom: 30px
         }
 
         .network h2 {
@@ -667,7 +676,7 @@
 
         .expert-photo {
             position: relative;
-            width: min(100%, 420px);
+            width: min(100%, 320px);
             aspect-ratio: 4 / 5;
             margin-inline: auto;
             overflow: hidden;
@@ -716,6 +725,7 @@
         }
 
         .expert-card .role {
+            min-height: 3em;
             margin-bottom: 17px;
             color: var(--gold-dark);
             font-size: 12px;
@@ -725,7 +735,7 @@
         }
 
         .expert-intro {
-            min-height: 10em;
+            min-height: 12em;
             margin-bottom: 20px
         }
 
@@ -744,7 +754,12 @@
 
         .expert-details-content {
             min-height: 8em;
-            padding-top: 16px
+            padding-top: 16px;
+            line-height: 1.55
+        }
+
+        .expert-details-content p+p {
+            margin-top: 10px
         }
 
         .expert-card p {
@@ -777,8 +792,59 @@
 
         @media(max-width:850px) {
             .profile-inner {
-                grid-template-columns: .8fr 1.2fr;
-                gap: 28px
+                display: flex;
+                flex-direction: column;
+                gap: 14px
+            }
+
+            .profile-aside,
+            .profile-photos,
+            .profile-main {
+                display: contents
+            }
+
+            .profile-main>.kicker,
+            .profile-main>.profile-name,
+            .profile-main>.profile-role {
+                order: 1
+            }
+
+            .profile-photos .profile-photo:first-child {
+                order: 2
+            }
+
+            .profile-main> :not(.kicker):not(.profile-name):not(.profile-role):not(.value-box) {
+                order: 3
+            }
+
+            .profile-main>.value-box {
+                order: 4
+            }
+
+            .profile-photos .profile-photo:last-child {
+                order: 5
+            }
+
+            .profile-photo,
+            .profile-photo img {
+                min-height: 330px
+            }
+
+            .profile-main>.kicker {
+                margin-bottom: 4px
+            }
+
+            .profile-name {
+                margin-bottom: 4px
+            }
+
+            .profile-role {
+                margin-bottom: 0
+            }
+
+            .quote {
+                margin-bottom: 20px;
+                padding: 16px 0 16px 20px
             }
         }
 
@@ -991,16 +1057,20 @@
                 <p>Two different sport and professional backgrounds, united by one goal: developing mental readiness
                     with intention.</p>
             </div>
-            <article class="profile">
+            <article class="profile" id="zoltan">
                 <div class="container profile-inner">
-                    <aside>
-                        <div class="profile-photo"><img src="../pics/Zoli%20g%C3%B3l.jpg"
-                                alt="Zoltán Stieber celebrating on the pitch"></div>
+                    <aside class="profile-aside">
+                        <div class="profile-photos">
+                            <div class="profile-photo"><img src="../pics/Zoli%20g%C3%B3l.jpg"
+                                    alt="Zoltán Stieber celebrating on the pitch"></div>
+                            <div class="profile-photo"><img src="../pics/Zoli%20progfi%20.jpeg"
+                                    alt="Portrait of Zoltán Stieber"></div>
+                        </div>
                     </aside>
-                    <div>
+                    <div class="profile-main">
                         <div class="kicker">Co-founder</div>
                         <h2 class="profile-name">Zoltán Stieber</h2>
-                        <div class="role">Mentor · Sports mental coach · Former Hungary international</div>
+                        <div class="role profile-role">Mentor · Sports mental coach · Former Hungary international</div>
                         <blockquote class="quote">“Professional sport taught me that talent alone is not enough. When
                             the decisive moment comes, the advantage belongs to the person who is ready mentally, too.”
                         </blockquote>
@@ -1026,16 +1096,20 @@
                     </div>
                 </div>
             </article>
-            <article class="profile">
+            <article class="profile" id="zsofi">
                 <div class="container profile-inner">
-                    <aside>
-                        <div class="profile-photo"><img src="../pics/Zsofi%20mikrofon.png"
-                                alt="Zsófia Boros speaking at an event"></div>
+                    <aside class="profile-aside">
+                        <div class="profile-photos">
+                            <div class="profile-photo"><img src="../pics/Zsofi%20mikrofon.png"
+                                    alt="Zsófia Boros speaking at an event"></div>
+                            <div class="profile-photo"><img src="../pics/Zsofi%20futoversenyen.png"
+                                    alt="Zsófia Boros at a running event"></div>
+                        </div>
                     </aside>
-                    <div>
+                    <div class="profile-main">
                         <div class="kicker">Co-founder</div>
                         <h2 class="profile-name">Zsófia Boros</h2>
-                        <div class="role">Sports mental &amp; team coach · ICF ACC credentialed coach</div>
+                        <div class="role profile-role">Sports mental &amp; team coach · ICF ACC credentialed coach</div>
                         <blockquote class="quote">“In sport and in life, the goal is not to avoid difficult moments. It
                             is to have the tools to respond to them well.”</blockquote>
                         <div class="profile-copy">
@@ -1074,30 +1148,72 @@
                     psychology, so every athlete receives the support they truly need.</p>
                 <div class="expert-grid">
                     <article class="expert-card">
-                        <div class="expert-photo"><img src="../pics/Dori%20pic.png" alt="Fejes Dóra"></div>
+                        <div class="expert-photo"><img src="../pics/D%C3%B3ri%20futas.jpeg"
+                                alt="Fejes Dóra in running gear"></div>
                         <div class="expert-content">
                             <h3>Fejes Dóra</h3>
-                            <div class="role">Psychologist, sports psychologist</div>
+                            <div class="role">Qualified psychologist · Sports psychologist · Running therapist</div>
                             <div class="expert-intro">
-                                <p>Dóri is a qualified psychologist and sports psychologist who supports professional
-                                    and amateur athletes in developing their mental performance. Her work includes,
-                                    among other things, managing competitive situations, performance anxiety,
-                                    motivation, self-confidence, and mental adaptation to injuries.</p>
+                                <p>Dóri is a qualified psychologist, sports psychologist and running therapist, and
+                                    author of <em>Running Therapy</em>. As a sports psychologist with Mental Ascend,
+                                    she supports athletes in their mental preparation. Her areas of focus include
+                                    managing performance anxiety, developing motivation and self-confidence, and
+                                    working through the mental challenges associated with injury.</p>
                             </div>
                             <details class="expert-details">
                                 <summary>Learn more about Dóri</summary>
                                 <div class="expert-details-content">
-                                    <p>Her key areas include managing performance anxiety and high-stakes situations,
-                                        developing motivation and self-confidence, preventing burnout, conflicts within
-                                        teams, and mental recovery following injuries or changes in physical condition.
-                                    </p>
-                                    <p>Her own sporting experience—including completing several half-marathons, a
-                                        marathon and a half-distance triathlon—gives her personal insight into the
-                                        mental challenges of performance, competition and injury. She combines a
-                                        sports-psychology approach with practical sporting experience.</p>
-                                    <p>Dóri also focuses on the relationship between running and psychology. She
-                                        developed her own method, FDRT® running therapy, which combines cognitive
-                                        therapy tools with mindful running.</p>
+                                    <p>As a recreational athlete, Dóri has completed numerous half-marathons, two
+                                        marathons and a half-distance triathlon. Through her own sporting experiences
+                                        and rehabilitation following an injury, she has experienced first-hand the
+                                        important role mental preparation plays in sport and recovery.</p>
+                                    <p>At university, she discovered exercise psychology, which uses sport to support
+                                        people in making life changes, reducing anxiety and coping with depression.
+                                        She created her own running-based therapy, FDRT® Running Therapy, specifically
+                                        for people looking for an effective way to manage stress and regain a sense of
+                                        control over their lives. Her book, <em>Running Therapy</em>, was published
+                                        this March.</p>
+                                    <p>As a sports psychologist, Dóri works with coaches and individual and team-sport
+                                        athletes—professional and amateur, adults and children—helping them improve
+                                        their performance and overcome injuries. She combines sports-psychology
+                                        knowledge with her own sporting experience, whether addressing competition,
+                                        sustaining motivation, preventing burnout or making a mental return after
+                                        injury.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </article>
+                    <article class="expert-card">
+                        <div class="expert-photo"><img src="../pics/%C3%81gi%20erd%C5%91s%20k%C3%A9p.jpg"
+                                alt="Nagy Ágnes outdoors in a wooded setting"></div>
+                        <div class="expert-content">
+                            <h3>Nagy Ágnes</h3>
+                            <div class="role">Sports mental coach · Team coach · Qualified psychologist</div>
+                            <div class="expert-intro">
+                                <p>As a sports mental coach in Mental Ascend’s programmes, Ági supports athletes’
+                                    mental development, conscious preparation and the realization of their potential.
+                                    She enjoys working with adults and young athletes alike; when supporting younger
+                                    athletes, collaboration with parents is an important part of the process.</p>
+                            </div>
+                            <details class="expert-details">
+                                <summary>Learn more about Ági</summary>
+                                <div class="expert-details-content">
+                                    <p>Ági is a sports mental coach, team coach, qualified psychologist and economist.
+                                        She spent 14 years in multinational companies, working in specialist and
+                                        leadership roles. She particularly enjoys working with young athletes and
+                                        considers collaboration with their parents important, as a supportive
+                                        environment can play a defining role in young people’s relationship with sport
+                                        and their development.</p>
+                                    <p>Through her corporate experience, she gained first-hand insight into
+                                        performance expectations, navigating change and the challenges of achieving
+                                        goals. She draws on this experience when supporting athletes, since conscious
+                                        preparation, recognising inner resources and managing pressure matter in sport
+                                        just as they do in the workplace.</p>
+                                    <p>Sport has been part of her life since childhood, and she still enjoys exploring
+                                        new activities. As a sports mental coach, she believes development is about
+                                        more than results: it is just as important for athletes to understand
+                                        themselves, recognise their strengths and learn to draw consciously on their
+                                        own resources.</p>
                                 </div>
                             </details>
                         </div>
