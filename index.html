@@ -236,6 +236,8 @@
 
     .hero-actions {
       display: flex;
+      flex-direction: column;
+      align-items: flex-start;
       flex-wrap: wrap;
       gap: 16px;
       margin-top: 36px
@@ -258,6 +260,12 @@
     .button.primary {
       color: var(--black);
       background: var(--gold)
+    }
+
+    .button.open-day {
+      color: var(--black);
+      border-color: var(--white);
+      background: var(--white)
     }
 
     .button.secondary {
@@ -1216,7 +1224,7 @@
       }
 
       h1 {
-        font-size: 58px
+        font-size: clamp(38px, 11.5vw, 58px)
       }
 
       .hero-copy {
@@ -1339,6 +1347,8 @@
             sportolóknak.</span>Coachinggal, élsportolói mentoringgal és sportpszichológiával segítünk kezelni a nyomást
           és kihozni belőled a maximumot a téthelyzetekben is.</p>
         <div class="hero-actions"><a class="button primary" href="#contact-form">Kérem az ingyenes konzultációt</a>
+          <a class="button open-day" href="https://forms.gle/MeRGGS5pcDssqbmc9">Regisztrálok az ingyenes nyílt napra
+            11.25.</a>
         </div>
       </div>
     </section>
